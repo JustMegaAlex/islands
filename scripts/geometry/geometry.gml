@@ -140,6 +140,14 @@ function Vec2(xx, yy, is_polar=false) constructor {
 		return new Vec2(x*n, y*n)	
 	}
 
+    dist_to = function(vec) {
+        return point_distance(x, y, vec.x, vec.y)
+    }
+
+    angle_to = function(vec) {
+        return point_direction(x, y, vec.x, vec.y)
+    }
+
 	if is_polar == true
 		self.set_polar(xx, yy)
 }

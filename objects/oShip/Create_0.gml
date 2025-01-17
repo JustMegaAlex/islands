@@ -1,7 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
 event_inherited()
 
-z = -400
+z = -200
+sp_max = 8

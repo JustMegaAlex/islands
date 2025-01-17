@@ -41,6 +41,7 @@
   },
   "name":"islands",
   "resources":[
+    {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},},
     {"id":{"name":"oEntityChildTemplate","path":"objects/oEntityChildTemplate/oEntityChildTemplate.yy",},},
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},
@@ -49,6 +50,7 @@
     {"id":{"name":"oRoomSelectButton","path":"objects/oRoomSelectButton/oRoomSelectButton.yy",},},
     {"id":{"name":"oRoomSelectMenu","path":"objects/oRoomSelectMenu/oRoomSelectMenu.yy",},},
     {"id":{"name":"oShip","path":"objects/oShip/oShip.yy",},},
+    {"id":{"name":"oSys","path":"objects/oSys/oSys.yy",},},
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
     {"id":{"name":"camera","path":"scripts/camera/camera.yy",},},
     {"id":{"name":"debug_view_helpers","path":"scripts/debug_view_helpers/debug_view_helpers.yy",},},
@@ -61,6 +63,7 @@
     {"id":{"name":"sFullnessBar","path":"sprites/sFullnessBar/sFullnessBar.yy",},},
     {"id":{"name":"sShadow","path":"sprites/sShadow/sShadow.yy",},},
     {"id":{"name":"sShip","path":"sprites/sShip/sShip.yy",},},
+    {"id":{"name":"sUINavigateArrow","path":"sprites/sUINavigateArrow/sUINavigateArrow.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
