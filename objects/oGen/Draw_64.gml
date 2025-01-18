@@ -1,2 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
+
+DebugDrawVar("mouse pos", $"{mouse_x}, {mouse_y}")
+DebugDrawVar("debug", _debug)
