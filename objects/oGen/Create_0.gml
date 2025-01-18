@@ -25,9 +25,53 @@ generators_config = {
     n9: new Generator(3),
 }
 
-function Generator(islands_count=4) constructor {
+function Generator(islands_count=4, trees_prosperity=2, amber_prosperity=2) constructor {
     self.islands_count = islands_count
     self.size_randomer = irandomer(400, 1000)
+    self.trees_randomer = irandomer(trees_prosperity, trees_prosperity * 1.5)
+    self.amber_randomer = irandomer(amber_prosperity, amber_prosperity * 1.5)
+
+    FixIslandPlacement = function(isle) {
+        var cycles = 1000
+        with isle {
+            while place_meeting(x, y, oIsland) {
+                x = other.posx_randomer()
+                y = other.posy_randomer()
+                cycles--
+                if (cycles <= 0) {
+                    show_message($"Failed to place island at {xx}, {yy}")
+                    break
+                }
+                // show_debug_message($"Placed island at {xx}, {yy}")
+            }
+        }
+    }
+
+    FillIsland = function(isle) {
+        with isle {
+            var gap = 20
+            var placex_randomer = irandomer(bbox_left + gap, bbox_right - gap)
+            var placey_randomer = irandomer(bbox_top + gap, bbox_bottom - gap)
+            repeat(other.trees_randomer()) {
+                tree = instance_create_layer(
+                    placex_randomer(), placey_randomer(), "Instances", oTree)
+                var cycles = 1000
+                with tree while true {
+                    var ent = instance_place(x, y, oEntity)
+                    if !ent or !ent.is_resource {
+                        break
+                    }
+                    x = placex_randomer()
+                    y = placey_randomer()
+                    cycles--
+                    if (cycles <= 0) {
+                        show_message($"Failed to place tree at {tree.x}, {tree.y}")
+                        break
+                    }
+                }
+            }
+        }
+    }
 
     run = function(i, j) {
         self.x0 = oGen.x0 + i * oGen.grid_area_size
@@ -38,22 +82,12 @@ function Generator(islands_count=4) constructor {
             var xx = self.posx_randomer()
             var yy = self.posy_randomer()
             var size = self.size_randomer()
-            var isle = instance_create_layer(xx, yy, "Instances", oIsland)
+            var isle = instance_create_layer(xx, yy, "Bottom", oIsland)
             isle.image_xscale = size / sprite_get_width(isle.sprite_index)
             isle.image_yscale = size / sprite_get_height(isle.sprite_index)
-            var cycles = 1000
-            with isle {
-                while place_meeting(x, y, oIsland) {
-                    x = other.posx_randomer()
-                    y = other.posy_randomer()
-                    cycles--
-                    if (cycles <= 0) {
-                        show_message($"Failed to place island at {xx}, {yy}")
-                        break
-                    }
-                    // show_debug_message($"Placed island at {xx}, {yy}")
-                }
-            }
+
+            self.FixIslandPlacement(isle)
+            self.FillIsland(isle)
         }
     }
 }

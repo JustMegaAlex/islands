@@ -54,6 +54,7 @@
     {"id":{"name":"oRoomSelectMenu","path":"objects/oRoomSelectMenu/oRoomSelectMenu.yy",},},
     {"id":{"name":"oShip","path":"objects/oShip/oShip.yy",},},
     {"id":{"name":"oSys","path":"objects/oSys/oSys.yy",},},
+    {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},},
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
     {"id":{"name":"camera","path":"scripts/camera/camera.yy",},},
     {"id":{"name":"debug_view_helpers","path":"scripts/debug_view_helpers/debug_view_helpers.yy",},},

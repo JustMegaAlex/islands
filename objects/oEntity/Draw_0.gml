@@ -1,4 +1,14 @@
 
+if sprite_index == -1 {
+    draw_set_color(default_color)
+    draw_rectangle(
+        x - default_rect.x / 2, y - default_rect.y / 2,
+        x + default_rect.x / 2, y + default_rect.y / 2,
+        false)
+    draw_set_color(c_white)
+    exit
+}
+
 draw_sprite_ext(
     sprite_index, image_index,
     x, y + z,
