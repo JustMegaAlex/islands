@@ -24,7 +24,10 @@ for (var _col = _start_col; _col <= _end_col; _col++) {
         var _y1 = _row * grid_area_size + y0
         
         // Draw cell rectangle
+        var col = (_col == ship_grid_pos.x) and (_row == ship_grid_pos.y) ? c_green : c_white
+        draw_set_color(col)
         draw_rectangle(_x1, _y1, _x1 + grid_area_size, _y1 + grid_area_size, true)
+        draw_set_color(c_white)
     }
 }
 
