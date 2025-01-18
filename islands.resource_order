@@ -26,6 +26,7 @@
     {"name":"oControl","order":5,"path":"objects/oControl/oControl.yy",},
     {"name":"oEntity","order":2,"path":"objects/oEntity/oEntity.yy",},
     {"name":"oEntityChildTemplate","order":1,"path":"objects/oEntityChildTemplate/oEntityChildTemplate.yy",},
+    {"name":"oGen","order":6,"path":"objects/oGen/oGen.yy",},
     {"name":"oMusic","order":1,"path":"objects/oMusic/oMusic.yy",},
     {"name":"oRoomSelectButton","order":1,"path":"objects/oRoomSelectButton/oRoomSelectButton.yy",},
     {"name":"oRoomSelectMenu","order":2,"path":"objects/oRoomSelectMenu/oRoomSelectMenu.yy",},

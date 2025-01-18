@@ -45,6 +45,7 @@
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},},
     {"id":{"name":"oEntityChildTemplate","path":"objects/oEntityChildTemplate/oEntityChildTemplate.yy",},},
+    {"id":{"name":"oGen","path":"objects/oGen/oGen.yy",},},
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},
     {"id":{"name":"oMusic","path":"objects/oMusic/oMusic.yy",},},
     {"id":{"name":"oRoomLoaderButton","path":"objects/oRoomLoaderButton/oRoomLoaderButton.yy",},},
