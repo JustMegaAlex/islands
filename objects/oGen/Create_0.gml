@@ -16,15 +16,15 @@ for (var i = 0; i < grid_w; i++) {
     }
 }
 
-function Generator(i, j, islands_count=4) constructor {
-    self.x0 = other.x0 + i * other.grid_area_size
-    self.y0 = other.y0 + j * other.grid_area_size
+function Generator(islands_count=4) constructor {
     self.islands_count = islands_count
-    self.posx_randomer = irandomer(self.x0, self.x0 + other.grid_area_size)
-    self.posy_randomer = irandomer(self.y0, self.y0 + other.grid_area_size)
     self.size_randomer = irandomer(400, 1000)
 
-    run = function() {
+    run = function(i, j) {
+        self.x0 = oGen.x0 + i * oGen.grid_area_size
+        self.y0 = oGen.y0 + j * oGen.grid_area_size
+        self.posx_randomer = irandomer(self.x0, self.x0 + oGen.grid_area_size)
+        self.posy_randomer = irandomer(self.y0, self.y0 + oGen.grid_area_size)
         repeat(self.islands_count) {
             var xx = self.posx_randomer()
             var yy = self.posy_randomer()
@@ -53,13 +53,36 @@ function Area() constructor {
     generated = false
 }
 
+//// Initialize generators
+generators = ds_list_create()
+generators_config = {
+    n10: new Generator(5),
+    n5: new Generator(1),
+    n20: new Generator(2),
+    n9: new Generator(3),
+}
+
+function InitGenerators() {
+    var keys = variable_struct_get_names(generators_config)
+    for (var i = 0; i < array_length(keys); ++i) {
+        var key = keys[i]
+        var num = real(string_copy(key, 2, 2))
+        var gen = generators_config[$ key]
+        repeat(num) { ds_list_add(generators, gen) }
+    }
+    ds_list_shuffle(generators)
+}
+
 function GenerateArea(i, j) {
     var area = grid[# i, j]
-    show_debug_message($"{i} {j} area.generated: {area.generated}")
     if (area.generated) { return }
     area.generated = true
-    show_debug_message($"{i} {j} area.generated: {area.generated}")
-    new Generator(i, j).run()
+    generators[| 0].run(i, j)
+    ds_list_delete(generators, 0)
+    if ds_list_empty(generators) {
+        show_debug_message("Generators are empty, reinitializing")
+        InitGenerators()
+    }
 }
 
 function UpdateShipGridPos() {
@@ -77,3 +100,5 @@ function GridCheck(vec) {
 }
 
 show_debug_message($"ship_grid_pos: {ship_grid_pos.x}, {ship_grid_pos.y}, ship_grid_pos_prev: {ship_grid_pos_prev.x}, {ship_grid_pos_prev.y}")
+
+InitGenerators()
