@@ -16,6 +16,15 @@ for (var i = 0; i < grid_w; i++) {
     }
 }
 
+//// Initialize generators
+generators = ds_list_create()
+generators_config = {
+    n10: new Generator(5),
+    n5: new Generator(1),
+    n20: new Generator(2),
+    n9: new Generator(3),
+}
+
 function Generator(islands_count=4) constructor {
     self.islands_count = islands_count
     self.size_randomer = irandomer(400, 1000)
@@ -34,12 +43,12 @@ function Generator(islands_count=4) constructor {
             isle.image_yscale = size / sprite_get_height(isle.sprite_index)
             var cycles = 1000
             with isle {
-                while place_meeting(xx, yy, oIsland) {
-                    xx = other.posx_randomer()
-                    yy = other.posy_randomer()
+                while place_meeting(x, y, oIsland) {
+                    x = other.posx_randomer()
+                    y = other.posy_randomer()
                     cycles--
                     if (cycles <= 0) {
-                        show_error($"Failed to place island at {xx}, {yy}", false)
+                        show_message($"Failed to place island at {xx}, {yy}")
                         break
                     }
                     // show_debug_message($"Placed island at {xx}, {yy}")
@@ -53,14 +62,6 @@ function Area() constructor {
     generated = false
 }
 
-//// Initialize generators
-generators = ds_list_create()
-generators_config = {
-    n10: new Generator(5),
-    n5: new Generator(1),
-    n20: new Generator(2),
-    n9: new Generator(3),
-}
 
 function InitGenerators() {
     var keys = variable_struct_get_names(generators_config)
