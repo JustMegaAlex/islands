@@ -47,16 +47,16 @@ function Generator(islands_count=4, trees_prosperity=2, amber_prosperity=2) cons
         }
     }
 
-    FillIsland = function(isle) {
+    GenerateItems = function(isle, num, obj) {
         with isle {
             var gap = 20
             var placex_randomer = irandomer(bbox_left + gap, bbox_right - gap)
             var placey_randomer = irandomer(bbox_top + gap, bbox_bottom - gap)
-            repeat(other.trees_randomer()) {
-                tree = instance_create_layer(
-                    placex_randomer(), placey_randomer(), "Instances", oTree)
+            repeat(num) {
+                var inst = instance_create_layer(
+                    placex_randomer(), placey_randomer(), "Instances", obj)
                 var cycles = 1000
-                with tree while true {
+                with inst while true {
                     var ent = instance_place(x, y, oEntity)
                     if !ent or !ent.is_resource {
                         break
@@ -65,12 +65,17 @@ function Generator(islands_count=4, trees_prosperity=2, amber_prosperity=2) cons
                     y = placey_randomer()
                     cycles--
                     if (cycles <= 0) {
-                        show_message($"Failed to place tree at {tree.x}, {tree.y}")
+                        show_message($"Failed to place tree at {inst.x}, {inst.y}")
                         break
                     }
                 }
             }
         }
+    }
+
+    FillIsland = function(isle) {
+        GenerateItems(isle, trees_randomer(), oTree)
+        GenerateItems(isle, amber_randomer(), oAmber)
     }
 
     run = function(i, j) {

@@ -41,6 +41,7 @@
   },
   "name":"islands",
   "resources":[
+    {"id":{"name":"oAmber","path":"objects/oAmber/oAmber.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},},
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},},
