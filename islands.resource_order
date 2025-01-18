@@ -22,7 +22,8 @@
     {"name":"Timelines","order":5,"path":"folders/unused groups/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"oControl","order":4,"path":"objects/oControl/oControl.yy",},
+    {"name":"oCamera","order":4,"path":"objects/oCamera/oCamera.yy",},
+    {"name":"oControl","order":5,"path":"objects/oControl/oControl.yy",},
     {"name":"oEntity","order":2,"path":"objects/oEntity/oEntity.yy",},
     {"name":"oEntityChildTemplate","order":1,"path":"objects/oEntityChildTemplate/oEntityChildTemplate.yy",},
     {"name":"oMusic","order":1,"path":"objects/oMusic/oMusic.yy",},
