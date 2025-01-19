@@ -10,8 +10,8 @@
   "name":"oInput",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Libraries/AlexLibs/Objects.yy",
+    "name":"Libraries",
+    "path":"folders/Libraries.yy",
   },
   "parentObjectId":null,
   "persistent":true,
