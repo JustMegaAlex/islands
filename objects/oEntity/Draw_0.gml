@@ -1,11 +1,4 @@
 
-if sprite_index == sWhitePixel {
-    draw_set_color(default_color)
-    draw_self()
-    draw_set_color(c_white)
-    exit
-}
-
 draw_sprite_ext(
     sprite_index, image_index,
     x, y + z,

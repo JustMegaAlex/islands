@@ -9,13 +9,13 @@ z = 0
 velocity = new Vec2(0, 0)
 position = new Vec2(x, y)
 move_target = new Vec2(x, y)
-sp_max = 0
+sp_max = 1
 
 enum EntitySide {
     ours, theirs, nature
 }
 
-hp = 0
+hp = 1
 
 //// Type attributes
 is_resource = false
@@ -29,7 +29,7 @@ is_flying = false
 attack_target = noone
 attack_timer = MakeTimer(60)
 attack_damage = 0
-island = instance_place(x, y, oIsland)
+island = noone
 resource_to_mine = noone
 
 function StartAttacking(entity) {
@@ -49,6 +49,20 @@ function Die() {
     instance_destroy()
 }
 
+function AttachToIsland() {
+	island = instance_place(x, y, oIsland)
+	if island {
+		island.AddEntity(id)	
+	}
+}
+
+function DetachFromIsland() {
+	if island {
+		island.RemoveEntity(id)
+		island = noone
+	}
+}
+
 function GetClosestInstanceFromArray(array) {
     if ArrayEmpty(array) { return noone }
     var closest = array[0]
@@ -60,4 +74,6 @@ function GetClosestInstanceFromArray(array) {
     return closest
 }
 
-alarm[0] = 0
+alarm[0] = 1
+
+AttachToIsland()

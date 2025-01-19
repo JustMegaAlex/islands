@@ -9,3 +9,4 @@ default_rect.set(40, 100)
 show_debug_message($"Tree {x}, {y}")
 
 is_resource = true
+hp = 3

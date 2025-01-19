@@ -1,4 +1,14 @@
 
+if is_miner {
+    var test = true
+}
+if is_creature {
+    var test = false
+}
+if is_resource {
+    var test = false
+}
+
 if hp <= 0 {
     Die(); exit
 }
@@ -21,11 +31,12 @@ if !island {
 //// AI
 if !is_flying and !island {
     Die()
+	exit
 }
 
 if is_miner {
     if !resource_to_mine or !instance_exists(resource_to_mine) {
-        resource_to_mine = GetClosestInstanceFromArray(island.resources)
+        resource_to_mine = GetClosestInstanceFromArray(island.GetResources())
         move_target.setv(resource_to_mine.position)
     }
 
