@@ -24,27 +24,36 @@ position.add(velocity)
 x = position.x
 y = position.y
 
-if !island {
-    island = instance_place(x, y, oIsland)
-}
 
 //// AI
 if !is_flying and !island {
-    Die()
-	exit
+    island = instance_place(x, y, oIsland)
+    if !island {
+        Die()
+        exit
+    }
 }
 
 if is_miner {
     if !resource_to_mine or !instance_exists(resource_to_mine) {
         resource_to_mine = GetClosestInstanceFromArray(island.GetResources())
-        move_target.setv(resource_to_mine.position)
+        if resource_to_mine {
+            move_target.setv(resource_to_mine.position)
+        }
     }
 
     if resource_to_mine {
         if position.dist_to(resource_to_mine.position) < 10 {
-            StartAttacking(resource_to_mine)
+            if !attack_target {
+                StartAttacking(resource_to_mine)
+            }
         }
     }
+}
+
+
+if attack_target and !instance_exists(attack_target) {
+    attack_target = noone
 }
 
 if attack_target {

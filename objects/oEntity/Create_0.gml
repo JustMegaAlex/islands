@@ -28,13 +28,14 @@ is_flying = false
 
 attack_target = noone
 attack_timer = MakeTimer(60)
-attack_damage = 0
+attack_damage = 1
 island = noone
 resource_to_mine = noone
+attack_timer = MakeTimer(60)
 
 function StartAttacking(entity) {
     attack_target = entity
-    attack_timer = MakeTimer(60)
+    attack_timer.reset()
 }
 
 function IsMoving() {
@@ -46,6 +47,9 @@ function Hit(id) {
 }
 
 function Die() {
+	if island {
+		island.RemoveEntity(id)
+	}
     instance_destroy()
 }
 
@@ -76,4 +80,4 @@ function GetClosestInstanceFromArray(array) {
 
 alarm[0] = 1
 
-AttachToIsland()
+//AttachToIsland()
