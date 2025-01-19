@@ -7,3 +7,7 @@ if oInput.Pressed("rclick") {
 if is_ship_navigating {
     is_ship_navigating = oShip.IsMoving()
 }
+
+if oInput.Pressed("lclick") {
+    instance_create_layer(mouse_x, mouse_y, "Instances", oBuddy)
+}

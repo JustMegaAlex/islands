@@ -1,10 +1,7 @@
 
-if sprite_index == -1 {
+if sprite_index == sWhitePixel {
     draw_set_color(default_color)
-    draw_rectangle(
-        x - default_rect.x / 2, y - default_rect.y / 2,
-        x + default_rect.x / 2, y + default_rect.y / 2,
-        false)
+    draw_self()
     draw_set_color(c_white)
     exit
 }

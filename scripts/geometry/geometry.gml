@@ -71,6 +71,12 @@ function Vec2(xx, yy, is_polar=false) constructor {
 		return self
 	}
 
+	setv = function(vec) {
+		self.x = vec.x
+		self.y = vec.y
+		return self
+	}
+
 	set_polar = function(l, dir) {
 		self.x = lengthdir_x(l, dir)
 		self.y = lengthdir_y(l, dir)	
