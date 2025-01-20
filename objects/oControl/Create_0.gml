@@ -34,7 +34,7 @@ function CommandDropCrew(crew_type) constructor {
         with oUIMarkDrop {
             crew_commanded_to_drop += crew_type == other.crew_type
         }
-        if crew_left >= crew_commanded_to_drop {
+        if crew_left > crew_commanded_to_drop {
             var mark = instance_create_layer(mouse_x, mouse_y, "Instances", oUIMarkDrop)
             mark.crew_type = self.crew_type
         }

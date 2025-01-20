@@ -9,6 +9,10 @@ if is_resource {
     var test = false
 }
 
+if is_hidden {
+    exit
+}
+
 if hp <= 0 {
     Die(); exit
 }

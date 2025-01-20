@@ -18,6 +18,7 @@ enum EntitySide {
 hp = 1
 
 //// Type attributes
+is_hidden = false
 is_resource = false
 is_creature = false
 is_miner = false
@@ -32,6 +33,18 @@ attack_damage = 1
 island = noone
 resource_to_mine = noone
 attack_timer = MakeTimer(60)
+
+function MakeHidden() {
+    is_hidden = true
+    image_xscale = 0
+    image_yscale = 0
+}
+
+function MakeUnhidden() {
+    is_hidden = false
+    image_xscale = 1
+    image_yscale = 1
+}
 
 function StartAttacking(entity) {
     attack_target = entity

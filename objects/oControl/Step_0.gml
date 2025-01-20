@@ -8,9 +8,6 @@ if is_ship_navigating {
     is_ship_navigating = oShip.IsMoving()
 }
 
-if oInput.Pressed("lclick") {
-    instance_create_layer(mouse_x, mouse_y, "Instances", oBuddy)
-}
 
 
 ///// UI
@@ -19,7 +16,7 @@ var _ui = collision_point(mx, my, oUIButtonParent, false, false)
 var clicked_on_ui = false
 if _ui {
     _ui.mouse_over = true
-    if oInput.Pressed("rclick") {
+    if oInput.Pressed("lclick") {
         _ui.active = true
         active_ui = _ui
         clicked_on_ui = true
@@ -27,7 +24,7 @@ if _ui {
 }
 /// Preform button
 if active_ui and !clicked_on_ui {
-    if oInput.Pressed("rclick") {
+    if oInput.Pressed("lclick") {
         active_ui.command.perform()
         // active_ui.active = false
         // active_ui = noone
