@@ -34,6 +34,7 @@ resource_to_mine = noone
 attack_timer = MakeTimer(60)
 
 marked_for_pickup = false
+marked_for_mining = false
 
 function MakeHidden() {
     is_hidden = true

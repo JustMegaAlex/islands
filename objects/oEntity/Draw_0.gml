@@ -13,3 +13,7 @@ draw_sprite_ext(
 if marked_for_pickup {
     draw_sprite(sUIDefault, 0, x, y - 30)
 }
+
+if marked_for_mining {
+    draw_sprite(sUIDefault, 0, x, y - 30)
+}
