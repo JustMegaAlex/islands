@@ -57,3 +57,16 @@ function CommandDropCrew(crew_type) constructor {
         }
     }
 }
+
+function CommandCannon() constructor {
+    self.sprite = noone
+    draw = function() {
+        if !sprite_exists(self.sprite) { return }
+        draw_sprite(sprite, 0, mouse_x, mouse_y)
+    }
+    perform = function() {
+        var core = instance_create_layer(
+            oShip.x, oShip.y + oShip.z, "Instances", oCannonCore)
+        core.Launch(mouse_x, mouse_y)
+    }
+}
