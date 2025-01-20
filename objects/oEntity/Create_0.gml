@@ -26,13 +26,14 @@ is_fighter = false
 is_flying = false
 
 //// State attributes
-
 attack_target = noone
 attack_timer = MakeTimer(60)
 attack_damage = 1
 island = noone
 resource_to_mine = noone
 attack_timer = MakeTimer(60)
+
+marked_for_pickup = false
 
 function MakeHidden() {
     is_hidden = true
@@ -68,6 +69,7 @@ function Die() {
 function SetPos(xx, yy=undefined) {
     if yy == undefined {
         position.set(xx.x, xx.y); x = xx.x; y = xx.y
+		return
     }
     position.set(xx, yy); x = xx; y = yy
 }

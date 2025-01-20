@@ -9,16 +9,17 @@ is_flying = true
 
 drop_crew_radius = 200
 drop_crew_marks = ds_list_create()
+crew_instances = ds_list_create()
 
 function AddBuddy() {
     var inst = instance_create_layer(x, y, "Instances",  oBuddy)
     inst.MakeHidden()
-    array_push(crew.buddies, inst)
+    array_push(crew.oBuddy, inst)
     return inst
 }
 
 crew = {
-    buddies: []
+    oBuddy: []
 }
 
-AddBuddy();AddBuddy();AddBuddy()
+AddBuddy(); AddBuddy();

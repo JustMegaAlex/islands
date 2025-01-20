@@ -10,6 +10,7 @@ if is_resource {
 }
 
 if is_hidden {
+    SetPos(oShip.position)
     exit
 }
 

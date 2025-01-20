@@ -1,4 +1,4 @@
 
 event_inherited()
 
-command = new oControl.CommandDropCrew("buddies")
+command = new oControl.CommandDropCrew("oBuddy")

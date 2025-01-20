@@ -43,6 +43,7 @@
     {"name":"sIsland","order":3,"path":"sprites/sIsland/sIsland.yy",},
     {"name":"sShadow","order":1,"path":"sprites/sShadow/sShadow.yy",},
     {"name":"sUIButton","order":5,"path":"sprites/sUIButton/sUIButton.yy",},
+    {"name":"sUIDefault","order":9,"path":"sprites/sUIDefault/sUIDefault.yy",},
     {"name":"sUIMarkDrop","order":7,"path":"sprites/sUIMarkDrop/sUIMarkDrop.yy",},
     {"name":"sUIMarkMining","order":6,"path":"sprites/sUIMarkMining/sUIMarkMining.yy",},
     {"name":"sUINavigateArrow","order":2,"path":"sprites/sUINavigateArrow/sUINavigateArrow.yy",},

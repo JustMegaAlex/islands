@@ -1,11 +1,20 @@
 
 if oInput.Pressed("rclick") {
+    /// Destroy a mark, mark crew to pick up, or nivagate the ship
     var mark = MouseCollision(oUIMarkDrop)
     if mark {
         instance_destroy(mark)
     } else {
-        oShip.move_target.set(mouse_x, mouse_y)
-        is_ship_navigating = true
+        if !MouseCollisionInstances(
+            function(inst) {
+                if IsCrew(inst) {
+                    inst.marked_for_pickup = !inst.marked_for_pickup; return true
+                }; return false
+            }
+        ) {
+            oShip.move_target.set(mouse_x, mouse_y)
+            is_ship_navigating = true
+        }
     }
 }
 

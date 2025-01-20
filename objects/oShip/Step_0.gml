@@ -5,6 +5,7 @@
 event_inherited();
 
 collision_circle_list(x, y, drop_crew_radius, oUIMarkDrop, false, false, drop_crew_marks, false)
+collision_circle_list(x, y, drop_crew_radius, oEntity, false, false, crew_instances, false)
 
 
 //// Drop crew
@@ -15,11 +16,30 @@ if ds_list_size(drop_crew_marks) {
         if !ArrayEmpty(crew_arr) {
             var inst = array_pop(crew_arr)
             inst.SetPos(item.x, item.y)
+			inst.move_target.set(item.x, item.y)
             inst.MakeUnhidden()
             instance_destroy(item)
         }
     }
 }
 
+if ds_list_size(crew_instances) {
+    for (var i = 0; i < ds_list_size(crew_instances); ++i) {
+        var inst = crew_instances[| i]
+        if !IsCrew(inst) or !inst.marked_for_pickup or inst.is_hidden {
+            continue
+        }
+
+        var crew_arr = crew[$ object_get_name(inst.object_index)]
+		if crew_arr == undefined {
+			show_debug_message($"Not found crew array for {object_get_name(inst.object_index)}")
+		}
+        array_push(crew_arr, inst)
+        inst.marked_for_pickup = false
+        inst.MakeHidden()
+    }
+}
+
 
 ds_list_clear(drop_crew_marks)
+ds_list_clear(crew_instances)
