@@ -6,3 +6,7 @@ hp = 16
 is_creature = true
 is_fighter = true
 is_flying = true
+
+crew = {
+    buddies: []
+}
