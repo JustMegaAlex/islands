@@ -1,22 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oEntityChildTemplate",
+  "%Name":"oCollectibleAmber",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oEntityChildTemplate",
+  "name":"oCollectibleAmber",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/Objects/Entities.yy",
+    "name":"Collectibels",
+    "path":"folders/Objects/Collectibels.yy",
   },
   "parentObjectId":{
-    "name":"oEntity",
-    "path":"objects/oEntity/oEntity.yy",
+    "name":"oCollectibleParent",
+    "path":"objects/oCollectibleParent/oCollectibleParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sAmber",
+    "path":"sprites/sAmber/sAmber.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

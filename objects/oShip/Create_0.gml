@@ -10,6 +10,10 @@ is_flying = true
 drop_crew_radius = 200
 drop_crew_marks = ds_list_create()
 crew_instances = ds_list_create()
+collectibles = ds_list_create()
+
+wood = 0
+amber = 0
 
 function AddBuddy() {
     var inst = instance_create_layer(x, y, "Instances",  oBuddy)

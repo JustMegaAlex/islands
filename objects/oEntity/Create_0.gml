@@ -32,6 +32,7 @@ attack_damage = 1
 island = noone
 resource_to_mine = noone
 attack_timer = MakeTimer(60)
+resource_type = noone
 
 marked_for_pickup = false
 marked_for_mining = false

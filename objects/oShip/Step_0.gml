@@ -6,6 +6,7 @@ event_inherited();
 
 collision_circle_list(x, y, drop_crew_radius, oUIMarkDrop, false, false, drop_crew_marks, false)
 collision_circle_list(x, y, drop_crew_radius, oEntity, false, false, crew_instances, false)
+collision_circle_list(x, y, drop_crew_radius, oCollectibleParent, false, false, collectibles, false)
 
 
 //// Drop crew
@@ -36,6 +37,14 @@ if ds_list_size(crew_instances) {
     }
 }
 
+if ds_list_size(crew_instances) {
+    for (var i = 0; i < ds_list_size(collectibles); ++i) {
+        var item = collectibles[| i]
+        item.is_collected = true
+    }
+}
+
 
 ds_list_clear(drop_crew_marks)
 ds_list_clear(crew_instances)
+ds_list_clear(collectibles)

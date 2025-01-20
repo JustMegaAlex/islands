@@ -10,3 +10,5 @@ show_debug_message($"Amber {x}, {y}")
 
 is_resource = true
 hp = 3
+
+resource_type = oCollectibleAmber

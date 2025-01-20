@@ -10,3 +10,5 @@ show_debug_message($"Tree {x}, {y}")
 
 is_resource = true
 hp = 3
+
+resource_type = oCollectibleWood
