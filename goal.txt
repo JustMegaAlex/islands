@@ -1,0 +1,16 @@
+My goal for Pirate Software Jam is to create a game I'm passionate about.
+That includes:
+1. Interesting engaging gameplay
+    - experiment and be ready to cancel what doesn't work
+2. Beautiful and funny visuals
+3. Epic soundtrack
+4. A lot of feedback
+    - widely depends on game's performance after all
+    - but stay open, communicate and ask for it
+5. Fully complete the game
+    - keep the goal and tasks clear
+    - make the playable version as soon as possble
+
+
+First build vision.
+You can fly your ship, drop/pick up crew, set tasks to mine, shoot your cannon. There will be enemies spawning to keep it interesting. And there will be settlements to refill your crew. After some time a giant monster will emerge. Defeating him will serve as a main goal for now.
