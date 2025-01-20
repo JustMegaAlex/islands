@@ -4,7 +4,7 @@ if oInput.Pressed("rclick") {
     is_ship_navigating = true
 }
 
-if oInput.Pressed("lclick") {
+if !active_ui and oInput.Pressed("lclick") {
     /// Destroy a mark, mark crew to pick up, or nivagate the ship
     var mark = MouseCollision(oUIMarkDrop)
     if mark {
@@ -47,4 +47,9 @@ if active_ui and !clicked_on_ui {
         // active_ui.active = false
         // active_ui = noone
     }
+}
+
+if oInput.Pressed("escape") and active_ui {
+    active_ui.active = false
+    active_ui = noone
 }
