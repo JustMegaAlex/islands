@@ -13,9 +13,21 @@ crew_instances = ds_list_create()
 
 function AddBuddy() {
     var inst = instance_create_layer(x, y, "Instances",  oBuddy)
-    inst.MakeHidden()
-    array_push(crew.oBuddy, inst)
+    LoadCrew(inst)
     return inst
+}
+
+function LoadCrew(inst) {
+    array_push(crew[$ object_get_name(inst.object_index)], inst)
+    instance_deactivate_object(inst)
+}
+
+function DropCrew(crew_type, xx, yy) {
+    var inst = array_pop(crew[$ crew_type])
+    instance_activate_object(inst)
+    inst.SetPos(xx, yy)
+    inst.move_target.set(xx, yy)
+    inst.AttachToIsland()
 }
 
 crew = {

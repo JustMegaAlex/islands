@@ -14,9 +14,9 @@ function MouseCollisionInstances(fun) {
     for (var i = 0; i < count; ++i) {
         var inst = collision_list[| i]
         if fun(inst) {
-            return true
+			found_instances = true
+			break
         }
-        found_instances = true
     }
     ds_list_clear(collision_list)
     return found_instances

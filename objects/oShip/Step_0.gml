@@ -14,10 +14,7 @@ if ds_list_size(drop_crew_marks) {
         var item = drop_crew_marks[| i]
         var crew_arr = crew[$ item.crew_type]
         if !ArrayEmpty(crew_arr) {
-            var inst = array_pop(crew_arr)
-            inst.SetPos(item.x, item.y)
-			inst.move_target.set(item.x, item.y)
-            inst.MakeUnhidden()
+            DropCrew(item.crew_type, item.x, item.y)
             instance_destroy(item)
         }
     }
@@ -34,9 +31,8 @@ if ds_list_size(crew_instances) {
 		if crew_arr == undefined {
 			show_debug_message($"Not found crew array for {object_get_name(inst.object_index)}")
 		}
-        array_push(crew_arr, inst)
         inst.marked_for_pickup = false
-        inst.MakeHidden()
+        LoadCrew(inst)
     }
 }
 
