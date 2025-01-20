@@ -7,6 +7,9 @@ is_creature = true
 is_fighter = true
 is_flying = true
 
+drop_crew_radius = 200
+drop_crew_marks = ds_list_create()
+
 function AddBuddy() {
     var inst = instance_create_layer(x, y, "Instances",  oBuddy)
     inst.MakeHidden()

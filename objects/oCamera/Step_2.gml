@@ -1,8 +1,12 @@
 
 //// Mouse input
 var gap = CamW() * 0.01
-var inpx = (mouse_x > (CamX() + CamW() - gap)) - (mouse_x < (CamX() + gap))
-var inpy = (mouse_y > (CamY() + CamH() - gap)) - (mouse_y < (CamY() + gap))
+var inpx = 0
+var inpy = 0
+if use_mouse_scroll {
+    inpx = (mouse_x > (CamX() + CamW() - gap)) - (mouse_x < (CamX() + gap))
+    inpy = (mouse_y > (CamY() + CamH() - gap)) - (mouse_y < (CamY() + gap))
+}
 
 //// Keyboard input
 if inpx == 0 and inpy == 0 {
@@ -22,8 +26,6 @@ if zoom_prev != zoom {
     var xx = CamXCent()
     var yy = CamYCent()
     SetZoom(zoom)
-    var xnew = CamXCent()
-    var ynew = CamYCent()
     CameraSetPos(xx, yy)
 }
 

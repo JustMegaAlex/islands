@@ -1,7 +1,7 @@
 
 DebugDrawUpdate()
 
-if keyboard_check_pressed(ord("R")) {
+if keyboard_check_pressed(vk_f4) {
     room_restart()
 }
 

@@ -42,8 +42,7 @@ function MakeHidden() {
 
 function MakeUnhidden() {
     is_hidden = false
-    image_xscale = 1
-    image_yscale = 1
+    alarm[0] = 1
 }
 
 function StartAttacking(entity) {
@@ -64,6 +63,13 @@ function Die() {
 		island.RemoveEntity(id)
 	}
     instance_destroy()
+}
+
+function SetPos(xx, yy=undefined) {
+    if yy == undefined {
+        position.set(xx.x, xx.y); x = xx.x; y = xx.y
+    }
+    position.set(xx, yy); x = xx; y = yy
 }
 
 function AttachToIsland() {

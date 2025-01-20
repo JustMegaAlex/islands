@@ -20,6 +20,8 @@ drag_button = mb_middle
 mouse_x_prev = 0
 mouse_y_prev = 0
 
+use_mouse_scroll = false
+
 spd = 25
 
 function ChangeZoom(step) {
