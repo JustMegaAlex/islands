@@ -66,7 +66,7 @@ function CommandCannon() constructor {
     }
     perform = function() {
         var core = instance_create_layer(
-            oShip.x, oShip.y + oShip.z, "Instances", oCannonCore)
+            oShip.x, oShip.y, "Instances", oCannonCore)
         core.Launch(mouse_x, mouse_y)
     }
 }

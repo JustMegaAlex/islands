@@ -2,7 +2,8 @@
 distance_passed += sp
 var xx = distance_passed / distance
 
-z = -zmax * (1 - sqr(xx - 0.5) * 4)
+var h = (1 - sqr(xx - 0.5) * 4)
+z = -zmax * h
 
 x += velocity.x
 y += velocity.y
