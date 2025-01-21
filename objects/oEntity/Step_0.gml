@@ -31,12 +31,26 @@ y = position.y
 
 
 //// AI
-if !is_flying and !island {
+if !is_flying and !is_swimmer and !island {
     island = instance_place(x, y, oIsland)
     if !island {
         Die()
         exit
     }
+}
+
+
+if is_fighter {
+    if !attack_target or !instance_exists(attack_target) {
+        attack_target = FindAttackTarget()
+    }
+    if attack_target {
+        move_target.setv(attack_target.position)
+    }
+}
+
+if is_fighter and attack_target {
+    exit
 }
 
 if is_miner {

@@ -22,7 +22,7 @@ function MouseCollisionInstances(fun) {
     return found_instances
 }
 
-function Command() constructor {
+function CommandTemplate() constructor {
     self.sprite = noone
     draw = function() {
         if !sprite_exists(self.sprite) { return }
@@ -68,5 +68,17 @@ function CommandCannon() constructor {
         var core = instance_create_layer(
             oShip.x, oShip.y, "Instances", oCannonCore)
         core.Launch(mouse_x, mouse_y)
+    }
+}
+
+function CommandCreateInstance(obj) constructor {
+    self.sprite = noone
+    self.obj = obj
+    draw = function() {
+        if !sprite_exists(self.sprite) { return }
+        draw_sprite(sprite, 0, mouse_x, mouse_y)
+    }
+    perform = function() {
+        instance_create_layer(mouse_x, mouse_y, "Instances", obj)
     }
 }

@@ -17,6 +17,8 @@ enum EntitySide {
 
 hp = 1
 
+side = EntitySide.nature
+
 //// Type attributes
 is_hidden = false
 is_resource = false
@@ -24,15 +26,19 @@ is_creature = false
 is_miner = false
 is_fighter = false
 is_flying = false
+is_swimmer = false
 
 //// State attributes
 attack_target = noone
+enemy_detection_range = 1000
 attack_timer = MakeTimer(60)
 attack_damage = 1
 island = noone
 resource_to_mine = noone
 attack_timer = MakeTimer(60)
 resource_type = noone
+
+instances_list = ds_list_create()
 
 marked_for_pickup = false
 marked_for_mining = false
@@ -51,6 +57,24 @@ function MakeUnhidden() {
 function StartAttacking(entity) {
     attack_target = entity
     attack_timer.reset()
+}
+
+function FindAttackTarget() {
+    var count = collision_circle_list(
+        x, y, enemy_detection_range, oEntity, false, false,
+        instances_list, false)
+    var result = noone
+    for (var i = 0; i < ds_list_size(instances_list); ++i) {
+        var inst = instances_list[| i]
+        if inst.is_creature
+                and inst.side != EntitySide.nature 
+                and inst.side != side {
+            result = inst
+            break
+        }
+    }
+    ds_list_clear(instances_list)
+    return result
 }
 
 function IsMoving() {

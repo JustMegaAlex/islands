@@ -9,5 +9,6 @@ x += velocity.x
 y += velocity.y
 
 if distance_passed >= distance {
+	oParticles.WaterSplash(x, y)
     instance_destroy()
 }

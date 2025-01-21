@@ -4,14 +4,15 @@
 // Inherit the parent event
 event_inherited();
 
-side = EntitySide.ours
+side = EntitySide.theirs
 
-default_color = c_fuchsia
-default_rect.set(20, 70)
+default_color = c_black
+default_rect.set(30, 50)
 
 is_creature = true
-is_miner = true
+is_fighter = true
+is_swimmer = true
 
 hp = 2
-sp_max = 2
+sp_max = 3
 damage = 1
