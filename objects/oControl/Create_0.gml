@@ -82,3 +82,21 @@ function CommandCreateInstance(obj) constructor {
         instance_create_layer(mouse_x, mouse_y, "Instances", obj)
     }
 }
+
+function CommandFullfillTask(settlement) constructor {
+    self.settlement = settlement
+    self.wood = settlement.wood_cost
+    self.amber = settlement.amber_cost
+
+    perform = function() {
+        if !oShip.wood_count >= self.wood or !oShip.amber_count >= self.amber {
+            return
+        }
+        oShip.wood_count -= self.wood
+        oShip.amber_count -= self.amber
+        for (var i = 0; i < array_length(self.settlement.units); ++i) {
+            var unit = self.settlement.units[i]
+            unit.side = EntitySide.ours
+        }
+    }
+}

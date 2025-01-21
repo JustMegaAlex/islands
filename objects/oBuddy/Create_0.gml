@@ -5,7 +5,7 @@
 event_inherited();
 
 side = EntitySide.ours
-
+friendly_with &= EntitySide.neutral
 
 default_color = c_fuchsia
 default_rect.set(20, 70)

@@ -1,18 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oSettlement",
+  "%Name":"oUITaskButton",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oSettlement",
+  "name":"oUITaskButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"UI",
+    "path":"folders/Objects/UI.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oUIMapButtonParent",
+    "path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sSettlement",
-    "path":"sprites/sSettlement/sSettlement.yy",
+    "name":"sUIButton2",
+    "path":"sprites/sUIButton2/sUIButton2.yy",
   },
   "spriteMaskId":null,
   "visible":true,
