@@ -31,7 +31,7 @@ is_swimmer = false
 //// State attributes
 attack_target = noone
 attack_target_move = noone
-attack_distance = 100
+attack_distance = 50
 enemy_detection_range = 1000
 attack_timer = MakeTimer(60)
 attack_damage = 1
