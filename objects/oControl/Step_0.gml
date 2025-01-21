@@ -49,6 +49,18 @@ if active_ui and !clicked_on_ui {
     }
 }
 
+if !_ui {
+    _ui = collision_point(mouse_x, mouse_y, oUIMapButtonParent, false, false)
+    if _ui {
+        _ui.mouse_over = true
+        if oInput.Pressed("lclick") {
+            if _ui.command.perform() {
+                instance_destroy(_ui)
+            }
+        }
+    }
+}
+
 if oInput.Pressed("escape") and active_ui {
     active_ui.active = false
     active_ui = noone

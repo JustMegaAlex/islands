@@ -89,14 +89,15 @@ function CommandFullfillTask(settlement) constructor {
     self.amber = settlement.amber_cost
 
     perform = function() {
-        if !oShip.wood_count >= self.wood or !oShip.amber_count >= self.amber {
-            return
+        if oShip.wood < self.wood or oShip.amber < self.amber {
+            return false
         }
-        oShip.wood_count -= self.wood
-        oShip.amber_count -= self.amber
+        oShip.wood -= self.wood
+        oShip.amber -= self.amber
         for (var i = 0; i < array_length(self.settlement.units); ++i) {
             var unit = self.settlement.units[i]
             unit.side = EntitySide.ours
         }
+        return true
     }
 }
