@@ -64,13 +64,15 @@ function FindAttackTarget() {
         x, y, enemy_detection_range, oEntity, false, false,
         instances_list, false)
     var result = noone
+    var dist = infinity
     for (var i = 0; i < ds_list_size(instances_list); ++i) {
         var inst = instances_list[| i]
         if inst.is_creature
                 and inst.side != EntitySide.nature 
-                and inst.side != side {
+                and inst.side != side
+                and InstDist(inst) < dist {
             result = inst
-            break
+            dist = InstDist(inst)
         }
     }
     ds_list_clear(instances_list)
