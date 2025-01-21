@@ -22,7 +22,7 @@ generators_config = {
     n10: new Generator(5),
     n5: new Generator(1),
     n20: new Generator(2),
-    n9: new Generator(3),
+    n9: new Generator(3, 2, 2, 1),
 }
 
 function Generator(
@@ -93,6 +93,10 @@ function Generator(
             var isle = instance_create_layer(xx, yy, "Bottom", oIsland)
             isle.image_xscale = size / sprite_get_width(isle.sprite_index)
             isle.image_yscale = size / sprite_get_height(isle.sprite_index)
+            if self.enemy_spawners {
+                instance_create_layer(xx, yy, "Instances", oEnemySpawner)
+                self.enemy_spawners--
+            }
 
             self.FixIslandPlacement(isle)
             self.FillIsland(isle)
