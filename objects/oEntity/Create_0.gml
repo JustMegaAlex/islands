@@ -27,6 +27,7 @@ is_miner = false
 is_fighter = false
 is_flying = false
 is_swimmer = false
+is_structure = false
 
 //// State attributes
 attack_target = noone

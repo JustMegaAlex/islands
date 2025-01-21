@@ -17,13 +17,18 @@ for (var i = 0; i < grid_w; i++) {
 }
 
 //// Initialize generators
-generators = ds_list_create()
-generators_config = {
+island_generators = ds_list_create()
+enemy_generators = ds_list_create()
+settlement_generators = ds_list_create()
+island_generators_config = {
     n10: new Generator(5),
     n5: new Generator(1),
     n20: new Generator(2),
-    n30: new Generator(3, 2, 2, 1),
+    n30: new Generator(3, 5, 5, 1),
 }
+enemy_generate_chance = 0.5
+settlement_generate_chance = 0.5
+
 
 function Generator(
         islands_count=4, trees_prosperity=2, amber_prosperity=2,
@@ -61,7 +66,7 @@ function Generator(
                 var cycles = 1000
                 with inst while true {
                     var ent = instance_place(x, y, oEntity)
-                    if !ent or !ent.is_resource {
+                    if !ent or !ent.is_resource or !ent.is_structure {
                         break
                     }
                     x = placex_randomer()
@@ -77,6 +82,23 @@ function Generator(
     }
 
     FillIsland = function(isle) {
+        var settlement_flag = oGen.settlement_generators[| 0]
+        ds_list_delete(oGen.settlement_generators, 0)
+        if settlement_flag {
+            GenerateItems(isle, 1, oSettlement)
+        }
+
+        if self.enemy_spawners {
+            instance_create_layer(isle.x, isle.y, "Instances", oEnemySpawner)
+            self.enemy_spawners--
+        } else {
+            var enemy_flag = oGen.enemy_generators[| 0]
+            ds_list_delete(oGen.enemy_generators, 0)
+            if enemy_flag {
+                instance_create_layer(isle.x, isle.y, "Instances", oEnemySpawner)
+            }
+        }
+
         GenerateItems(isle, trees_randomer(), oTree)
         GenerateItems(isle, amber_randomer(), oAmber)
     }
@@ -93,10 +115,6 @@ function Generator(
             var isle = instance_create_layer(xx, yy, "Bottom", oIsland)
             isle.image_xscale = size / sprite_get_width(isle.sprite_index)
             isle.image_yscale = size / sprite_get_height(isle.sprite_index)
-            if self.enemy_spawners {
-                instance_create_layer(xx, yy, "Instances", oEnemySpawner)
-                self.enemy_spawners--
-            }
 
             self.FixIslandPlacement(isle)
             self.FillIsland(isle)
@@ -110,23 +128,35 @@ function Area() constructor {
 
 
 function InitGenerators() {
-    var keys = variable_struct_get_names(generators_config)
+    var keys = variable_struct_get_names(island_generators_config)
+    var islands_count = 0
     for (var i = 0; i < array_length(keys); ++i) {
         var key = keys[i]
         var num = real(string_copy(key, 2, 2))
-        var gen = generators_config[$ key]
-        repeat(num) { ds_list_add(generators, gen) }
+        var gen = island_generators_config[$ key]
+        repeat(num) { ds_list_add(island_generators, gen) }
+        islands_count += num
     }
-    ds_list_shuffle(generators)
+    ds_list_shuffle(island_generators)
+    ds_list_set(enemy_generators, islands_count - 1, false)
+    for (var i = 0; i < enemy_generate_chance * islands_count; ++i) {
+        enemy_generators[| i] = true
+    }
+    ds_list_set(settlement_generators, islands_count - 1, false)
+    for (var i = 0; i < settlement_generate_chance * islands_count; ++i) {
+        settlement_generators[| i] = true
+    }
+    ds_list_shuffle(enemy_generators)
+    ds_list_shuffle(settlement_generators)
 }
 
 function GenerateArea(i, j) {
     var area = grid[# i, j]
     if (area.generated) { return }
     area.generated = true
-    generators[| 0].run(i, j)
-    ds_list_delete(generators, 0)
-    if ds_list_empty(generators) {
+    island_generators[| 0].run(i, j)
+    ds_list_delete(island_generators, 0)
+    if ds_list_empty(island_generators) {
         show_debug_message("Generators are empty, reinitializing")
         InitGenerators()
     }

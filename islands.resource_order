@@ -37,6 +37,7 @@
     {"name":"oInput","order":1,"path":"objects/oInput/oInput.yy",},
     {"name":"oIsland","order":5,"path":"objects/oIsland/oIsland.yy",},
     {"name":"oParticles","order":4,"path":"objects/oParticles/oParticles.yy",},
+    {"name":"oSettlement","order":8,"path":"objects/oSettlement/oSettlement.yy",},
     {"name":"oShip","order":4,"path":"objects/oShip/oShip.yy",},
     {"name":"oTree","order":4,"path":"objects/oTree/oTree.yy",},
     {"name":"oUIButtonDrop","order":2,"path":"objects/oUIButtonDrop/oUIButtonDrop.yy",},

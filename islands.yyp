@@ -62,6 +62,7 @@
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},
     {"id":{"name":"oIsland","path":"objects/oIsland/oIsland.yy",},},
     {"id":{"name":"oParticles","path":"objects/oParticles/oParticles.yy",},},
+    {"id":{"name":"oSettlement","path":"objects/oSettlement/oSettlement.yy",},},
     {"id":{"name":"oShip","path":"objects/oShip/oShip.yy",},},
     {"id":{"name":"oSys","path":"objects/oSys/oSys.yy",},},
     {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},},
