@@ -25,8 +25,11 @@ generators_config = {
     n9: new Generator(3),
 }
 
-function Generator(islands_count=4, trees_prosperity=2, amber_prosperity=2) constructor {
+function Generator(
+        islands_count=4, trees_prosperity=2, amber_prosperity=2,
+        enemy_spawners=0) constructor {
     self.islands_count = islands_count
+    self.enemy_spawners = enemy_spawners
     self.size_randomer = irandomer(400, 1000)
     self.trees_randomer = irandomer(trees_prosperity, trees_prosperity * 1.5)
     self.amber_randomer = irandomer(amber_prosperity, amber_prosperity * 1.5)
