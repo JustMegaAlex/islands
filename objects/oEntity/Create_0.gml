@@ -12,12 +12,14 @@ move_target = new Vec2(x, y)
 sp_max = 1
 
 enum EntitySide {
-    ours, theirs, nature
+    ours, theirs, nature,
+    neutral, rogue
 }
 
 hp = 1
 
 side = EntitySide.nature
+friendly_with = EntitySide.nature // bitwise mask
 
 //// Type attributes
 is_hidden = false

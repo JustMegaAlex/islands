@@ -15,5 +15,5 @@ function EntitiesListCircle(x, y, r, list) {
 }
 
 function IsEnemySide(inst) {
-    return inst.side != EntitySide.nature and inst.side != side
+    return !(side & inst.friendly_with) and !(friendly_with & inst.side)
 }
