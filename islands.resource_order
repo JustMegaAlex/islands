@@ -53,6 +53,7 @@
     {"name":"sCannonCore","order":12,"path":"sprites/sCannonCore/sCannonCore.yy",},
     {"name":"sIsland","order":3,"path":"sprites/sIsland/sIsland.yy",},
     {"name":"sPartWaterSplash","order":13,"path":"sprites/sPartWaterSplash/sPartWaterSplash.yy",},
+    {"name":"sSettlement","order":14,"path":"sprites/sSettlement/sSettlement.yy",},
     {"name":"sShadow","order":1,"path":"sprites/sShadow/sShadow.yy",},
     {"name":"sUIButton","order":5,"path":"sprites/sUIButton/sUIButton.yy",},
     {"name":"sUIDefault","order":9,"path":"sprites/sUIDefault/sUIDefault.yy",},

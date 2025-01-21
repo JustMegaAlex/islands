@@ -22,7 +22,7 @@ generators_config = {
     n10: new Generator(5),
     n5: new Generator(1),
     n20: new Generator(2),
-    n9: new Generator(3, 2, 2, 1),
+    n30: new Generator(3, 2, 2, 1),
 }
 
 function Generator(

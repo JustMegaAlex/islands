@@ -85,6 +85,7 @@
     {"id":{"name":"sFullnessBar","path":"sprites/sFullnessBar/sFullnessBar.yy",},},
     {"id":{"name":"sIsland","path":"sprites/sIsland/sIsland.yy",},},
     {"id":{"name":"sPartWaterSplash","path":"sprites/sPartWaterSplash/sPartWaterSplash.yy",},},
+    {"id":{"name":"sSettlement","path":"sprites/sSettlement/sSettlement.yy",},},
     {"id":{"name":"sShadow","path":"sprites/sShadow/sShadow.yy",},},
     {"id":{"name":"sShip","path":"sprites/sShip/sShip.yy",},},
     {"id":{"name":"sUIButton","path":"sprites/sUIButton/sUIButton.yy",},},
