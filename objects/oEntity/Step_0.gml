@@ -41,19 +41,24 @@ if !is_flying and !is_swimmer and !island {
 
 
 if is_fighter {
-    if !attack_target or !instance_exists(attack_target) {
-        attack_target = FindAttackTarget()
+    var atk = attack_target ?? attack_target_move
+    if !atk or !instance_exists(atk) {
+        attack_target_move = FindAttackTarget()
     }
-    if attack_target {
-        move_target.setv(attack_target.position)
+    if attack_target_move {
+        if (InstDist(attack_target_move) < attack_distance) {
+            if !attack_target {
+                move_target.set(x, y)
+                StartAttacking(attack_target_move)
+            }
+        } else {
+            attack_target = noone
+            move_target.setv(attack_target_move.position)
+        }
     }
 }
 
-if is_fighter and attack_target {
-    exit
-}
-
-if is_miner {
+if is_miner and !attack_target {
     if !resource_to_mine or !instance_exists(resource_to_mine) {
         resource_to_mine = GetClosestInstanceFromArray(
             array_filter(island.GetResources(), function(inst) { return inst.marked_for_mining })

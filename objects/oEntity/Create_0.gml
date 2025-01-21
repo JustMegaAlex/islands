@@ -30,6 +30,8 @@ is_swimmer = false
 
 //// State attributes
 attack_target = noone
+attack_target_move = noone
+attack_distance = 100
 enemy_detection_range = 1000
 attack_timer = MakeTimer(60)
 attack_damage = 1
@@ -80,7 +82,7 @@ function FindAttackTarget() {
 }
 
 function IsMoving() {
-    return position.dist_to(move_target) > sp_max
+    return move_target and position.dist_to(move_target) > sp_max
 }
 
 function Hit(id) {
