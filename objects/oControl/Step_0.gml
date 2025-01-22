@@ -35,6 +35,9 @@ var clicked_on_ui = false
 if _ui {
     _ui.mouse_over = true
     if oInput.Pressed("lclick") {
+        if active_ui {
+            active_ui.active = false
+        }
         _ui.active = true
         active_ui = _ui
         clicked_on_ui = true
@@ -43,9 +46,13 @@ if _ui {
 /// Preform button
 if active_ui and !clicked_on_ui {
     if oInput.Pressed("lclick") {
-        active_ui.command.perform()
+        active_ui.command.press()
         // active_ui.active = false
         // active_ui = noone
+    } else if oInput.Hold("lclick") {
+        active_ui.command.hold()
+    } else if oInput.Released("lclick") {
+        active_ui.command.release()
     }
 }
 
@@ -54,7 +61,7 @@ if !_ui {
     if _ui {
         _ui.mouse_over = true
         if oInput.Pressed("lclick") {
-            if _ui.command.perform() {
+            if _ui.command.press() {
                 instance_destroy(_ui)
             }
         }

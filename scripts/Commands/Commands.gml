@@ -6,7 +6,9 @@ function CommandTemplate() constructor {
         if !sprite_exists(self.sprite) { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
     }
-    perform = function() {}
+    press = function() {}
+    hold = function() {}
+    release = function() {}
 }
 
 function CommandDropCrew(crew_type) constructor {
@@ -19,7 +21,7 @@ function CommandDropCrew(crew_type) constructor {
                 or !self.mosue_over_island { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
     }
-    perform = function() {
+    press = function() {
         self.mosue_over_island = collision_point(mouse_x, mouse_y, oIsland, false, false)
         if !self.mosue_over_island {
             return
@@ -34,22 +36,52 @@ function CommandDropCrew(crew_type) constructor {
             mark.crew_type = self.crew_type
         }
     }
+    hold = function() {}
+    release = function() {}
 }
 
 function CommandCannon() constructor {
     self.sprite = noone
+    self.charge_frames = 30
+    self.holded_frames = 0
+    self.charge_icon_angles = [0, 90, 180, 270]
+    self.vec = new Vec2(0, 0)
+    self.cursor_line_length = 50
+
     draw = function() {
-        if !sprite_exists(self.sprite) { return }
-        draw_sprite(sprite, 0, mouse_x, mouse_y)
+        for (var i = 0; i < array_length(self.charge_icon_angles); ++i) {
+            var angle = self.charge_icon_angles[i]
+            var inner_radius = (self.charge_frames - self.holded_frames) * 1.5 + 20
+            draw_set_color(c_black)
+            draw_line_width(
+                mouse_x + lengthdir_x(inner_radius, angle),
+                mouse_y + lengthdir_y(inner_radius, angle),
+                mouse_x + lengthdir_x(inner_radius + self.cursor_line_length, angle),
+                mouse_y + lengthdir_y(inner_radius + self.cursor_line_length, angle),
+                3
+            )
+            if self.holded_frames >= self.charge_frames {
+                draw_circle(mouse_x, mouse_y, 50, true)
+            }
+            draw_set_color(c_white)
+        }
     }
-    perform = function() {
+    press = function() {}
+    hold = function() {
         if oShip.amber < global.cost_cannon_amber {
+            self.holded_frames = 0
             return
         }
-        oShip.amber -= global.cost_cannon_amber
-        var core = instance_create_layer(
-            oShip.x, oShip.y, "Instances", oCannonCore)
-        core.Launch(mouse_x, mouse_y)
+        self.holded_frames = min(self.holded_frames + 1, self.charge_frames)
+    }
+    release = function() {
+        if self.holded_frames >= self.charge_frames {
+            oShip.amber -= global.cost_cannon_amber
+            var core = instance_create_layer(
+                oShip.x, oShip.y, "Instances", oCannonCore)
+            core.Launch(mouse_x, mouse_y)
+        }
+        self.holded_frames = 0
     }
 }
 
@@ -60,9 +92,11 @@ function CommandCreateInstance(obj) constructor {
         if !sprite_exists(self.sprite) { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
     }
-    perform = function() {
+    press = function() {
         instance_create_layer(mouse_x, mouse_y, "Instances", obj)
     }
+    hold = function() {}
+    release = function() {}
 }
 
 function CommandFullfillTask(settlement) constructor {
@@ -70,7 +104,9 @@ function CommandFullfillTask(settlement) constructor {
     self.wood = settlement.wood_cost
     self.amber = settlement.amber_cost
 
-    perform = function() {
+    draw = function() {}
+
+    press = function() {
         if oShip.wood < self.wood or oShip.amber < self.amber {
             return false
         }
@@ -82,4 +118,6 @@ function CommandFullfillTask(settlement) constructor {
         }
         return true
     }
+    hold = function() {}
+    release = function() {}
 }
