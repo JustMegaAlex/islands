@@ -13,6 +13,6 @@ is_creature = true
 is_fighter = true
 is_swimmer = true
 
-hp = 2
+hp_max = 2
 sp_max = 3
 damage = 1

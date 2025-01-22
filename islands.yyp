@@ -96,6 +96,7 @@
     {"id":{"name":"sUIButton","path":"sprites/sUIButton/sUIButton.yy",},},
     {"id":{"name":"sUIButton2","path":"sprites/sUIButton2/sUIButton2.yy",},},
     {"id":{"name":"sUIDefault","path":"sprites/sUIDefault/sUIDefault.yy",},},
+    {"id":{"name":"sUIIconDrop","path":"sprites/sUIIconDrop/sUIIconDrop.yy",},},
     {"id":{"name":"sUIMarkDrop","path":"sprites/sUIMarkDrop/sUIMarkDrop.yy",},},
     {"id":{"name":"sUIMarkMining","path":"sprites/sUIMarkMining/sUIMarkMining.yy",},},
     {"id":{"name":"sUINavigateArrow","path":"sprites/sUINavigateArrow/sUINavigateArrow.yy",},},

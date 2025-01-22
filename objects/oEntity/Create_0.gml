@@ -15,6 +15,7 @@ enum EntitySide {
     neutral, rogue
 }
 
+hp_max = 1
 hp = 1
 
 side = EntitySide.nature

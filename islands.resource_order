@@ -63,6 +63,7 @@
     {"name":"sUIButton","order":5,"path":"sprites/sUIButton/sUIButton.yy",},
     {"name":"sUIButton2","order":6,"path":"sprites/sUIButton2/sUIButton2.yy",},
     {"name":"sUIDefault","order":10,"path":"sprites/sUIDefault/sUIDefault.yy",},
+    {"name":"sUIIconDrop","order":16,"path":"sprites/sUIIconDrop/sUIIconDrop.yy",},
     {"name":"sUIMarkDrop","order":8,"path":"sprites/sUIMarkDrop/sUIMarkDrop.yy",},
     {"name":"sUIMarkMining","order":7,"path":"sprites/sUIMarkMining/sUIMarkMining.yy",},
     {"name":"sUINavigateArrow","order":2,"path":"sprites/sUINavigateArrow/sUINavigateArrow.yy",},

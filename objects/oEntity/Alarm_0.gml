@@ -7,3 +7,5 @@ if sprite_index == sWhitePixel {
         AttachToIsland()	
 	}
 }
+
+hp = hp_max
