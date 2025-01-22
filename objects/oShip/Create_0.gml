@@ -21,6 +21,7 @@ function AddBuddy() {
 }
 
 function LoadCrew(inst) {
+    inst.DropStateAttributes()
     array_push(crew[$ object_get_name(inst.object_index)], inst)
     instance_deactivate_object(inst)
 }

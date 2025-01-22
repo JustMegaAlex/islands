@@ -1,8 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
-event_inherited();
+event_inherited()
 
 collision_circle_list(x, y, drop_crew_radius, oUIMarkDrop, false, false, drop_crew_marks, false)
 collision_circle_list(x, y, drop_crew_radius, oEntity, false, false, crew_instances, false)
@@ -21,10 +17,11 @@ if ds_list_size(drop_crew_marks) {
     }
 }
 
+//// Pickup crew
 if ds_list_size(crew_instances) {
     for (var i = 0; i < ds_list_size(crew_instances); ++i) {
         var inst = crew_instances[| i]
-        if !IsCrew(inst) or !inst.marked_for_pickup or inst.is_hidden {
+        if !IsCrew(inst) or !inst.marked_for_pickup {
             continue
         }
 
@@ -37,14 +34,15 @@ if ds_list_size(crew_instances) {
     }
 }
 
-if ds_list_size(crew_instances) {
+//// Pickup collectibles
+if ds_list_size(collectibles) {
     for (var i = 0; i < ds_list_size(collectibles); ++i) {
         var item = collectibles[| i]
         item.is_collected = true
     }
 }
 
-
+//// Clear lists
 ds_list_clear(drop_crew_marks)
 ds_list_clear(crew_instances)
 ds_list_clear(collectibles)

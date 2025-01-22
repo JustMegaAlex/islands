@@ -8,7 +8,6 @@ z = 0
 
 velocity = new Vec2(0, 0)
 position = new Vec2(x, y)
-move_target = new Vec2(x, y)
 sp_max = global.sp_entity_default
 
 enum EntitySide {
@@ -22,7 +21,6 @@ side = EntitySide.nature
 friendly_with = EntitySide.nature // bitwise mask
 
 //// Type attributes
-is_hidden = false
 is_resource = false
 is_creature = false
 is_miner = false
@@ -34,34 +32,34 @@ is_structure = false
 //// State attributes
 attack_target = noone
 attack_target_move = noone
-attack_distance = 50
-enemy_detection_range = 1000
+move_target = new Vec2(x, y)
 attack_timer = MakeTimer(60)
-attack_damage = 1
 island = noone
 resource_to_mine = noone
-attack_timer = MakeTimer(60)
+
+//// Stats
+attack_distance = 50
+enemy_detection_range = 1000
+attack_damage = 1
 resource_type = noone
 
-instances_list = ds_list_create()
+instances_list = ds_list_create() /// helper list for _collision_list functions
 
 marked_for_pickup = false
 marked_for_mining = false
 
-function MakeHidden() {
-    is_hidden = true
-    image_xscale = 0
-    image_yscale = 0
-}
-
-function MakeUnhidden() {
-    is_hidden = false
-    alarm[0] = 1
-}
-
 function StartAttacking(entity) {
     attack_target = entity
     attack_timer.reset()
+}
+
+function DropStateAttributes() {
+    attack_target = noone
+    attack_target_move = noone
+    attack_timer.reset()
+    move_target.setv(position)
+    island = noone
+    resource_to_mine = noone
 }
 
 function FindAttackTarget() {

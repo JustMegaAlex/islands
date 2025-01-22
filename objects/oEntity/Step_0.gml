@@ -9,11 +9,6 @@ if is_resource {
     var test = false
 }
 
-if is_hidden {
-    SetPos(oShip.position)
-    exit
-}
-
 if hp <= 0 {
     Die(); exit
 }

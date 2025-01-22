@@ -1,6 +1,6 @@
 
 function IsCrew(inst) {
-    return inst.is_creature and inst.object_index != oShip // and is our side
+    return inst.is_creature and inst.object_index != oShip and inst.side == EntitySide.ours
 }
 
 function FlyingInstDist(inst) {
