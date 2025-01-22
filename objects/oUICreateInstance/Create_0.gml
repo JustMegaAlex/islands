@@ -1,4 +1,4 @@
 
 event_inherited()
 
-command = new oControl.CommandCreateInstance(obj)
+command = new CommandCreateInstance(obj)
