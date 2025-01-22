@@ -90,7 +90,10 @@ function Generator(
         }
 
         if self.enemy_spawners {
-            instance_create_layer(isle.x, isle.y, "Instances", oEnemySpawner)
+            var spawner = instance_create_layer(isle.x, isle.y, "Instances", oEnemySpawner)
+            var pos = new Vec2(isle.x, isle.y)
+            pos.add_polar(spawner.spawn_distance * 0.8, random(360))
+            spawner.x = pos.x; spawner.y = pos.y
             self.enemy_spawners--
         } else {
             var enemy_flag = oGen.enemy_generators[| 0]

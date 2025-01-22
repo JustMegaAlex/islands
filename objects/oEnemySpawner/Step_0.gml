@@ -1,25 +1,23 @@
 
 if !check_timer.update() {
-	is_enemy_near = false
+	enemy_nearby = noone
     check_timer.reset()
-    for (var i = 0; i < array_length(island.entities); ++i) {
-        var inst = island.entities[i]
+    EntitiesListCircle(x, y, spawn_distance, instances_list)
+    for (var i = 0; i < ds_list_size(instances_list); ++i) {
+        var inst = instances_list[| i]
         if inst.is_creature and IsEnemySide(inst) {
-            is_enemy_near = true
+            enemy_nearby = inst
             break
         }
     }
+    ds_list_clear(instances_list)
 }
 
 
-if is_enemy_near and !spawn_timer.update() {
-    var pos = spawn_position.add_polar_(spawn_distance, random(360))
-    while collision_point(pos.x, pos.y, oIsland, false, false) {
-        pos = spawn_position.add_polar_(spawn_distance, random(360))
-    }
+if enemy_nearby and !spawn_timer.update() {
     repeat spawn_randomer() {
-        var inst = instance_create_layer(pos.x, pos.y, "Instances", oEnemyCrawlp)
-        inst.move_target.set(x, y)
+        var inst = instance_create_layer(x, y, "Instances", oEnemyCrawlp)
+        inst.move_target.setv(enemy_nearby.position)
     }
     spawn_timer.reset()
 }
