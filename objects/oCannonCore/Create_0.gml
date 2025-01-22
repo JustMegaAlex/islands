@@ -6,6 +6,8 @@ velocity = new Vec2(0, 0)
 zmax = 300
 distance = 0
 distance_passed = 0
+damage = 4
+damage_radius = 100
 
 function Launch(xx, yy) {
     velocity.set_polar(sp, PointDir(xx, yy))

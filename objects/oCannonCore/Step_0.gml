@@ -11,4 +11,10 @@ y += velocity.y
 if distance_passed >= distance {
 	oParticles.WaterSplash(x, y)
     instance_destroy()
+    var list = ds_list_create()
+    EntitiesListCircle(x, y, damage_radius, list)
+    for (var i = 0; i < ds_list_size(list); ++i) {
+        var inst = list[| i]
+        inst.Hit(id)
+    }
 }
