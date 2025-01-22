@@ -1,9 +1,10 @@
 
+_debug_corner_cells = []
 
 grid_w = 1000
 grid_h = 1000
 
-grid_area_size = 4000
+grid_area_size = 5000
 x0 = oShip.x - grid_w * grid_area_size / 2
 y0 = oShip.y - grid_h * grid_area_size / 2
 
@@ -26,8 +27,8 @@ island_generators_config = {
     n20: new Generator(2),
     n30: new Generator(3, 5, 5, 1),
 }
-enemy_generate_chance = 0.5
-settlement_generate_chance = 0.5
+enemy_generate_chance = 0.2
+settlement_generate_chance = 0.2
 
 
 function Generator(

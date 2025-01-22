@@ -9,6 +9,6 @@ default_rect.set(40, 100)
 show_debug_message($"Tree {x}, {y}")
 
 is_resource = true
-hp = 3
+hp = global.hp_tree
 
 resource_type = oCollectibleWood

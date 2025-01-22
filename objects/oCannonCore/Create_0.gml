@@ -6,7 +6,7 @@ velocity = new Vec2(0, 0)
 zmax = 300
 distance = 0
 distance_passed = 0
-damage = 4
+damage = global.damage_cannon
 damage_radius = 100
 
 function Launch(xx, yy) {
