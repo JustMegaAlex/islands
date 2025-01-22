@@ -11,8 +11,8 @@ drop_crew_marks = ds_list_create()
 crew_instances = ds_list_create()
 collectibles = ds_list_create()
 
-wood = 0
-amber = 0
+wood = global.ship_starting_wood
+amber = global.ship_starting_amber
 
 function AddBuddy() {
     var inst = instance_create_layer(x, y, "Instances",  oBuddy)

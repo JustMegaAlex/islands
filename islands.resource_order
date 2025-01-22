@@ -46,6 +46,7 @@
     {"name":"oUIMapButtonParent","order":1,"path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",},
     {"name":"oUIMarkDrop","order":2,"path":"objects/oUIMarkDrop/oUIMarkDrop.yy",},
     {"name":"oUITaskButton","order":6,"path":"objects/oUITaskButton/oUITaskButton.yy",},
+    {"name":"Balancing","order":2,"path":"scripts/Balancing/Balancing.yy",},
     {"name":"Commands","order":1,"path":"scripts/Commands/Commands.yy",},
     {"name":"debug_view_helpers","order":2,"path":"scripts/debug_view_helpers/debug_view_helpers.yy",},
     {"name":"debug","order":1,"path":"scripts/debug/debug.yy",},

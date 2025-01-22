@@ -43,6 +43,10 @@ function CommandCannon() constructor {
         draw_sprite(sprite, 0, mouse_x, mouse_y)
     }
     perform = function() {
+        if oShip.amber < global.cost_cannon_amber {
+            return
+        }
+        oShip.amber -= global.cost_cannon_amber
         var core = instance_create_layer(
             oShip.x, oShip.y, "Instances", oCannonCore)
         core.Launch(mouse_x, mouse_y)
