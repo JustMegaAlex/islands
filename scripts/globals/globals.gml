@@ -1,0 +1,1 @@
+spawners_draw_enabled = false
