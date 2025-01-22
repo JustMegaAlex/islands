@@ -13,11 +13,14 @@ if !check_timer.update() {
     ds_list_clear(instances_list)
 }
 
-
 if enemy_nearby and !spawn_timer.update() {
-    repeat spawn_randomer() {
-        var inst = instance_create_layer(x, y, "Instances", oEnemyCrawlp)
+    repeat spawn_number {
+        var inst = instance_create_layer(
+            x - 300 + random(600),
+            y - 300 + random(600),
+            "Instances", oEnemyCrawlp)
         inst.move_target.setv(enemy_nearby.position)
     }
     spawn_timer.reset()
+    instance_destroy()
 }

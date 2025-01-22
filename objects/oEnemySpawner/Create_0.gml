@@ -2,9 +2,9 @@
 visible = true
 
 var sec = 60
-spawn_timer = MakeTimer(5 * sec)
-spawn_distance = 4000
-spawn_randomer = irandomer(2, 4)
+spawn_timer = MakeTimer(irandom_range(5, 10) * sec)
+spawn_distance = 3000
+spawn_number = irandom_range(2, 4)
 side = EntitySide.theirs
 friendly_with = EntitySide.nature
 

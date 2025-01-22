@@ -27,7 +27,7 @@ island_generators_config = {
     n20: new Generator(2),
     n30: new Generator(3, 5, 5, 1),
 }
-enemy_generate_chance = 0.2
+enemy_generate_chance = 0.3
 settlement_generate_chance = 0.2
 
 
@@ -89,18 +89,17 @@ function Generator(
             GenerateItems(isle, 1, oSettlement)
         }
 
-        if self.enemy_spawners {
+        var enemy_flag = oGen.enemy_generators[| 0]
+        ds_list_delete(oGen.enemy_generators, 0)
+        if enemy_flag {
             var spawner = instance_create_layer(isle.x, isle.y, "Instances", oEnemySpawner)
             var pos = new Vec2(isle.x, isle.y)
             pos.add_polar(spawner.spawn_distance * 0.8, random(360))
+            while collision_point(pos.x, pos.y, oIsland, false, false) {
+                pos.setv(isle.position).add_polar(spawner.spawn_distance * 0.8, random(360))
+            }
             spawner.x = pos.x; spawner.y = pos.y
             self.enemy_spawners--
-        } else {
-            var enemy_flag = oGen.enemy_generators[| 0]
-            ds_list_delete(oGen.enemy_generators, 0)
-            if enemy_flag {
-                instance_create_layer(isle.x, isle.y, "Instances", oEnemySpawner)
-            }
         }
 
         GenerateItems(isle, trees_randomer(), oTree)
