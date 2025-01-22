@@ -1,15 +1,6 @@
 
+//// Dynamic grid gen
 UpdateShipGridPos()
-
-// if !(ship_grid_pos.eq(ship_grid_pos_prev)) {
-//     show_debug_message("Grid pos changed")
-//     if GridCheck(ship_grid_pos) {
-//         show_debug_message("Grid pos is valid")
-//         if !GridGet(ship_grid_pos).generated {
-//             show_debug_message("Grid pos is not generated")
-//         }
-//     }
-// }
 
 var vec_check = new Vec2(ship_grid_pos.x, ship_grid_pos.y)
 if !(ship_grid_pos.eq(ship_grid_pos_prev)) {
@@ -22,4 +13,11 @@ if !(ship_grid_pos.eq(ship_grid_pos_prev)) {
             }
         }
     }
+}
+
+
+//// Amber emerging
+if !emerge_timer.update() {
+    Emerge()
+    emerge_timer.reset()
 }

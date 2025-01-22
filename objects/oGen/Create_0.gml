@@ -1,19 +1,25 @@
 
 _debug_corner_cells = []
 
-grid_w = 1000
-grid_h = 1000
+var sec = 60
+emerging_level = 0
+emerge_timer = MakeTimer(5 * sec)
+emerge_spawn_crawlps = 0
+
+grid_w = 100
+grid_h = 100
 
 grid_area_size = 5000
 x0 = oShip.x - grid_w * grid_area_size / 2
 y0 = oShip.y - grid_h * grid_area_size / 2
 
 grid = ds_grid_create(grid_w, grid_h)
+generated_areas = []
 ship_grid_pos_prev = new Vec2(-infinity, -infinity)
 ship_grid_pos = new Vec2(0, 0)
 for (var i = 0; i < grid_w; i++) {
     for (var j = 0; j < grid_h; j++) {
-        grid[# i, j] = new Area()
+        grid[# i, j] = new Area(i, j)
     }
 }
 
@@ -23,7 +29,8 @@ enemy_generators = ds_list_create()
 settlement_generators = ds_list_create()
 island_generators_config = {
     n10: new Generator(5),
-    n5: new Generator(1),
+    n10: new Generator(1),
+    n15: new Generator(0),
     n20: new Generator(2),
     n30: new Generator(3, 5, 5, 1),
 }
@@ -96,7 +103,7 @@ function Generator(
             var pos = new Vec2(isle.x, isle.y)
             pos.add_polar(spawner.spawn_distance * 0.8, random(360))
             while collision_point(pos.x, pos.y, oIsland, false, false) {
-                pos.setv(isle.position).add_polar(spawner.spawn_distance * 0.8, random(360))
+                pos.set(isle.x, isle.y).add_polar(spawner.spawn_distance * 0.8, random(360))
             }
             spawner.x = pos.x; spawner.y = pos.y
             self.enemy_spawners--
@@ -111,6 +118,7 @@ function Generator(
         self.y0 = oGen.y0 + j * oGen.grid_area_size
         self.posx_randomer = irandomer(self.x0, self.x0 + oGen.grid_area_size)
         self.posy_randomer = irandomer(self.y0, self.y0 + oGen.grid_area_size)
+        var area = oGen.grid[# i, j]
         repeat(self.islands_count) {
             var xx = self.posx_randomer()
             var yy = self.posy_randomer()
@@ -121,14 +129,25 @@ function Generator(
 
             self.FixIslandPlacement(isle)
             self.FillIsland(isle)
+
+            RandomSpawnRect(
+                area.x0, area.y0,
+                area.x1, area.y1,
+                oGen.emerge_spawn_crawlps, oEnemySpawner, oIsland)
         }
     }
 }
 
-function Area() constructor {
-    generated = false
+function Area(i, j) constructor {
+    self.i = i
+    self.j = j
+    self.x0 = oGen.x0 + i * oGen.grid_area_size
+    self.y0 = oGen.y0 + j * oGen.grid_area_size
+    self.x1 = self.x0 + oGen.grid_area_size
+    self.y1 = self.y0 + oGen.grid_area_size
+    self.generated = false
+    self.just_generated = true
 }
-
 
 function InitGenerators() {
     var keys = variable_struct_get_names(island_generators_config)
@@ -153,9 +172,38 @@ function InitGenerators() {
     ds_list_shuffle(settlement_generators)
 }
 
+function Emerge() {
+    emerging_level++
+    if (emerging_level mod 5) == 0 {
+        enemy_generate_chance += 0.1
+        emerge_spawn_crawlps += 1
+    }
+    repeat emerging_level div 5 {
+        SpawnCrawlps()
+    }
+    switch (emerging_level) {
+        case 1: break
+    }
+}
+
+function SpawnCrawlps() {
+    for (var i = 0; i < array_length(generated_areas); ++i) {
+        var area = generated_areas[i]
+        if area.just_generated {
+            area.just_generated = false
+            continue
+        }
+        RandomSpawnRect(
+            area.x0, area.y0,
+            area.x1, area.y1,
+            emerge_spawn_crawlps, oEnemySpawner, oIsland)
+    }
+}
+
 function GenerateArea(i, j) {
     var area = grid[# i, j]
     if (area.generated) { return }
+    array_push(generated_areas, area)
     area.generated = true
     island_generators[| 0].run(i, j)
     ds_list_delete(island_generators, 0)

@@ -1,7 +1,7 @@
 event_inherited()
 
 z = -200
-sp_max = 5.5
+sp_max = global.ship_speed
 hp_max = 16
 is_creature = true
 is_flying = true

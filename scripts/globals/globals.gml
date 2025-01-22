@@ -1,1 +1,1 @@
-spawners_draw_enabled = false
+spawners_draw_enabled = true
