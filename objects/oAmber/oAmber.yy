@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sAmber",
+    "path":"sprites/sAmber/sAmber.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

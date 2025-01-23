@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sAmber",
-    "path":"sprites/sAmber/sAmber.yy",
+    "name":"sCollectibleAmber",
+    "path":"sprites/sCollectibleAmber/sCollectibleAmber.yy",
   },
   "spriteMaskId":null,
   "visible":true,

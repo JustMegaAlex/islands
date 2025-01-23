@@ -36,7 +36,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sBuildingWatchTower",
+    "path":"sprites/sBuildingWatchTower/sBuildingWatchTower.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

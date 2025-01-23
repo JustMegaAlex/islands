@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sIsland",
-    "path":"sprites/sIsland/sIsland.yy",
+    "name":"sIslandTile",
+    "path":"sprites/sIslandTile/sIslandTile.yy",
   },
   "spriteMaskId":null,
   "visible":true,
