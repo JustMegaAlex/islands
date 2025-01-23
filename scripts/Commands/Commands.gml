@@ -162,21 +162,49 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
 }
 
 function CommandPlaceBuilding(obj, wood, amber) constructor {
+	self.obj = obj
     self.sprite = noone
     self.wood = wood
     self.amber = amber
+    self.list = ds_list_create()
+
+    self.checker = instance_create_layer(mouse_x, mouse_y, "Instances", oCollisionChecker)
+    var inst = instance_create_layer(0, 0, "Instances", obj)
+    self.building_sprite = inst.sprite_index
+    self.checker.image_xscale = inst.sprite_width / self.checker.sprite_width
+    self.checker.image_yscale = inst.sprite_height / self.checker.sprite_height
+    instance_deactivate_object(self.checker)
+    instance_destroy(inst)
+
     __define_methods()
+    activate = function() {
+        instance_activate_object(self.checker)
+    }
+    deactivate = function() {
+        instance_deactivate_object(self.checker)
+    }
     draw = function() {
-        if !sprite_exists(self.sprite) { return }
-        draw_sprite(sprite, 0, mouse_x, mouse_y)
+        self.checker.x = mouse_x
+        self.checker.y = mouse_y
+        draw_set_alpha(0.5)
+        draw_sprite(self.building_sprite, 0, mouse_x, mouse_y)
+        draw_set_alpha(1)
     }
     press = function() {
         if oShip.wood < self.wood or oShip.amber < self.amber {
             return false
         }
+        self.checker.x = mouse_x
+        self.checker.y = mouse_y
+        with self.checker {
+            if place_meeting(x, y, oSettlement) { return false }
+            var collisions = EntitiesInRect(bbox_left, bbox_top, bbox_right, bbox_bottom,
+                function(inst) { return inst.is_resource || inst.is_structure })
+            if !ArrayEmpty(collisions) { return false }
+        }
         oShip.wood -= self.wood
         oShip.amber -= self.amber
-        instance_create_layer(mouse_x, mouse_y, "Instances", obj)
+        instance_create_layer(mouse_x, mouse_y, "Instances", other.obj)
         return true
     }
     hold = function() {}
