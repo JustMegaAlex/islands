@@ -210,3 +210,9 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
     hold = function() {}
     release = function() {}
 }
+
+function CommandTowerDropCrew(tower) constructor {
+    __define_methods()
+
+    press = tower.DropCrew
+}

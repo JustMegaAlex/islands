@@ -16,6 +16,8 @@ if !active_ui and oInput.Pressed("lclick") {
                     inst.marked_for_pickup = !inst.marked_for_pickup; return true}
                 if inst.is_resource {
                     inst.marked_for_mining = !inst.marked_for_mining; return true}
+				if inst.object_index == oBuildingGuardTower {
+					inst.MarkForCrew()}
                 return false
             }
         )

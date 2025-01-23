@@ -49,6 +49,7 @@
     {"name":"oUIButtonDrop","order":3,"path":"objects/oUIButtonDrop/oUIButtonDrop.yy",},
     {"name":"oUICannon","order":7,"path":"objects/oUICannon/oUICannon.yy",},
     {"name":"oUICreateInstance","order":4,"path":"objects/oUICreateInstance/oUICreateInstance.yy",},
+    {"name":"oUIGuardTower","order":9,"path":"objects/oUIGuardTower/oUIGuardTower.yy",},
     {"name":"oUIMapButtonParent","order":1,"path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",},
     {"name":"oUIMarkDrop","order":2,"path":"objects/oUIMarkDrop/oUIMarkDrop.yy",},
     {"name":"oUITaskButton","order":8,"path":"objects/oUITaskButton/oUITaskButton.yy",},

@@ -42,6 +42,7 @@ attack_timer = MakeTimer(60)
 island = noone
 resource_to_mine = noone
 build_timer = MakeTimer(10 * 60)
+move_to_tower = noone
 
 //// Stats
 attack_distance = 50

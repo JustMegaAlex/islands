@@ -31,7 +31,6 @@ function DropCrew(crew_type, xx, yy) {
     instance_activate_object(inst)
     inst.SetPos(xx, yy)
     inst.move_target.set(xx, yy)
-    inst.AttachToIsland()
 }
 
 crew = {

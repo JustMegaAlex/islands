@@ -98,6 +98,15 @@ if is_miner and side == EntitySide.ours and !attack_target {
     }
 }
 
+//// Override any fight or mining behavior if there is a tower marked for crew nearby
+if move_to_tower {
+    move_target.setv(move_to_tower.position)
+    if InstDist(move_to_tower) < 100 {
+        move_to_tower.TakeCrew(id)
+        move_to_tower = noone
+        move_target.set(x, y)
+    }
+}
 
 if attack_target and !instance_exists(attack_target) {
     attack_target = noone

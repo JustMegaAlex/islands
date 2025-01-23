@@ -76,6 +76,7 @@
     {"id":{"name":"oUIButtonParent","path":"objects/oUIButtonParent/oUIButtonParent.yy",},},
     {"id":{"name":"oUICannon","path":"objects/oUICannon/oUICannon.yy",},},
     {"id":{"name":"oUICreateInstance","path":"objects/oUICreateInstance/oUICreateInstance.yy",},},
+    {"id":{"name":"oUIGuardTower","path":"objects/oUIGuardTower/oUIGuardTower.yy",},},
     {"id":{"name":"oUIMapButtonParent","path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",},},
     {"id":{"name":"oUIMarkDrop","path":"objects/oUIMarkDrop/oUIMarkDrop.yy",},},
     {"id":{"name":"oUITaskButton","path":"objects/oUITaskButton/oUITaskButton.yy",},},

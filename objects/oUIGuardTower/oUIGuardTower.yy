@@ -1,23 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oBuildingGuardTower",
+  "%Name":"oUIGuardTower",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oBuildingGuardTower",
+  "name":"oUIGuardTower",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/Objects/Entities.yy",
+    "name":"UI",
+    "path":"folders/Objects/UI.yy",
   },
   "parentObjectId":{
-    "name":"oEntity",
-    "path":"objects/oEntity/oEntity.yy",
+    "name":"oUIMapButtonParent",
+    "path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -36,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sUIButton2",
+    "path":"sprites/sUIButton2/sUIButton2.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
