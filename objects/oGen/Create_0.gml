@@ -30,23 +30,23 @@ island_generators = ds_list_create()
 enemy_generators = ds_list_create()
 settlement_generators = ds_list_create()
 cell_generators_config = {
-    n5: new Cell(5, 1, 0),
-    n5: new Cell(4, 0, 1),
-    n5: new Cell(4, 2, 1),
-    n5: new Cell(4, 3, 1),
-    n1: new Cell(1, 8, 1),
-    n1: new Cell(1, 12, 0),
-    n2: new Cell(1, 2, 4),
+    n5: new Cell(5),
+    n5: new Cell(4),
+    n5: new Cell(4),
+    n5: new Cell(4),
+    n1: new Cell(1),
+    n1: new Cell(1),
+    n2: new Cell(1),
     n10: new Cell(0),
 }
 islands_config = {
-    n5: new Island(1, 0),
-    n5: new Island(0, 1),
-    n5: new Island(2, 1),
-    n5: new Island(3, 1),
+    n7: new Island(0, 1),
+    n7: new Island(1, 0),
+    n3: new Island(2, 1),
+    n3: new Island(3, 1),
     n1: new Island(8, 1),
     n1: new Island(12, 0),
-    n2: new Island(2, 4),
+    n1: new Island(2, 4),
 }
 enemy_generate_chance = 0.3
 settlement_generate_chance = 0.2
@@ -135,13 +135,6 @@ function Cell(
         self.posy_randomer = irandomer(self.y0, self.y0 + oGen.grid_area_size)
         var area = oGen.grid[# i, j]
         repeat(self.islands_count) {
-            var xx = self.posx_randomer()
-            var yy = self.posy_randomer()
-            var size = self.size_randomer()
-            var island_gen = oGen.island_generators[| 0]
-            var isle = instance_create_layer(xx, yy, "Bottom", oIsland)
-            isle.image_xscale = size / sprite_get_width(isle.sprite_index)
-            isle.image_yscale = size / sprite_get_height(isle.sprite_index)
 
             var add_settlement = oGen.settlement_generators[| 0]
             ds_list_delete(oGen.settlement_generators, 0)
@@ -153,6 +146,20 @@ function Cell(
             if ds_list_empty(oGen.enemy_generators) with oGen {
                 FillListByProbability(enemy_generators, enemy_generate_chance, 20)
             }
+
+            var island_gen = oGen.island_generators[| 0]
+            ds_list_delete(oGen.island_generators, 0)
+            if ds_list_empty(oGen.island_generators) with oGen {
+                FillListFromConfig(island_generators, islands_config)
+            }
+
+            var xx = self.posx_randomer()
+            var yy = self.posy_randomer()
+            var size = self.size_randomer()
+            var isle = instance_create_layer(xx, yy, "Bottom", oIsland)
+            isle.image_xscale = size / sprite_get_width(isle.sprite_index)
+            isle.image_yscale = size / sprite_get_height(isle.sprite_index)
+
 
             self.FixIslandPlacement(isle)
             self.FillIsland(isle, island_gen, add_settlement)
@@ -182,7 +189,7 @@ function FillListFromConfig(list, config) {
     var count = 0
     for (var i = 0; i < array_length(keys); ++i) {
         var key = keys[i]
-        var num = real(string_copy(key, 2, 2))
+        var num = real(string_copy(key, 2, 4))
         var item = config[$ key]
         repeat(num) { ds_list_add(list, item) }
         count += num
@@ -200,13 +207,13 @@ function FillListByProbability(list, probability, total) {
 }
 
 function InitAllGenerators() {
-    islands_config_count = FillListFromConfig(cell_generators, cell_generators_config)
-    cells_config_count = FillListFromConfig(island_generators, islands_config)
+    cells_config_count = FillListFromConfig(cell_generators, cell_generators_config)
+    islands_config_count = FillListFromConfig(island_generators, islands_config)
     if ds_list_empty(enemy_generators) {    
-        FillListByProbability(enemy_generators, enemy_generate_chance, cells_config_count)
+        FillListByProbability(enemy_generators, enemy_generate_chance, 20)
     }
     if ds_list_empty(settlement_generators) {
-        FillListByProbability(settlement_generators, settlement_generate_chance, cells_config_count)
+        FillListByProbability(settlement_generators, settlement_generate_chance, 20)
     }
 }
 
