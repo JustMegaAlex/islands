@@ -7,6 +7,6 @@ dist -= sp
 if dist <= 0 {
     instance_destroy()
     if instance_exists(target) {
-        target.Hit(shooter)
+        target.Hit(id)
     }
 }

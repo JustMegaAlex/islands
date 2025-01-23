@@ -61,7 +61,6 @@ function DropCrew() {
     }
 }
 
-
 function SpecialAttack() {
     take_shots = array_length(crew)
     shots_timer.time = min(10, attack_timer.time / (take_shots ?? 1))

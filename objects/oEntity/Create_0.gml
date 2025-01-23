@@ -77,9 +77,8 @@ function FindAttackTarget() {
     var dist = infinity
     for (var i = 0; i < ds_list_size(instances_list); ++i) {
         var inst = instances_list[| i]
-        if inst.is_creature
-                and inst.side != EntitySide.nature 
-                and inst.side != side
+        if (inst.is_creature or inst.is_structure)
+                and IsEnemySide(inst)
                 and InstDist(inst) < dist {
             result = inst
             dist = InstDist(inst)

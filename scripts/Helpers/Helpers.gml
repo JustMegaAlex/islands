@@ -65,7 +65,7 @@ function EntitiesInRect(x0, y0, x1, y1, filter=undefined) {
 }
 
 function IsEnemySide(inst) {
-    return !(side & inst.friendly_with) and !(friendly_with & inst.side)
+    return inst.side != side and !(side & inst.friendly_with) and !(friendly_with & inst.side)
 }
 
 function RandomSpawnRect(x0, y0, x1, y1, num, obj, avoid_object, avoid_attempts=3) {
