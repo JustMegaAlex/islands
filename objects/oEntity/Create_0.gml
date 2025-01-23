@@ -29,6 +29,7 @@ is_fighter = false
 is_flying = false
 is_swimmer = false
 is_structure = false
+is_shooter = false
 
 //// State attributes
 attack_target = noone

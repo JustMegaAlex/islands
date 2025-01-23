@@ -48,6 +48,7 @@
   "resources":[
     {"id":{"name":"oAmber","path":"objects/oAmber/oAmber.yy",},},
     {"id":{"name":"oArcherBuddy","path":"objects/oArcherBuddy/oArcherBuddy.yy",},},
+    {"id":{"name":"oArrow","path":"objects/oArrow/oArrow.yy",},},
     {"id":{"name":"oBuddy","path":"objects/oBuddy/oBuddy.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCannonCore","path":"objects/oCannonCore/oCannonCore.yy",},},
@@ -90,6 +91,7 @@
     {"id":{"name":"ui","path":"scripts/ui/ui.yy",},},
     {"id":{"name":"utils","path":"scripts/utils/utils.yy",},},
     {"id":{"name":"sAmber","path":"sprites/sAmber/sAmber.yy",},},
+    {"id":{"name":"sArrow","path":"sprites/sArrow/sArrow.yy",},},
     {"id":{"name":"sCannonCore","path":"sprites/sCannonCore/sCannonCore.yy",},},
     {"id":{"name":"sFullnessBar","path":"sprites/sFullnessBar/sFullnessBar.yy",},},
     {"id":{"name":"sIsland","path":"sprites/sIsland/sIsland.yy",},},
@@ -100,6 +102,7 @@
     {"id":{"name":"sUIButton","path":"sprites/sUIButton/sUIButton.yy",},},
     {"id":{"name":"sUIButton2","path":"sprites/sUIButton2/sUIButton2.yy",},},
     {"id":{"name":"sUIDefault","path":"sprites/sUIDefault/sUIDefault.yy",},},
+    {"id":{"name":"sUIIconArcher","path":"sprites/sUIIconArcher/sUIIconArcher.yy",},},
     {"id":{"name":"sUIIconDrop","path":"sprites/sUIIconDrop/sUIIconDrop.yy",},},
     {"id":{"name":"sUIMarkDrop","path":"sprites/sUIMarkDrop/sUIMarkDrop.yy",},},
     {"id":{"name":"sUIMarkMining","path":"sprites/sUIMarkMining/sUIMarkMining.yy",},},

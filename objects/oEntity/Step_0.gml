@@ -79,7 +79,11 @@ if attack_target and !instance_exists(attack_target) {
 
 if attack_target {
     if !attack_timer.update() {
-        attack_target.Hit(id)
+        if is_shooter {
+            instance_create_layer(x, y, oArrow, { shooter: id, target: attack_target })
+        } else {
+            attack_target.Hit(id)
+        }
         if instance_exists(attack_target) {
             attack_timer.reset()
         } else {
