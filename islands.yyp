@@ -47,6 +47,7 @@
   "name":"islands",
   "resources":[
     {"id":{"name":"oAmber","path":"objects/oAmber/oAmber.yy",},},
+    {"id":{"name":"oArcherBuddy","path":"objects/oArcherBuddy/oArcherBuddy.yy",},},
     {"id":{"name":"oBuddy","path":"objects/oBuddy/oBuddy.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCannonCore","path":"objects/oCannonCore/oCannonCore.yy",},},
@@ -74,6 +75,7 @@
     {"id":{"name":"oUIMapButtonParent","path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",},},
     {"id":{"name":"oUIMarkDrop","path":"objects/oUIMarkDrop/oUIMarkDrop.yy",},},
     {"id":{"name":"oUITaskButton","path":"objects/oUITaskButton/oUITaskButton.yy",},},
+    {"id":{"name":"oUIUpgradeToArcher","path":"objects/oUIUpgradeToArcher/oUIUpgradeToArcher.yy",},},
     {"id":{"name":"psWaterSplash","path":"particles/psWaterSplash/psWaterSplash.yy",},},
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
     {"id":{"name":"Balancing","path":"scripts/Balancing/Balancing.yy",},},

@@ -30,14 +30,11 @@ island_generators = ds_list_create()
 enemy_generators = ds_list_create()
 settlement_generators = ds_list_create()
 cell_generators_config = {
-    n5: new Cell(5),
-    n5: new Cell(4),
-    n5: new Cell(4),
-    n5: new Cell(4),
-    n1: new Cell(1),
-    n1: new Cell(1),
-    n2: new Cell(1),
-    n10: new Cell(0),
+    n1: new Cell(5),
+    n2: new Cell(4),
+    n6: new Cell(2),
+    n3: new Cell(1),
+    n6: new Cell(0),
 }
 islands_config = {
     n7: new Island(0, 1),

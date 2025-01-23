@@ -121,3 +121,28 @@ function CommandFullfillTask(settlement) constructor {
     hold = function() {}
     release = function() {}
 }
+
+function CommandCrewUpgrade(obj, amber, wood) constructor {
+    self.obj = obj
+    self.amber = amber
+    self.wood = wood
+    self.sprite = noone
+    draw = function() {
+        if !sprite_exists(self.sprite) { return }
+        draw_sprite(sprite, 0, mouse_x, mouse_y)
+    }
+    press = function() {
+        if oShip.amber < self.amber or oShip.wood < self.wood {
+            return false
+        }
+        var crew = EntitiesInCircle(mouse_x, mouse_y, 5, IsCrew)
+        if ArrayEmpty(crew) { return false }
+
+        with crew[0] { instance_change(other.obj, true) }
+        oShip.amber -= self.amber
+        oShip.wood -= self.wood
+        return true
+    }
+    hold = function() {}
+    release = function() {}
+}

@@ -10,7 +10,7 @@ hp_amber = 12
 hp_tree = 2
 
 ship_starting_amber = 4
-ship_starting_wood = 0
+ship_starting_wood = 12
 ship_starting_crew_size = 8
 ship_speed = 5.5
 

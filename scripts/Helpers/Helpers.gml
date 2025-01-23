@@ -11,7 +11,30 @@ function FlyingInstDir(inst) {
 }
 
 function EntitiesListCircle(x, y, r, list) {
-    collision_circle_list(x, y, r, oEntity, false, false, list, false)
+    return collision_circle_list(x, y, r, oEntity, false, false, list, false)
+}
+
+function EntitiesInCircle(x, y, r, filter=undefined) {
+    var list = ds_list_create()
+    var count =EntitiesListCircle(x, y, r, list)   
+    var res = []
+    array_resize(res, count)
+    if filter == undefined {
+        for (var i = 0; i < count; i++) {
+            res[i] = list[| i]
+        }
+        return res
+    }
+    var j = 0
+    for (var i = 0; i < count; i++) {
+        if filter(list[| i]) {
+            res[j] = list[| i]
+            j++
+        }
+    }
+    ds_list_destroy(list)
+    array_resize(res, j)
+    return res
 }
 
 function IsEnemySide(inst) {
