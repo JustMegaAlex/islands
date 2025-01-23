@@ -1,7 +1,11 @@
 
-
-function CommandTemplate() constructor {
-    self.sprite = noone
+function __define_methods() {
+    activate = function() {
+        active = true
+    }
+    deactivate = function() {
+        active = false
+    }
     draw = function() {
         if !sprite_exists(self.sprite) { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
@@ -11,10 +15,16 @@ function CommandTemplate() constructor {
     release = function() {}
 }
 
+function CommandTemplate() constructor {
+    self.sprite = noone
+    __define_methods()
+}
+
 function CommandDropCrew(crew_type) constructor {
     self.crew_type = crew_type
     self.sprite = sUIMarkDrop
     self.mosue_over_island = false
+    __define_methods()
 
     draw = function() {
         if !sprite_exists(self.sprite)
@@ -47,6 +57,7 @@ function CommandCannon() constructor {
     self.charge_icon_angles = [0, 90, 180, 270]
     self.vec = new Vec2(0, 0)
     self.cursor_line_length = 50
+    __define_methods()
 
     draw = function() {
         for (var i = 0; i < array_length(self.charge_icon_angles); ++i) {
@@ -88,6 +99,7 @@ function CommandCannon() constructor {
 function CommandCreateInstance(obj) constructor {
     self.sprite = noone
     self.obj = obj
+    __define_methods()
     draw = function() {
         if !sprite_exists(self.sprite) { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
@@ -103,6 +115,7 @@ function CommandFullfillTask(settlement) constructor {
     self.settlement = settlement
     self.wood = settlement.wood_cost
     self.amber = settlement.amber_cost
+    __define_methods()
 
     draw = function() {}
 
@@ -127,6 +140,7 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
     self.amber = amber
     self.wood = wood
     self.sprite = noone
+    __define_methods()
     draw = function() {
         if !sprite_exists(self.sprite) { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
@@ -141,6 +155,28 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
         with crew[0] { instance_change(other.obj, true) }
         oShip.amber -= self.amber
         oShip.wood -= self.wood
+        return true
+    }
+    hold = function() {}
+    release = function() {}
+}
+
+function CommandPlaceBuilding(obj, wood, amber) constructor {
+    self.sprite = noone
+    self.wood = wood
+    self.amber = amber
+    __define_methods()
+    draw = function() {
+        if !sprite_exists(self.sprite) { return }
+        draw_sprite(sprite, 0, mouse_x, mouse_y)
+    }
+    press = function() {
+        if oShip.wood < self.wood or oShip.amber < self.amber {
+            return false
+        }
+        oShip.wood -= self.wood
+        oShip.amber -= self.amber
+        instance_create_layer(mouse_x, mouse_y, "Instances", obj)
         return true
     }
     hold = function() {}

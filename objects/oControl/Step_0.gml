@@ -36,9 +36,9 @@ if _ui {
     _ui.mouse_over = true
     if oInput.Pressed("lclick") {
         if active_ui {
-            active_ui.active = false
+            active_ui.command.deactivate()
         }
-        _ui.active = true
+        _ui.command.activate()
         active_ui = _ui
         clicked_on_ui = true
     }
@@ -69,6 +69,6 @@ if !_ui {
 }
 
 if oInput.Pressed("escape") and active_ui {
-    active_ui.active = false
+    active_ui.command.deactivate()
     active_ui = noone
 }
