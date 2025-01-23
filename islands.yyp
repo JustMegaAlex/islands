@@ -50,6 +50,7 @@
     {"id":{"name":"oArcherBuddy","path":"objects/oArcherBuddy/oArcherBuddy.yy",},},
     {"id":{"name":"oArrow","path":"objects/oArrow/oArrow.yy",},},
     {"id":{"name":"oBuddy","path":"objects/oBuddy/oBuddy.yy",},},
+    {"id":{"name":"oBuildingGuardTower","path":"objects/oBuildingGuardTower/oBuildingGuardTower.yy",},},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},},
     {"id":{"name":"oCannonCore","path":"objects/oCannonCore/oCannonCore.yy",},},
     {"id":{"name":"oCollectibleAmber","path":"objects/oCollectibleAmber/oCollectibleAmber.yy",},},

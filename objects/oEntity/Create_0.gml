@@ -3,6 +3,9 @@ default_color = c_white
 default_rect = new Vec2(100, 100)
 sprite_index = sprite_index == -1 ? sWhitePixel : sprite_index
 
+/// stay inside an island
+island_collision_paddingx = sprite_width * 0.5
+island_collision_paddingy = sprite_height * 0.5
 shadow_size = sprite_width
 z = 0
 

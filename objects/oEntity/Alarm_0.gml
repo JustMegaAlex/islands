@@ -6,6 +6,7 @@ if sprite_index == sWhitePixel {
 	if !is_flying {
         AttachToIsland()	
 	}
+    island_collision_paddingx = sprite_width * 0.5
 }
 
 hp = hp_max

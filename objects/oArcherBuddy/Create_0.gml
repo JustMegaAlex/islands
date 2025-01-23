@@ -12,6 +12,10 @@ default_rect.set(20, 70)
 
 is_creature = true
 is_miner = true
+is_fighter = true
+is_shooter = true
+
+attack_distance = 400
 
 hp_max = 2
 sp_max = 2

@@ -8,6 +8,12 @@ if is_creature {
 if is_resource {
     var test = false
 }
+var test
+switch object_index {
+	case oArcherBuddy:
+		test = true; break
+		
+}
 
 if hp <= 0 {
     Die(); exit
@@ -26,12 +32,20 @@ y = position.y
 
 
 //// AI
-if !is_flying and !is_swimmer and !island {
-    island = instance_place(x, y, oIsland)
+if !is_flying and !is_swimmer {
     if !island {
-        Die()
-        exit
+        island = instance_place(x, y, oIsland)
+        if !island {
+            Die()
+            exit
+        }
     }
+    x = clamp(
+        x, island.bbox_left + island_collision_paddingx,
+           island.bbox_right - island_collision_paddingx)
+    y = clamp(
+        y, island.bbox_top + island_collision_paddingy,
+           island.bbox_bottom - island_collision_paddingy)
 }
 
 
@@ -80,7 +94,8 @@ if attack_target and !instance_exists(attack_target) {
 if attack_target {
     if !attack_timer.update() {
         if is_shooter {
-            instance_create_layer(x, y, oArrow, { shooter: id, target: attack_target })
+            instance_create_layer(x, y, "Instances", oArrow, 
+                                  { shooter: id, target: attack_target })
         } else {
             attack_target.Hit(id)
         }
