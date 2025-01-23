@@ -15,4 +15,4 @@ is_miner = true
 
 hp_max = 2
 sp_max = 2
-damage = 1
+attack_damage = 1

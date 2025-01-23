@@ -13,6 +13,14 @@ switch object_index {
 	case oArcherBuddy:
 		test = true; break
 		
+	case oBuildingGuardTower:
+		test = true; break
+}
+
+if is_structure and build_timer.update() {
+    exit
+} else {
+    image_alpha = 1
 }
 
 if hp <= 0 {
@@ -24,8 +32,9 @@ if IsMoving() {
 } else {
     velocity.set(0, 0)
 }
-
-position.add(velocity)
+if !is_structure {
+    position.add(velocity)
+}
 
 x = position.x
 y = position.y
@@ -48,6 +57,9 @@ if !is_flying and !is_swimmer {
            island.bbox_bottom - island_collision_paddingy)
 }
 
+if object_index == oBuildingGuardTower {
+	test = true
+}
 
 if is_fighter {
     var atk = attack_target ?? attack_target_move
@@ -93,9 +105,10 @@ if attack_target and !instance_exists(attack_target) {
 
 if attack_target {
     if !attack_timer.update() {
-        if is_shooter {
-            instance_create_layer(x, y, "Instances", oArrow, 
-                                  { shooter: id, target: attack_target })
+        if SpecialAttack {
+            SpecialAttack()
+        } else if is_shooter {
+            ShootAnArrow()
         } else {
             attack_target.Hit(id)
         }

@@ -35,7 +35,8 @@ function DropCrew(crew_type, xx, yy) {
 }
 
 crew = {
-    oBuddy: []
+    oBuddy: [],
+    oArcher: [],
 }
 
 repeat global.ship_starting_crew_size {

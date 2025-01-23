@@ -17,3 +17,7 @@ if marked_for_pickup {
 if marked_for_mining {
     draw_sprite(sUIDefault, 0, x, y - 30)
 }
+
+if is_structure and build_timer.timer {
+    draw_text(x, y, int64(build_timer.timer / 60))
+}

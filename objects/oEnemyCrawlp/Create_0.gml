@@ -15,4 +15,4 @@ is_swimmer = true
 
 hp_max = 2
 sp_max = 3
-damage = 1
+attack_damage = 1

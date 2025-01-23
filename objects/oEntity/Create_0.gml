@@ -41,6 +41,7 @@ move_target = new Vec2(x, y)
 attack_timer = MakeTimer(60)
 island = noone
 resource_to_mine = noone
+build_timer = MakeTimer(10 * 60)
 
 //// Stats
 attack_distance = 50
@@ -92,7 +93,7 @@ function IsMoving() {
 }
 
 function Hit(id) {
-    hp -= id.damage
+    hp -= id.attack_damage
 }
 
 function Die() {
@@ -134,6 +135,13 @@ function GetClosestInstanceFromArray(array) {
     }
     return closest
 }
+
+function ShootAnArrow() {
+    instance_create_layer(x, y, "Instances", oArrow, 
+                          { shooter: id, target: attack_target })
+}
+
+SpecialAttack = undefined
 
 alarm[0] = 1
 
