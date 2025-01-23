@@ -38,4 +38,6 @@ crew = {
     oBuddy: []
 }
 
-AddBuddy(); AddBuddy();
+repeat global.ship_starting_crew_size {
+    AddBuddy()
+}

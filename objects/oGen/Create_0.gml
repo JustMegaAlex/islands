@@ -3,7 +3,7 @@ _debug_corner_cells = []
 
 var sec = 60
 emerging_level = 0
-emerge_timer = MakeTimer(5 * sec)
+emerge_timer = MakeTimer(global.gen_emerge_secs * sec)
 emerge_spawn_crawlps = 0
 
 grid_w = 100
@@ -28,11 +28,14 @@ island_generators = ds_list_create()
 enemy_generators = ds_list_create()
 settlement_generators = ds_list_create()
 island_generators_config = {
-    n10: new Generator(5),
-    n10: new Generator(1),
-    n15: new Generator(0),
-    n20: new Generator(2),
-    n30: new Generator(3, 5, 5, 1),
+    n5: new Generator(5, 1, 0),
+    n5: new Generator(4, 0, 1),
+    n5: new Generator(4, 2, 1),
+    n5: new Generator(4, 3, 1),
+    n1: new Generator(1, 8, 1),
+    n1: new Generator(1, 12, 0),
+    n2: new Generator(1, 2, 4),
+    n10: new Generator(0),
 }
 enemy_generate_chance = 0.3
 settlement_generate_chance = 0.2
