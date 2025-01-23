@@ -4,6 +4,7 @@ cost_cannon_amber = 0.5
 damage_cannon = 10
 
 gen_emerge_secs = 30
+gen_enemy_spawners = 2
 
 hp_amber = 12
 hp_tree = 2
