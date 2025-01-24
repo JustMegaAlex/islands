@@ -29,10 +29,11 @@ enemy_spawners_max_per_cell = 2
 resource_multiplier = 1
 
 
-function Island(trees, amber, enemy_spawners=0) constructor {
+function Island(trees, amber, enemy_spawners=0, big_trees=0) constructor {
     self.trees = irandom_range(trees, trees * 1.5)
     self.amber = irandom_range(amber, amber * 1.5)
     self.enemy_spawners = enemy_spawners
+    self.big_trees = big_trees
 }
 
 function Cell(
@@ -102,6 +103,7 @@ function Cell(
 
         GenerateItems(isle, gen.trees * oGen.resource_multiplier, oTree)
         GenerateItems(isle, gen.amber * oGen.resource_multiplier, oAmber)
+        GenerateItems(isle, gen.big_trees * oGen.resource_multiplier, oBigTree)
     }
 
     run = function(i, j) {
@@ -157,22 +159,22 @@ function Area(i, j) constructor {
 
 //// Initialize generators
 gen_enemy_spawners = global.gen_enemy_spawners
-cell_generators_config = {
-    n1: new Cell(5),
-    n3: new Cell(4),
-    n8: new Cell(2),
-    n4: new Cell(1),
-    n2: new Cell(0),
-}
-islands_config = {
-    n5: new Island(0, 1),
-    n5: new Island(1, 0),
-    n8: new Island(2, 1),
-    n3: new Island(5, 1),
-    n1: new Island(8, 1),
-    n1: new Island(12, 0),
-    n1: new Island(2, 4),
-}
+cell_generators_config = [
+    [1, new Cell(5)],
+    [3, new Cell(4)],
+    [8, new Cell(2)],
+    [4, new Cell(1)],
+    [2, new Cell(0)],
+]
+islands_config = [
+    [5, new Island(0, 1)],
+    [5, new Island(1, 0)],
+    [8, new Island(2, 1)],
+    [3, new Island(5, 1)],
+    [1, new Island(8, 1)],
+    [1, new Island(12, 0)],
+    [1, new Island(2, 4)],
+]
 enemy_generate_chance = 0.3
 settlement_generate_chance = 0.2
 
@@ -182,18 +184,19 @@ enemy_generators = new RandomerByProbability(0.3, 20)
 settlement_generators = new RandomerByProbability(0.2, 20)
 
 
+island_gen_big_trees = new Island(3, 1, 1, 1)
+island_gen_big_trees_conf = [5, island_gen_big_trees]
+
 function RandomerFromConfig(config) constructor {
     self.config = config
     self.list = ds_list_create()
     self.count = 0
 
     init = function() {
-        var keys = variable_struct_get_names(config)
         count = 0
-        for (var i = 0; i < array_length(keys); ++i) {
-            var key = keys[i]
-            var num = real(string_copy(key, 2, 4))
-            var item = config[$ key]
+        for (var i = 0; i < array_length(config); ++i) {
+            var num = config[i][0]
+            var item = config[i][1]
             repeat(num) { ds_list_add(list, item) }
             count += num
         }
@@ -265,6 +268,17 @@ function Emerge() {
     }
     switch (emerging_level) {
         case 1: break
+        case 5: 
+            array_push(islands_config, island_gen_big_trees_conf)
+        break
+        case 10: 
+            island_gen_big_trees.big_trees = 2
+            island_gen_big_trees.trees += 3
+        break
+        case 15:
+            island_gen_big_trees.big_trees = 3
+            island_gen_big_trees.trees += 3
+        break
     }
     if emerging_level > 4 {
         resource_multiplier += emerge_resource_gain

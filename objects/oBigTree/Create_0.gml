@@ -1,8 +1,8 @@
 
 event_inherited()
 
-default_color = c_green
-default_rect.set(40, 100)
+default_color = #005629
+default_rect.set(40, 150)
 
 is_resource = true
 hp_max = global.hp_big_tree
