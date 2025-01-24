@@ -14,6 +14,8 @@ zoom = 1
 zoom_to = 1
 zoom_treshold_speed = 40
 zoom_factor = 0.25
+zoom_max = 3
+zoom_min = 1
 
 // mouse drag
 drag_button = mb_middle
@@ -26,6 +28,9 @@ spd = 25
 
 function ChangeZoom(step) {
     zoom_to += step * zoom_factor
+    if global.camera_clamp_zoom {
+        zoom_to = clamp(zoom_to, zoom_min, zoom_max)
+    }
 }
 
 function SetZoom(value) {

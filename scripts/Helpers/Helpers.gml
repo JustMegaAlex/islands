@@ -92,3 +92,10 @@ function RandomSpawnRect(x0, y0, x1, y1, num, obj, avoid_object, avoid_attempts=
         }
     }
 }
+
+function RectInstanceCount(x0, y0, x1, y1, obj) {
+    var list = ds_list_create()
+    var count = collision_rectangle_list(x0, y0, x1, y1, obj, false, false, list, false)
+    ds_list_destroy(list)
+    return count
+}

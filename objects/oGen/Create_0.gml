@@ -1,15 +1,11 @@
 
 _debug_corner_cells = []
 
-var sec = 60
-emerging_level = 0
-emerge_timer = MakeTimer(global.gen_emerge_secs * sec)
-emerge_spawn_crawlps = 0
 
 grid_w = 100
 grid_h = 100
 
-grid_area_size = 5000
+grid_area_size = 3000
 x0 = oShip.x - grid_w * grid_area_size / 2
 y0 = oShip.y - grid_h * grid_area_size / 2
 
@@ -23,6 +19,12 @@ for (var i = 0; i < grid_w; i++) {
     }
 }
 
+var sec = 60
+emerging_level = 0
+emerge_timer = MakeTimer(global.gen_emerge_secs * sec)
+emerge_spawn_crawlps = 0
+enemy_spawners_max_per_cell = 2
+
 //// Initialize generators
 gen_enemy_spawners = global.gen_enemy_spawners
 cell_generators = ds_list_create()
@@ -31,15 +33,15 @@ enemy_generators = ds_list_create()
 settlement_generators = ds_list_create()
 cell_generators_config = {
     n1: new Cell(5),
-    n2: new Cell(4),
-    n6: new Cell(2),
-    n3: new Cell(1),
+    n3: new Cell(4),
+    n8: new Cell(2),
+    n4: new Cell(1),
     n2: new Cell(0),
 }
 islands_config = {
     n5: new Island(0, 1),
     n5: new Island(1, 0),
-    n3: new Island(2, 1),
+    n8: new Island(2, 1),
     n3: new Island(5, 1),
     n1: new Island(8, 1),
     n1: new Island(12, 0),
@@ -169,11 +171,14 @@ function Cell(
             self.FixIslandPlacement(isle)
             self.FillIsland(isle, island_gen, add_settlement)
 
-            RandomSpawnRect(
-                area.x0, area.y0,
-                area.x1, area.y1,
-                oGen.emerge_spawn_crawlps + enemy_flag * oGen.gen_enemy_spawners,
-                oEnemySpawner, oIsland)
+            if oGen.RectAreaCount(area, oEnemySpawner) < oGen.enemy_spawners_max_per_cell {
+                RandomSpawnRect(
+                    area.x0, area.y0,
+                    area.x1, area.y1,
+                    oGen.emerge_spawn_crawlps + enemy_flag * oGen.gen_enemy_spawners,
+                    oEnemySpawner, oIsland)
+            }
+
         }
     }
 }
@@ -227,6 +232,7 @@ function Emerge() {
     if (emerging_level mod 5) == 0 {
         enemy_generate_chance += 0.1
         emerge_spawn_crawlps += 1
+        enemy_spawners_max_per_cell += 1
     }
     repeat emerging_level div 5 {
         SpawnCrawlps()
@@ -243,10 +249,12 @@ function SpawnCrawlps() {
             area.just_generated = false
             continue
         }
-        RandomSpawnRect(
-            area.x0, area.y0,
-            area.x1, area.y1,
-            emerge_spawn_crawlps, oEnemySpawner, oIsland)
+        if oGen.RectAreaCount(area, oEnemySpawner) < oGen.enemy_spawners_max_per_cell {
+            RandomSpawnRect(
+                area.x0, area.y0,
+                area.x1, area.y1,
+                emerge_spawn_crawlps, oEnemySpawner, oIsland)
+        }
     }
 }
 
@@ -275,6 +283,10 @@ function GridGet(vec) {
 
 function GridCheck(vec) {
     return !(vec.x < 0 || vec.x >= grid_w || vec.y < 0 || vec.y >= grid_h)
+}
+
+function RectAreaCount(area, obj) {
+    return RectInstanceCount(area.x0, area.y0, area.x1, area.y1, obj)
 }
 
 show_debug_message($"ship_grid_pos: {ship_grid_pos.x}, {ship_grid_pos.y}, ship_grid_pos_prev: {ship_grid_pos_prev.x}, {ship_grid_pos_prev.y}")
