@@ -75,6 +75,7 @@
     {"id":{"name":"oSys","path":"objects/oSys/oSys.yy",},},
     {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},},
     {"id":{"name":"oTutTrigger","path":"objects/oTutTrigger/oTutTrigger.yy",},},
+    {"id":{"name":"oTutTriggerArcherButton","path":"objects/oTutTriggerArcherButton/oTutTriggerArcherButton.yy",},},
     {"id":{"name":"oUIBuildGuardTower","path":"objects/oUIBuildGuardTower/oUIBuildGuardTower.yy",},},
     {"id":{"name":"oUIButtonDrop","path":"objects/oUIButtonDrop/oUIButtonDrop.yy",},},
     {"id":{"name":"oUIButtonParent","path":"objects/oUIButtonParent/oUIButtonParent.yy",},},

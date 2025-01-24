@@ -48,6 +48,7 @@
     {"name":"oShip","order":4,"path":"objects/oShip/oShip.yy",},
     {"name":"oTree","order":6,"path":"objects/oTree/oTree.yy",},
     {"name":"oTutTrigger","order":6,"path":"objects/oTutTrigger/oTutTrigger.yy",},
+    {"name":"oTutTriggerArcherButton","order":7,"path":"objects/oTutTriggerArcherButton/oTutTriggerArcherButton.yy",},
     {"name":"oUIBuildGuardTower","order":7,"path":"objects/oUIBuildGuardTower/oUIBuildGuardTower.yy",},
     {"name":"oUIButtonDrop","order":3,"path":"objects/oUIButtonDrop/oUIButtonDrop.yy",},
     {"name":"oUIButtonSkipTut","order":4,"path":"objects/oUIButtonSkipTut/oUIButtonSkipTut.yy",},

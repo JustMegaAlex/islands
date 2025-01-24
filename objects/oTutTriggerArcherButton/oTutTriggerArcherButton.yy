@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oSys",
+  "%Name":"oTutTriggerArcherButton",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oSys",
+  "name":"oTutTriggerArcherButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"System",
-    "path":"folders/Objects/System.yy",
+    "name":"Tutorial",
+    "path":"folders/Tutorial.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,11 +26,18 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"ui_elements","filters":[
+        "GMObject",
+      ],"listItems":[],"multiselect":false,"name":"ui_elements","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sIsland",
+    "path":"sprites/sIsland/sIsland.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
