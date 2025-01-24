@@ -227,9 +227,11 @@ function CommandSkipTut() constructor {
     __define_methods()
     activate = function() {
         oGen.gen_enabled = true
-        layer_destroy("TutTriggers")
-        layer_destroy("Tutorial")
-        instance_activate_object(oUIButtonParent)
+        layer_destroy_instances("TutTriggers")
+        layer_set_visible("Tutorial", false)
+        with oUIButtonParent {
+            Show()
+        }
 		//show_debug_message("UI activated!")
 		instance_destroy(oUIButtonSkipTut)
 		oControl.active_ui = noone
