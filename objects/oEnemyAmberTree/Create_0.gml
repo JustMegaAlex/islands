@@ -1,20 +1,24 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
-event_inherited();
+event_inherited()
 
 side = EntitySide.theirs
 
-default_color = c_black
-default_rect.set(30, 50)
+default_color = c_lime
+default_rect.set(50, 120)
 
 is_fighter = true
 is_structure = true
-is_resourse = true
+is_resource = true
+is_shooter = true
 
-ai_random_walk = true
+attack_distance = 1000
+enemy_detection_range = 1000
 
-hp_max = 2
+build_timer = MakeTimer(0)
+attack_timer = MakeTimer(180)
+
+hp_max = 12
 sp_max = 3
-attack_damage = 1
+attack_damage = 3
+
+wood = 3
+amber = 1
