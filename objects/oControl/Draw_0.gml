@@ -24,6 +24,6 @@ if resource_select_box.enabled {
         resource_select_box.y0, 
         resource_select_box.x1, 
         resource_select_box.y1,
-        false)
+        true)
 }
 draw_set_color(c_white)

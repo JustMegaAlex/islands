@@ -1,5 +1,7 @@
 
 
+rclick_pressed_timer.update()
+lclick_pressed_timer.update()
 
 if oInput.Pressed("rclick") {
     rclick_pressed_timer.reset()
@@ -15,24 +17,24 @@ if oInput.Pressed("lclick") {
 
 var rclick_pressed = false
 if oInput.Released("rclick") {
-    rclick_pressed = !rclick_pressed_timer.update()
+    rclick_pressed = rclick_pressed_timer.timer > 0
     crew_select_box.enabled = false
 }
 
 
 var lclick_pressed = false
 if oInput.Released("lclick") {
-    lclick_pressed = !lclick_pressed_timer.update()
+    lclick_pressed = lclick_pressed_timer.timer > 0
     resource_select_box.enabled = false
 }
 
-if rclick_pressed_timer.timer < 0 and oInput.Hold("rclick") {
+if rclick_pressed_timer.timer <= 0 and oInput.Hold("rclick") {
     crew_select_box.enabled = true
     crew_select_box.x1 = mouse_x
     crew_select_box.y1 = mouse_y
 }
 
-if !active_ui and lclick_pressed_timer.timer < 0 and oInput.Hold("lclick") {
+if !active_ui and lclick_pressed_timer.timer <= 0 and oInput.Hold("lclick") {
     resource_select_box.enabled = true
     resource_select_box.x1 = mouse_x
     resource_select_box.y1 = mouse_y
