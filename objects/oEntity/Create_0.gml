@@ -46,6 +46,10 @@ move_to_tower = noone
 settlement = noone
 
 //// Stats
+ai_random_walk = false
+ai_random_walk_timer = MakeTimer(3 * 60)
+ai_random_walk_distance = 40
+ai_random_walk_time_randomer = irandomer(2 * 60, 4 * 60)
 attack_distance = 50
 enemy_detection_range = 1000
 attack_damage = 1
@@ -74,19 +78,31 @@ function FindAttackTarget() {
     var count = collision_circle_list(
         x, y, enemy_detection_range, oEntity, false, false,
         instances_list, false)
-    var result = noone
+    var target = noone
     var dist = infinity
     for (var i = 0; i < ds_list_size(instances_list); ++i) {
         var inst = instances_list[| i]
         if (inst.is_creature or inst.is_structure)
                 and IsEnemySide(inst)
                 and InstDist(inst) < dist {
-            result = inst
+            target = inst
             dist = InstDist(inst)
         }
     }
     ds_list_clear(instances_list)
-    return result
+    return target
+}
+
+function CrowdAttack(target) {
+    var friends = EntitiesInCircle(x, y, 150, function(ent) 
+        { return ent.is_fighter and ent.side == side 
+                 and !(ent.attack_target or ent.attack_target_move) })
+    var enemies = EntitiesInCircle(target.x, target.y, 150, function(ent) 
+        { return ent.is_creature and IsEnemySide(ent) })
+    for (var i = 0; i < array_length(friends); ++i) {
+        var inst = friends[i]
+        inst.attack_target_move = ArrayChoose(enemies)
+    }
 }
 
 function IsMoving() {

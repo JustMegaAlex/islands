@@ -11,6 +11,13 @@ draw_sprite_ext(
 	image_angle, image_blend, image_alpha)
 
 
+draw_circle(x, y, 150, true)
+
+var atk = attack_target_move ?? attack_target
+if atk {
+	draw_circle(atk.x, atk.y, 10, false)
+}
+
 if marked_for_pickup {
     draw_sprite(sUIDefault, 0, x, y - 30)
 }

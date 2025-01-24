@@ -13,6 +13,8 @@ is_creature = true
 is_fighter = true
 is_swimmer = true
 
+ai_random_walk = true
+
 hp_max = 2
 sp_max = 3
 attack_damage = 1

@@ -116,6 +116,8 @@ if attack_target and !instance_exists(attack_target) {
     attack_target = noone
 }
 
+ai_random_walk_timer.update()
+
 if attack_target {
     if !attack_timer.update() {
         if SpecialAttack {
@@ -130,5 +132,11 @@ if attack_target {
         } else {
             attack_target = noone
         }
+    }
+} else {
+    if ai_random_walk and !ai_random_walk_timer.timer and !IsMoving() {
+         move_target.add_polar(ai_random_walk_distance, random(360))
+         ai_random_walk_timer.time = ai_random_walk_time_randomer()
+         ai_random_walk_timer.reset()
     }
 }

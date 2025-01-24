@@ -1,7 +1,6 @@
 
 _debug_corner_cells = []
 
-
 grid_w = 100
 grid_h = 100
 
