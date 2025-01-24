@@ -16,3 +16,4 @@ ship_speed = 5.5
 
 sp_entity_default = 0.7
 
+harpy_sp_max = 3
