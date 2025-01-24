@@ -30,3 +30,18 @@ function MouseCollisionInstances(fun) {
     ds_list_clear(collision_list)
     return found_instances
 }
+
+function RectCollisionInstances(x0, y0, x1, y1, fun) {
+    var count = collision_rectangle_list(
+        x0, y0, x1, y1, oEntity, false, false, collision_list, false)
+    var found_instances = false
+    for (var i = 0; i < count; ++i) {
+        var inst = collision_list[| i]
+        if fun(inst) {
+			found_instances = true
+			break
+        }
+    }
+    ds_list_clear(collision_list)
+    return found_instances
+}

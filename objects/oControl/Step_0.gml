@@ -18,6 +18,15 @@ if oInput.Pressed("lclick") {
 var rclick_pressed = false
 if oInput.Released("rclick") {
     rclick_pressed = rclick_pressed_timer.timer > 0
+    if crew_select_box.enabled {
+        RectCollisionInstances(
+            crew_select_box.x0, crew_select_box.y0, crew_select_box.x1, crew_select_box.y1,
+            function(inst) {
+                if IsCrew(inst) {
+                    inst.marked_for_pickup = !inst.marked_for_pickup; return false}
+            }
+        )
+    }
     crew_select_box.enabled = false
 }
 
@@ -25,10 +34,19 @@ if oInput.Released("rclick") {
 var lclick_pressed = false
 if oInput.Released("lclick") {
     lclick_pressed = lclick_pressed_timer.timer > 0
+    if resource_select_box.enabled {
+        RectCollisionInstances(
+            resource_select_box.x0, resource_select_box.y0, resource_select_box.x1, resource_select_box.y1,
+            function(inst) {
+                if inst.is_resource {
+                    inst.marked_for_mining = !inst.marked_for_mining; return false}
+            }
+        )
+    }
     resource_select_box.enabled = false
 }
 
-if rclick_pressed_timer.timer <= 0 and oInput.Hold("rclick") {
+if rclick_pressed_timer.timer <= 0 and oInput.Hold("alter") and oInput.Hold("rclick") {
     crew_select_box.enabled = true
     crew_select_box.x1 = mouse_x
     crew_select_box.y1 = mouse_y
