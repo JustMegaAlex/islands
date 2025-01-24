@@ -104,6 +104,7 @@ function Cell(
         GenerateItems(isle, gen.trees * oGen.resource_multiplier, oTree)
         GenerateItems(isle, gen.amber * oGen.resource_multiplier, oAmber)
         GenerateItems(isle, gen.big_trees * oGen.resource_multiplier, oBigTree)
+        GenerateItems(isle, oGen.amber_tree_generators.get_auto(), oEnemyAmberTree)
     }
 
     run = function(i, j) {
@@ -287,8 +288,10 @@ function Emerge() {
     if emerging_level > 4 {
         resource_multiplier += emerge_resource_gain
     }
-    harpy_generators.probability += emerging_level > 4 * 0.05
+    harpy_generators.probability += (emerging_level > 4) * 0.05
     harpy_generators.init()
+    amber_tree_generators.probability += (emerging_level > 10) * 0.05
+    amber_tree_generators.init()
 }
 
 function SpawnEnemies() {
