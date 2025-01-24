@@ -182,6 +182,8 @@ cell_generators = new RandomerFromConfig(cell_generators_config)
 island_generators = new RandomerFromConfig(islands_config)
 enemy_generators = new RandomerByProbability(0.3, 20)
 settlement_generators = new RandomerByProbability(0.2, 20)
+harpy_generators = new RandomerByProbability(0, 20)
+amber_tree_generators = new RandomerByProbability(0, 20)
 
 
 island_gen_big_trees = new Island(3, 1, 1, 1)
@@ -227,7 +229,7 @@ function RandomerByProbability(probability, total) constructor {
     self.list = ds_list_create()
     self.count = 0
     self.total = total
-    self.probability = probability
+    self.probability = min(probability, 1)
 
     init = function() {
         ds_list_set(list, total - 1, false)
@@ -263,9 +265,7 @@ function Emerge() {
         emerge_spawn_crawlps += 1
         enemy_spawners_max_per_cell += 1
     }
-    repeat emerging_level div 5 {
-        SpawnCrawlps()
-    }
+    SpawnEnemies()
     switch (emerging_level) {
         case 1: break
         case 5: 
@@ -279,13 +279,19 @@ function Emerge() {
             island_gen_big_trees.big_trees = 3
             island_gen_big_trees.trees += 3
         break
+        case 20:
+            island_gen_big_trees.big_trees = 4
+            island_gen_big_trees.trees += 3
+        break
     }
     if emerging_level > 4 {
         resource_multiplier += emerge_resource_gain
     }
+    harpy_generators.probability += emerging_level > 4 * 0.05
+    harpy_generators.init()
 }
 
-function SpawnCrawlps() {
+function SpawnEnemies() {
     for (var i = 0; i < array_length(generated_areas); ++i) {
         var area = generated_areas[i]
         if area.just_generated {
@@ -297,6 +303,12 @@ function SpawnCrawlps() {
                 area.x0, area.y0,
                 area.x1, area.y1,
                 emerge_spawn_crawlps, oEnemySpawner, oIsland)
+        }
+        if harpy_generators.get_auto() {
+            RandomSpawnRect(
+                area.x0, area.y0,
+                area.x1, area.y1,
+                1, oEnemyHarpy)
         }
     }
 }

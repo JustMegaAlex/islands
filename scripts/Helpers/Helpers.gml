@@ -68,7 +68,7 @@ function IsEnemySide(inst) {
     return inst.side != side and !(side & inst.friendly_with) and !(friendly_with & inst.side)
 }
 
-function RandomSpawnRect(x0, y0, x1, y1, num, obj, avoid_object, avoid_attempts=3) {
+function RandomSpawnRect(x0, y0, x1, y1, num, obj, avoid_object=noone, avoid_attempts=3) {
     var randx = irandomer(x0, x1)
     var randy = irandomer(y0, y1)
     var avoided = false
