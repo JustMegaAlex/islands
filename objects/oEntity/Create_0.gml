@@ -93,6 +93,9 @@ function IsMoving() {
 }
 
 function Hit(id) {
+    if id.object_index == oCannonCore and is_flying {
+        return
+    }
     hp -= id.attack_damage
 }
 
