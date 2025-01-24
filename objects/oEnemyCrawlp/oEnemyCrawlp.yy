@@ -11,8 +11,8 @@
   "name":"oEnemyCrawlp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/Objects/Entities.yy",
+    "name":"Enemies",
+    "path":"folders/Objects/Entities/Enemies.yy",
   },
   "parentObjectId":{
     "name":"oEntity",

@@ -46,3 +46,14 @@ if ds_list_size(collectibles) {
 ds_list_clear(drop_crew_marks)
 ds_list_clear(crew_instances)
 ds_list_clear(collectibles)
+
+if amber_wrath_timer.timer > 0 {
+    if !amber_wrath_timer.update() {
+        sp_max = sp_initial
+    }
+    var entities = EntitiesInCircle(x, y, 100, function(ent) { return ent.object_index != oShip })
+    for (var i = 0; i < array_length(entities); ++i) {
+        var ent = entities[i]
+        ent.Hit(amber_wrath_struct)
+    }
+}

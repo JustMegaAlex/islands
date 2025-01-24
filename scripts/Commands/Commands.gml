@@ -238,6 +238,13 @@ function CommandSkipTut() constructor {
     }
 }
 
+function CommandAmberWrath() constructor {
+    self.sprite = noone
+    __define_methods()
+    activate = function() {
+        oShip.amber_wrath_timer.reset()
+    }
+}
 
 function CommandTryAgain() constructor {
     self.sprite = noone
