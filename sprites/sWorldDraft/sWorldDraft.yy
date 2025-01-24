@@ -19,6 +19,7 @@
   "height":768,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"6656d330-1c12-40ff-9f04-38b4b14ecdf5","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"6656d330-1c12-40ff-9f04-38b4b14ecdf5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"84c7fc89-f1e8-4d68-9c52-1af07c4c070d","blendMode":0,"displayName":"default","isLocked":false,"name":"84c7fc89-f1e8-4d68-9c52-1af07c4c070d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sWorldDraft",
