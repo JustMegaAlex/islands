@@ -34,13 +34,13 @@ cell_generators_config = {
     n2: new Cell(4),
     n6: new Cell(2),
     n3: new Cell(1),
-    n6: new Cell(0),
+    n2: new Cell(0),
 }
 islands_config = {
-    n7: new Island(0, 1),
-    n7: new Island(1, 0),
+    n5: new Island(0, 1),
+    n5: new Island(1, 0),
     n3: new Island(2, 1),
-    n3: new Island(3, 1),
+    n3: new Island(5, 1),
     n1: new Island(8, 1),
     n1: new Island(12, 0),
     n1: new Island(2, 4),
