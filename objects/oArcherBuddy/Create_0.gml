@@ -11,7 +11,6 @@ default_color = c_green
 default_rect.set(20, 70)
 
 is_creature = true
-is_miner = true
 is_fighter = true
 is_shooter = true
 
