@@ -230,6 +230,7 @@ function CommandSkipTut() constructor {
         layer_destroy("TutTriggers")
         layer_destroy("Tutorial")
         instance_activate_object(oUIButtonParent)
+		//show_debug_message("UI activated!")
 		instance_destroy(oUIButtonSkipTut)
 		oControl.active_ui = noone
     }
