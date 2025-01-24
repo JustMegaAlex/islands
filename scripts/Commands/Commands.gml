@@ -125,9 +125,14 @@ function CommandFullfillTask(settlement) constructor {
         }
         oShip.wood -= self.wood
         oShip.amber -= self.amber
-        for (var i = 0; i < array_length(self.settlement.units); ++i) {
-            var unit = self.settlement.units[i]
+        repeat array_length(self.settlement.units) {
+            var unit = self.settlement.units[0]
+            if !instance_exists(unit) {
+                continue 
+            }
             unit.side = EntitySide.ours
+            self.settlement.RemoveUnit(unit)
+            unit.settlement = noone
         }
         return true
     }

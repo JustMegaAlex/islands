@@ -46,7 +46,7 @@ if oInput.Released("lclick") {
     resource_select_box.enabled = false
 }
 
-if rclick_pressed_timer.timer <= 0 and oInput.Hold("alter") and oInput.Hold("rclick") {
+if rclick_pressed_timer.timer <= 0 and oInput.Hold("rclick") {
     crew_select_box.enabled = true
     crew_select_box.x1 = mouse_x
     crew_select_box.y1 = mouse_y

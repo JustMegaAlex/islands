@@ -8,4 +8,6 @@ DebugViewAddRefs(global, [
 ])
 DebugViewAddRefs(oShip, [
     ["sp_max", dbg_text_input, "ship speed", "f"],
+    ["wood", dbg_text_input, "wood", "f"],
+    ["amber", dbg_text_input, "amber", "f"],
 ])

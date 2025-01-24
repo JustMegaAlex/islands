@@ -43,6 +43,7 @@ island = noone
 resource_to_mine = noone
 build_timer = MakeTimer(10 * 60)
 move_to_tower = noone
+settlement = noone
 
 //// Stats
 attack_distance = 50
@@ -103,6 +104,9 @@ function Die() {
 	if island {
 		island.RemoveEntity(id)
 	}
+    if settlement and instance_exists(settlement) {
+        settlement.RemoveUnit(id)
+    }
     instance_destroy()
 }
 
