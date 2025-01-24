@@ -51,8 +51,8 @@ cells_config_count = 0
 islands_config_count = 0
 
 function Island(trees, amber, enemy_spawners=0) constructor {
-    self.trees_randomer = irandomer(trees, trees * 1.5)
-    self.amber_randomer = irandomer(amber, amber * 1.5)
+    self.trees = irandom_range(trees, trees * 1.5)
+    self.amber = irandom_range(amber, amber * 1.5)
     self.enemy_spawners = enemy_spawners
 }
 
@@ -121,8 +121,8 @@ function Cell(
             self.enemy_spawners--
         }
 
-        GenerateItems(isle, gen.trees_randomer(), oTree)
-        GenerateItems(isle, gen.amber_randomer(), oAmber)
+        GenerateItems(isle, gen.trees, oTree)
+        GenerateItems(isle, gen.amber, oAmber)
     }
 
     run = function(i, j) {
@@ -152,11 +152,19 @@ function Cell(
 
             var xx = self.posx_randomer()
             var yy = self.posy_randomer()
-            var size = self.size_randomer()
+            var size_mult = 1 + random(1)
+            var size = (1 + (island_gen.trees + island_gen.amber) * 2) * size_mult
+            var _sqrt = sqrt(size)
+            var spread = max(0, _sqrt - 3)
+            var scalex = max(1, round(_sqrt) - irandom_range(-spread, spread))
+            var scaley = max(1, round(size / scalex))
             var isle = instance_create_layer(xx, yy, "Bottom", oIsland)
-            isle.image_xscale = size / sprite_get_width(isle.sprite_index)
-            isle.image_yscale = size / sprite_get_height(isle.sprite_index)
+            isle.image_xscale = scalex
+            isle.image_yscale = scaley
 
+            if scalex == 1 and scaley > 2 {
+                var test = true
+            }
 
             self.FixIslandPlacement(isle)
             self.FillIsland(isle, island_gen, add_settlement)

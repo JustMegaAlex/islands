@@ -52,7 +52,7 @@ function CommandDropCrew(crew_type) constructor {
 
 function CommandCannon() constructor {
     self.sprite = noone
-    self.charge_frames = 30
+    self.charge_frames = 18
     self.holded_frames = 0
     self.charge_icon_angles = [0, 90, 180, 270]
     self.vec = new Vec2(0, 0)

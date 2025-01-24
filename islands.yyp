@@ -28,7 +28,7 @@
     {"$GMFolder":"","%Name":"unused groups","folderPath":"folders/unused groups.yy","name":"unused groups","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/unused groups/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/unused groups/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/unused groups/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Notes","folderPath":"folders/unused groups/Notes.yy","name":"Notes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/unused groups/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/unused groups/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -47,6 +47,7 @@
   },
   "name":"islands",
   "resources":[
+    {"id":{"name":"fntDefault","path":"fonts/fntDefault/fntDefault.yy",},},
     {"id":{"name":"oAmber","path":"objects/oAmber/oAmber.yy",},},
     {"id":{"name":"oArcherBuddy","path":"objects/oArcherBuddy/oArcherBuddy.yy",},},
     {"id":{"name":"oArrow","path":"objects/oArrow/oArrow.yy",},},

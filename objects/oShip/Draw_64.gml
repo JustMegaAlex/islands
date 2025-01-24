@@ -1,0 +1,8 @@
+DebugDrawVar("")
+DebugDrawVar("")
+DebugDrawVar("wood", wood)
+DebugDrawVar("amber", amber)
+DebugDrawVar("buddies", array_length(crew.oBuddy))
+DebugDrawVar("archers", array_length(crew.oArcher))
+DebugDrawVar("")
+DebugDrawVar("")

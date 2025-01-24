@@ -36,6 +36,10 @@ if !is_structure {
     position.add(velocity)
 }
 
+if velocity.x != 0 {
+    image_xscale = image_xscale_start * sign(velocity.x)
+}
+
 x = position.x
 y = position.y
 
