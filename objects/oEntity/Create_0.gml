@@ -19,7 +19,7 @@ enum EntitySide {
 }
 
 hp_max = 1
-hp = 1
+hp = hp_max
 
 side = EntitySide.nature
 friendly_with = EntitySide.nature // bitwise mask
@@ -55,6 +55,8 @@ enemy_detection_range = 1000
 attack_damage = 1
 wood = 0
 amber = 0
+
+protection_aura = false
 
 instances_list = ds_list_create() /// helper list for _collision_list functions
 
@@ -119,7 +121,7 @@ function Hit(id) {
     if id.object_index == oCannonCore and is_flying {
         return
     }
-    hp -= id.attack_damage
+    hp -= id.attack_damage * (protection_aura ? 0.5 : 1)
 }
 
 function Die() {
@@ -170,8 +172,13 @@ function ShootAnArrow() {
                           { shooter: id, target: attack_target })
 }
 
+function Heal(amount) {
+    hp = min(hp + amount, hp_max)
+}
+
 SpecialAttack = undefined
 
 alarm[0] = 1
 
 //AttachToIsland()
+

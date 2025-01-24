@@ -27,3 +27,12 @@ if marked_for_mining {
 if is_structure and build_timer.timer {
     draw_text(x, y, int64(build_timer.timer / 60))
 }
+
+if hp < hp_max {
+    draw_set_color(c_red)
+    draw_line_width(x - 30, y - 40, x + 30, y - 40, 2)
+    draw_set_color(c_aqua)
+    var len = (hp / hp_max) * 60
+    draw_line_width(x - 30, y - 40, x - 30 + len, y - 40, 2)
+    draw_set_color(c_white)
+}

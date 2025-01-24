@@ -47,13 +47,40 @@ ds_list_clear(drop_crew_marks)
 ds_list_clear(crew_instances)
 ds_list_clear(collectibles)
 
+var entities = undefined
 if amber_wrath_timer.timer > 0 {
     if !amber_wrath_timer.update() {
         sp_max = sp_initial
     }
-    var entities = EntitiesInCircle(x, y, 100, function(ent) { return ent.object_index != oShip })
+    entities = EntitiesInCircle(x, y, 100, function(ent) { return ent.object_index != oShip })
     for (var i = 0; i < array_length(entities); ++i) {
         var ent = entities[i]
         ent.Hit(amber_wrath_struct)
+    }
+}
+
+if heal_aura_timer.timer > 0 {
+    if heal_aura_timer.update() {
+        entities = entities ?? EntitiesInCircle(x, y, 100)
+        for (var i = 0; i < array_length(entities); ++i) {
+            var ent = entities[i]
+            if !IsCrew(ent) and ent.object_index == oShip {
+                continue
+            }
+            ent.Heal(ent.hp_max / 180)
+        }
+    }
+}
+
+if protection_aura_timer.timer > 0 {
+    if protection_aura_timer.update() {
+        entities = entities ?? EntitiesInCircle(x, y, 100)
+        for (var i = 0; i < array_length(entities); ++i) {
+            var ent = entities[i]
+            if !IsCrew(ent) and ent.object_index == oShip {
+                continue
+            }
+            ent.protection_aura = true
+        }
     }
 }

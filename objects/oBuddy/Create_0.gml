@@ -13,6 +13,6 @@ default_rect.set(20, 70)
 is_creature = true
 is_miner = true
 
-hp_max = 2
+hp_max = 4
 sp_max = 2
 attack_damage = 1

@@ -17,6 +17,10 @@ amber_wrath_struct = {
     attack_damage: 0.5,
     object_index: noone,
 }
+heal_aura_timer = MakeTimer(300, 0)
+protection_aura_timer = MakeTimer(300, 0)
+heal_aura_radius = 200
+protection_aura_radius = 200
 frame = 0
 
 wood = global.ship_starting_wood

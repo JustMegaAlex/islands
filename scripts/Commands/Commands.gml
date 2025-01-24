@@ -232,6 +232,7 @@ function CommandSkipTut() constructor {
         with oUIButtonParent {
             Show()
         }
+		oUIButtonRetry.Hide()
 		//show_debug_message("UI activated!")
 		instance_destroy(oUIButtonSkipTut)
 		oControl.active_ui = noone
@@ -243,6 +244,22 @@ function CommandAmberWrath() constructor {
     __define_methods()
     activate = function() {
         oShip.amber_wrath_timer.reset()
+    }
+}
+
+function CommandHealAura() constructor {
+    self.sprite = noone
+    __define_methods()
+    activate = function() {
+        oShip.heal_aura_timer.reset()
+    }
+}
+
+function CommandProtectionAura() constructor {
+    self.sprite = noone
+    __define_methods()
+    activate = function() {
+        oShip.protection_aura_timer.reset()
     }
 }
 

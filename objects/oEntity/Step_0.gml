@@ -140,3 +140,5 @@ if attack_target {
          ai_random_walk_timer.reset()
     }
 }
+
+protection_aura = false
