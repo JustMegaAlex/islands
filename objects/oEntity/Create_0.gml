@@ -53,7 +53,8 @@ ai_random_walk_time_randomer = irandomer(2 * 60, 4 * 60)
 attack_distance = 50
 enemy_detection_range = 1000
 attack_damage = 1
-resource_type = noone
+wood = 0
+amber = 0
 
 instances_list = ds_list_create() /// helper list for _collision_list functions
 

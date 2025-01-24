@@ -9,9 +9,9 @@ side = EntitySide.theirs
 default_color = c_black
 default_rect.set(30, 50)
 
-is_creature = true
 is_fighter = true
-is_swimmer = true
+is_structure = true
+is_resourse = true
 
 ai_random_walk = true
 

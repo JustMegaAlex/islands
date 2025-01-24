@@ -1,5 +1,16 @@
 if is_resource {
-	instance_create_layer(x, y, "Instances", resource_type)
+    repeat wood {
+        instance_create_layer(
+            x + random_range(-50, 50),
+            y + random_range(-50, 50),
+            "Instances", oCollectibleWood)
+    }
+    repeat amber {
+        instance_create_layer(
+            x + random_range(-50, 50),
+            y + random_range(-50, 50),
+            "Instances", oCollectibleAmber)
+    }
 }
 
 if island {

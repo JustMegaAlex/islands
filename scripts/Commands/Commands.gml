@@ -238,3 +238,11 @@ function CommandSkipTut() constructor {
     }
 }
 
+
+function CommandTryAgain() constructor {
+    self.sprite = noone
+    __define_methods()
+    activate = function() {
+		Restart()
+    }
+}

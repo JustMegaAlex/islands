@@ -33,6 +33,12 @@ function DropCrew(crew_type, xx, yy) {
     inst.move_target.set(xx, yy)
 }
 
+function Die() {
+    visible = false
+    with oUIButtonParent { Hide()}
+    oUIButtonRetry.Show()
+}
+
 crew = {
     oBuddy: [],
     oArcherBuddy: [],
