@@ -221,3 +221,17 @@ function CommandTowerDropCrew(tower) constructor {
 
     press = tower.DropCrew
 }
+
+function CommandSkipTut() constructor {
+    self.sprite = noone
+    __define_methods()
+    activate = function() {
+        oGen.gen_enabled = true
+        layer_destroy("TutTriggers")
+        layer_destroy("Tutorial")
+        instance_activate_object(oUIButtonParent)
+		instance_destroy(oUIButtonSkipTut)
+		oControl.active_ui = noone
+    }
+}
+

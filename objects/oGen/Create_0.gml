@@ -4,6 +4,8 @@ _debug_corner_cells = []
 grid_w = 100
 grid_h = 100
 
+gen_enabled = false
+
 grid_area_size = 3000
 x0 = oShip.x - grid_w * grid_area_size / 2
 y0 = oShip.y - grid_h * grid_area_size / 2

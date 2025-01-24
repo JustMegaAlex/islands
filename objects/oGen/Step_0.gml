@@ -1,4 +1,8 @@
 
+if !gen_enabled {
+    exit
+}
+
 //// Dynamic grid gen
 UpdateShipGridPos()
 

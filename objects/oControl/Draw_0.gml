@@ -1,4 +1,8 @@
 
+if active_ui and !instance_exists(active_ui) {
+	active_ui = noone
+}
+
 if is_ship_navigating {
     draw_sprite(sUINavigateArrow, 0, oShip.move_target.x, oShip.move_target.y)
 }
