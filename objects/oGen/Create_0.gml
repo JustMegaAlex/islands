@@ -26,32 +26,6 @@ emerge_timer = MakeTimer(global.gen_emerge_secs * sec)
 emerge_spawn_crawlps = 0
 enemy_spawners_max_per_cell = 2
 
-//// Initialize generators
-gen_enemy_spawners = global.gen_enemy_spawners
-cell_generators = ds_list_create()
-island_generators = ds_list_create()
-enemy_generators = ds_list_create()
-settlement_generators = ds_list_create()
-cell_generators_config = {
-    n1: new Cell(5),
-    n3: new Cell(4),
-    n8: new Cell(2),
-    n4: new Cell(1),
-    n2: new Cell(0),
-}
-islands_config = {
-    n5: new Island(0, 1),
-    n5: new Island(1, 0),
-    n8: new Island(2, 1),
-    n3: new Island(5, 1),
-    n1: new Island(8, 1),
-    n1: new Island(12, 0),
-    n1: new Island(2, 4),
-}
-enemy_generate_chance = 0.3
-settlement_generate_chance = 0.2
-cells_config_count = 0
-islands_config_count = 0
 
 function Island(trees, amber, enemy_spawners=0) constructor {
     self.trees = irandom_range(trees, trees * 1.5)
@@ -194,6 +168,34 @@ function Area(i, j) constructor {
     self.generated = false
     self.just_generated = true
 }
+
+//// Initialize generators
+gen_enemy_spawners = global.gen_enemy_spawners
+cell_generators = ds_list_create()
+island_generators = ds_list_create()
+enemy_generators = ds_list_create()
+settlement_generators = ds_list_create()
+cell_generators_config = {
+    n1: new Cell(5),
+    n3: new Cell(4),
+    n8: new Cell(2),
+    n4: new Cell(1),
+    n2: new Cell(0),
+}
+islands_config = {
+    n5: new Island(0, 1),
+    n5: new Island(1, 0),
+    n8: new Island(2, 1),
+    n3: new Island(5, 1),
+    n1: new Island(8, 1),
+    n1: new Island(12, 0),
+    n1: new Island(2, 4),
+}
+enemy_generate_chance = 0.3
+settlement_generate_chance = 0.2
+cells_config_count = 0
+islands_config_count = 0
+
 
 function FillListFromConfig(list, config) {
     var keys = variable_struct_get_names(config)
