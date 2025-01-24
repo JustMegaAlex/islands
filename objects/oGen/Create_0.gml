@@ -24,7 +24,9 @@ var sec = 60
 emerging_level = 0
 emerge_timer = MakeTimer(global.gen_emerge_secs * sec)
 emerge_spawn_crawlps = 0
+emerge_resource_gain = 0.1
 enemy_spawners_max_per_cell = 2
+resource_multiplier = 1
 
 
 function Island(trees, amber, enemy_spawners=0) constructor {
@@ -98,8 +100,8 @@ function Cell(
             self.enemy_spawners--
         }
 
-        GenerateItems(isle, gen.trees, oTree)
-        GenerateItems(isle, gen.amber, oAmber)
+        GenerateItems(isle, gen.trees * oGen.resource_multiplier, oTree)
+        GenerateItems(isle, gen.amber * oGen.resource_multiplier, oAmber)
     }
 
     run = function(i, j) {
@@ -110,27 +112,15 @@ function Cell(
         var area = oGen.grid[# i, j]
         repeat(self.islands_count) {
 
-            var add_settlement = oGen.settlement_generators[| 0]
-            ds_list_delete(oGen.settlement_generators, 0)
-            if ds_list_empty(oGen.settlement_generators) with oGen {
-                FillListByProbability(settlement_generators, settlement_generate_chance, 20)
-            }
-            var enemy_flag = oGen.enemy_generators[| 0]
-            ds_list_delete(oGen.enemy_generators, 0)
-            if ds_list_empty(oGen.enemy_generators) with oGen {
-                FillListByProbability(enemy_generators, enemy_generate_chance, 20)
-            }
-
-            var island_gen = oGen.island_generators[| 0]
-            ds_list_delete(oGen.island_generators, 0)
-            if ds_list_empty(oGen.island_generators) with oGen {
-                FillListFromConfig(island_generators, islands_config)
-            }
+            var add_settlement = oGen.settlement_generators.get_auto()
+            var enemy_flag = oGen.enemy_generators.get_auto()
+            var island_gen = oGen.island_generators.get_auto()
 
             var xx = self.posx_randomer()
             var yy = self.posy_randomer()
             var size_mult = 1 + random(1)
-            var size = (1 + (island_gen.trees + island_gen.amber) * 2) * size_mult
+            var resource_factor = (island_gen.trees + island_gen.amber) * 2 * oGen.resource_multiplier
+            var size = (1 + resource_factor) * size_mult
             var _sqrt = sqrt(size)
             var spread = max(0, _sqrt - 3)
             var scalex = max(1, round(_sqrt) - irandom_range(-spread, spread))
@@ -138,10 +128,6 @@ function Cell(
             var isle = instance_create_layer(xx, yy, "Bottom", oIsland)
             isle.image_xscale = scalex
             isle.image_yscale = scaley
-
-            if scalex == 1 and scaley > 2 {
-                var test = true
-            }
 
             self.FixIslandPlacement(isle)
             self.FillIsland(isle, island_gen, add_settlement)
@@ -171,10 +157,6 @@ function Area(i, j) constructor {
 
 //// Initialize generators
 gen_enemy_spawners = global.gen_enemy_spawners
-cell_generators = ds_list_create()
-island_generators = ds_list_create()
-enemy_generators = ds_list_create()
-settlement_generators = ds_list_create()
 cell_generators_config = {
     n1: new Cell(5),
     n3: new Cell(4),
@@ -193,40 +175,81 @@ islands_config = {
 }
 enemy_generate_chance = 0.3
 settlement_generate_chance = 0.2
-cells_config_count = 0
-islands_config_count = 0
+
+cell_generators = new RandomerFromConfig(cell_generators_config)
+island_generators = new RandomerFromConfig(islands_config)
+enemy_generators = new RandomerByProbability(0.3, 20)
+settlement_generators = new RandomerByProbability(0.2, 20)
 
 
-function FillListFromConfig(list, config) {
-    var keys = variable_struct_get_names(config)
-    var count = 0
-    for (var i = 0; i < array_length(keys); ++i) {
-        var key = keys[i]
-        var num = real(string_copy(key, 2, 4))
-        var item = config[$ key]
-        repeat(num) { ds_list_add(list, item) }
-        count += num
+function RandomerFromConfig(config) constructor {
+    self.config = config
+    self.list = ds_list_create()
+    self.count = 0
+
+    init = function() {
+        var keys = variable_struct_get_names(config)
+        count = 0
+        for (var i = 0; i < array_length(keys); ++i) {
+            var key = keys[i]
+            var num = real(string_copy(key, 2, 4))
+            var item = config[$ key]
+            repeat(num) { ds_list_add(list, item) }
+            count += num
+        }
+        ds_list_shuffle(list)
+        return count
     }
-    ds_list_shuffle(list)
-    return count
+    self.init()
+
+    get = function() {
+        var value = list[| 0]
+        ds_list_delete(list, 0)
+        return value
+    }
+
+    get_auto = function() {
+        if empty() {
+            init()
+        }
+        return get()
+    }
+
+    empty = function() {
+        return ds_list_empty(list)
+    }
 }
 
-function FillListByProbability(list, probability, total) {
-    ds_list_set(list, total - 1, false)
-    for (var i = 0; i < probability * total; ++i) {
-        list[| i] = true
-    }
-    ds_list_shuffle(list)
-}
+function RandomerByProbability(probability, total) constructor {
+    self.list = ds_list_create()
+    self.count = 0
+    self.total = total
+    self.probability = probability
 
-function InitAllGenerators() {
-    cells_config_count = FillListFromConfig(cell_generators, cell_generators_config)
-    islands_config_count = FillListFromConfig(island_generators, islands_config)
-    if ds_list_empty(enemy_generators) {    
-        FillListByProbability(enemy_generators, enemy_generate_chance, 20)
+    init = function() {
+        ds_list_set(list, total - 1, false)
+        for (var i = 0; i < probability * total; ++i) {
+            list[| i] = true
+        }
+        ds_list_shuffle(list)
     }
-    if ds_list_empty(settlement_generators) {
-        FillListByProbability(settlement_generators, settlement_generate_chance, 20)
+    self.init()
+
+    get = function() {
+        var value = list[| 0]
+        ds_list_delete(list, 0)
+        return value
+    }
+
+    get_auto = function() {
+        if empty() {
+            init()
+        }
+        return get()
+    }
+
+    empty = function() {
+        return ds_list_empty(list)
     }
 }
 
@@ -242,6 +265,9 @@ function Emerge() {
     }
     switch (emerging_level) {
         case 1: break
+    }
+    if emerging_level > 4 {
+        resource_multiplier += emerge_resource_gain
     }
 }
 
@@ -266,12 +292,7 @@ function GenerateArea(i, j) {
     if (area.generated) { return }
     array_push(generated_areas, area)
     area.generated = true
-    oGen.cell_generators[| 0].run(i, j)
-    ds_list_delete(cell_generators, 0)
-    if ds_list_empty(cell_generators) {
-        show_debug_message("Generators are empty, reinitializing")
-        FillListFromConfig(cell_generators, cell_generators_config)
-    }
+    oGen.cell_generators.get_auto().run(i, j)
 }
 
 function UpdateShipGridPos() {
@@ -293,6 +314,3 @@ function RectAreaCount(area, obj) {
 }
 
 show_debug_message($"ship_grid_pos: {ship_grid_pos.x}, {ship_grid_pos.y}, ship_grid_pos_prev: {ship_grid_pos_prev.x}, {ship_grid_pos_prev.y}")
-
-InitAllGenerators()
-var test = true
