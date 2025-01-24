@@ -6,7 +6,9 @@
   ],
   "managed":true,
   "name":"oUIButtonDrop",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUIButtonParent","path":"objects/oUIButtonParent/oUIButtonParent.yy",},"propertyId":{"name":"icon_sprite","path":"objects/oUIButtonParent/oUIButtonParent.yy",},"resource":{"name":"sUIIconDrop","path":"sprites/sUIIconDrop/sUIIconDrop.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sUIIconDrop",},
+  ],
   "parent":{
     "name":"UI",
     "path":"folders/Objects/UI.yy",
@@ -28,7 +30,11 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v1","%Name":"crew_type","filters":[
+        "GMObject",
+      ],"listItems":[],"multiselect":false,"name":"crew_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"oBuddy","path":"objects/oBuddy/oBuddy.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"oBuddy","varType":5,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

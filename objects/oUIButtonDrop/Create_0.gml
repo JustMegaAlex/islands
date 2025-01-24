@@ -1,6 +1,4 @@
 
 event_inherited()
 
-command = new CommandDropCrew("oBuddy")
-
-icon_sprite = sUIIconDrop
+command = new CommandDropCrew(object_get_name(crew_type))
