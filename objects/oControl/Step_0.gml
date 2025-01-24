@@ -1,33 +1,56 @@
 
+
+
 if oInput.Pressed("rclick") {
-    oShip.move_target.set(mouse_x, mouse_y)
-    is_ship_navigating = true
+    rclick_pressed_timer.reset()
+    crew_select_box.x0 = mouse_x
+    crew_select_box.y0 = mouse_y
 }
 
-if !active_ui and oInput.Pressed("lclick") {
-    /// Destroy a mark, mark crew to pick up, or nivagate the ship
-    var mark = MouseCollision(oUIMarkDrop)
-    if mark {
-        instance_destroy(mark)
-    } else {
+if oInput.Pressed("lclick") {
+    lclick_pressed_timer.reset()
+    resource_select_box.x0 = mouse_x
+    resource_select_box.y0 = mouse_y
+}
+
+var rclick_pressed = false
+if oInput.Released("rclick") {
+    rclick_pressed = !rclick_pressed_timer.update()
+    crew_select_box.enabled = false
+}
+
+
+var lclick_pressed = false
+if oInput.Released("lclick") {
+    lclick_pressed = !lclick_pressed_timer.update()
+    resource_select_box.enabled = false
+}
+
+if rclick_pressed_timer.timer < 0 and oInput.Hold("rclick") {
+    crew_select_box.enabled = true
+    crew_select_box.x1 = mouse_x
+    crew_select_box.y1 = mouse_y
+}
+
+if !active_ui and lclick_pressed_timer.timer < 0 and oInput.Hold("lclick") {
+    resource_select_box.enabled = true
+    resource_select_box.x1 = mouse_x
+    resource_select_box.y1 = mouse_y
+}
+
+if rclick_pressed {
+    if oInput.Hold("alter") {
         MouseCollisionInstances(
             function(inst) {
                 if IsCrew(inst) {
                     inst.marked_for_pickup = !inst.marked_for_pickup; return true}
-                if inst.is_resource {
-                    inst.marked_for_mining = !inst.marked_for_mining; return true}
-				if inst.object_index == oBuildingGuardTower {
-					inst.MarkForCrew()}
-                return false
             }
         )
+    } else {
+        oShip.move_target.set(mouse_x, mouse_y)
+        is_ship_navigating = true
     }
 }
-
-if is_ship_navigating {
-    is_ship_navigating = oShip.IsMoving()
-}
-
 
 
 ///// UI
@@ -58,6 +81,7 @@ if active_ui and !clicked_on_ui {
     }
 }
 
+//// Check for map buttons
 if !_ui {
     _ui = collision_point(mouse_x, mouse_y, oUIMapButtonParent, false, false)
     if _ui {
@@ -69,6 +93,30 @@ if !_ui {
         }
     }
 }
+
+
+if !active_ui and lclick_pressed {
+    /// Destroy a mark, mark crew to pick up, or nivagate the ship
+    var mark = MouseCollision(oUIMarkDrop)
+    if mark {
+        instance_destroy(mark)
+    } else {
+        MouseCollisionInstances(
+            function(inst) {
+                if inst.is_resource {
+                    inst.marked_for_mining = !inst.marked_for_mining; return true}
+				if inst.object_index == oBuildingGuardTower {
+					inst.MarkForCrew()}
+                return false
+            }
+        )
+    }
+}
+
+if is_ship_navigating {
+    is_ship_navigating = oShip.IsMoving()
+}
+
 
 if oInput.Pressed("escape") and active_ui {
     active_ui.command.deactivate()

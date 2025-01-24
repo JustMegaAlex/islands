@@ -149,6 +149,7 @@ mapping_config = {
            new Gamepad(gp_padl), new GamepadAxis(gp_axislh, -1, 0.25)],
     right: [new Key(vk_right), new Key(ord("D")),
             new Gamepad(gp_padr), new GamepadAxis(gp_axislh, 1, 0.25)],
+    alter: [new Key(vk_lshift), new Key(vk_rshift)],
     up: [new Key(vk_up), new Key(ord("W")), new Gamepad(gp_padu)],
     down: [new Key(vk_down), new Key(ord("S")), new Gamepad(gp_padd)],
     lclick: [new Mouse(mb_left), new Gamepad(gp_face1)],

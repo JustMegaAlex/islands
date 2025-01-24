@@ -7,6 +7,15 @@ active_ui = noone
 
 collision_list = ds_list_create()
 
+rclick_pressed_timer = MakeTimer(10)
+lclick_pressed_timer = MakeTimer(10)
+crew_select_box = {
+    x0: 0, y0: 0, x1: 0, y1: 0, enabled: false
+}
+resource_select_box = {
+    x0: 0, y0: 0, x1: 0, y1: 0, enabled: false
+}
+
 function MouseCollisionInstances(fun) {
     var count = collision_point_list(
         mouse_x, mouse_y, oEntity, false, false, collision_list, false)
