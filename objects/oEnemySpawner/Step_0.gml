@@ -14,17 +14,24 @@ if !check_timer.update() {
 }
 
 if enemy_nearby and !spawn_timer.update() {
+    is_spawning = true
+}
+
+if is_spawning and !between_spawns_timer.update() {
     if !instance_exists(enemy_nearby) {
         enemy_nearby = noone
     } else {
-        repeat spawn_number {
+        if spawn_number-- {
             var inst = instance_create_layer(
                 x - 300 + random(600),
                 y - 300 + random(600),
                 "Instances", oEnemyCrawlp)
             inst.move_target.setv(enemy_nearby.position)
+            between_spawns_timer.reset()
+        } else {
+            spawn_timer.reset()
+            is_spawning = false
+            instance_destroy() // one time
         }
-        spawn_timer.reset()
-        instance_destroy()
     }
 }
