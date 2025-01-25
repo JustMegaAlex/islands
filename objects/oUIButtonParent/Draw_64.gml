@@ -1,6 +1,6 @@
 
 
-var img = min(mouse_over + active * 2, 2)
+var img = min(mouse_over + command.active * 2, 2)
 if !command.available() {
     img = 3
 }

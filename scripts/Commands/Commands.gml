@@ -1,5 +1,6 @@
 
 function __define_methods() {
+    active = false
     activate = function() {
         active = true
     }

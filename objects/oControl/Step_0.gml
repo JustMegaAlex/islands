@@ -7,6 +7,10 @@ if oInput.Pressed("rclick") {
     rclick_pressed_timer.reset()
     crew_select_box.x0 = mouse_x
     crew_select_box.y0 = mouse_y
+    if active_ui {
+        active_ui.command.deactivate()
+        active_ui = noone
+    }
 }
 
 if oInput.Pressed("lclick") {
