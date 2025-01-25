@@ -154,6 +154,16 @@ function Vec2(xx, yy, is_polar=false) constructor {
         return point_direction(x, y, vec.x, vec.y)
     }
 
+    clamp_coords = function(x0, x1, y0, y1) {
+        x = clamp(x, x0, x1)
+        y = clamp(y, y0, y1)
+        return self
+    }
+
+    clamp_coords_ = function(x0, x1, y0, y1) {
+        return new Vec2(clamp(x, x0, x1), clamp(y, y0, y1))
+    }
+
 	if is_polar == true
 		self.set_polar(xx, yy)
 }

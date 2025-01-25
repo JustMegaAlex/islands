@@ -6,6 +6,11 @@ active = false
 hidden = false
 name = ""
 
+function Deactivate() {
+    active = false
+    command.deactivate()
+}
+
 function Hide() {
     hidden = true
     x = -1000

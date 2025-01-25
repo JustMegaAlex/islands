@@ -3,6 +3,7 @@ function __define_methods() {
     active = false
     amber_cost = 0
     wood_cost = 0
+    step = function() {}
     activate = function() {
         active = true
     }
@@ -32,17 +33,55 @@ function CommandTemplate() constructor {
 function CommandDropCrew(crew_type) constructor {
     self.crew_type = crew_type
     self.sprite = sUIMarkDrop
-    self.mosue_over_island = false
+    self.mouse_over_island = false
+    self.isle = false
+    self.drag_start = new Vec2(0, 0)
+    self.spawn_vec = new Vec2(0, 0)
+    self.amount_to_drop = 0
+    self.amount_per_square_pixel = 1 / (sqr(40) * pi)
+    self.drag_radius = 0
+    self.check_hold_aux = 0
     __define_methods()
 
+    step = function() { 
+        self.check_hold_aux--
+        if self.check_hold_aux < -1 {
+            self.drag_radius = 0
+        }
+    }
+    deactivate = function() {
+        self.isle = false
+        self.amount_to_drop = 0
+        self.drag_radius = 0
+        self.active = false
+    }
+    activate = function() {
+        self.active = true
+        self.isle = false
+        self.amount_to_drop = 0
+        self.drag_radius = 0
+    }
     draw = function() {
+        if self.drag_radius > 20 {
+            draw_text(self.drag_start.x, self.drag_start.y, self.amount_to_drop)
+            draw_circle(self.drag_start.x, self.drag_start.y, self.drag_radius, true)
+        }
         if !sprite_exists(self.sprite)
-                or !self.mosue_over_island { return }
+                or !self.mouse_over_island { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
     }
     press = function() {
-        self.mosue_over_island = collision_point(mouse_x, mouse_y, oIsland, false, false)
-        if !self.mosue_over_island {
+        self.check_hold_aux = 0
+        self.isle = collision_point(mouse_x, mouse_y, oIsland, false, false)
+        self.drag_start.set(mouse_x, mouse_y)
+    }
+    hold = function() {
+        self.check_hold_aux++
+        self.drag_radius = point_distance(self.drag_start.x, self.drag_start.y, mouse_x, mouse_y)
+        self.amount_to_drop = self.amount_per_square_pixel * sqr(self.drag_radius) * pi
+    }
+    release = function() {
+        if !self.isle {
             return
         }
         var crew_left = array_length(oShip.crew[$ self.crew_type])
@@ -50,13 +89,17 @@ function CommandDropCrew(crew_type) constructor {
         with oUIMarkDrop {
             crew_commanded_to_drop += crew_type == other.crew_type
         }
-        if crew_left > crew_commanded_to_drop {
-            var mark = instance_create_layer(mouse_x, mouse_y, "Instances", oUIMarkDrop)
+        self.amount_to_drop = max(1, self.amount_to_drop)
+        repeat min(self.amount_to_drop, crew_left - crew_commanded_to_drop) {
+            self.spawn_vec.setv(self.drag_start)
+                          .add_polar(random(self.drag_radius*0.8), random(360))
+                          .clamp_coords(self.isle.bbox_left, self.isle.bbox_right, self.isle.bbox_top, self.isle.bbox_bottom)
+            var mark = instance_create_layer(self.spawn_vec.x, self.spawn_vec.y, "Instances", oUIMarkDrop)
             mark.crew_type = self.crew_type
         }
+        self.isle = noone
+        self.drag_radius = 0
     }
-    hold = function() {}
-    release = function() {}
 }
 
 function CommandCannon() constructor {

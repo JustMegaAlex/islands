@@ -1,15 +1,21 @@
 
 
+if active_ui != noone and !instance_exists(active_ui) {
+	active_ui = noone
+}
+
 rclick_pressed_timer.update()
 lclick_pressed_timer.update()
 
+var rclick_canceled_ui = false
 if oInput.Pressed("rclick") {
     rclick_pressed_timer.reset()
     crew_select_box.x0 = mouse_x
     crew_select_box.y0 = mouse_y
     if active_ui {
-        active_ui.command.deactivate()
+        active_ui.Deactivate()
         active_ui = noone
+        rclick_canceled_ui = true
     }
 }
 
@@ -69,18 +75,9 @@ if !active_ui and lclick_pressed_timer.timer <= 0 and oInput.Hold("lclick") {
     resource_select_box.y1 = mouse_y
 }
 
-if rclick_pressed {
-    if oInput.Hold("alter") {
-        MouseCollisionInstances(
-            function(inst) {
-                if IsCrew(inst) {
-                    inst.marked_for_pickup = !inst.marked_for_pickup; return true}
-            }
-        )
-    } else {
-        oShip.move_target.set(mouse_x, mouse_y)
-        is_ship_navigating = true
-    }
+if rclick_pressed and !rclick_canceled_ui {
+    oShip.move_target.set(mouse_x, mouse_y)
+    is_ship_navigating = true
 }
 
 
@@ -95,7 +92,9 @@ if _ui {
             active_ui.command.deactivate()
         }
         _ui.command.activate()
-        active_ui = _ui
+		if instance_exists(_ui) {
+			active_ui = _ui
+		}
         clicked_on_ui = true
     }
 }
@@ -141,6 +140,8 @@ if !active_ui and lclick_pressed {
         )
     }
 }
+
+if active_ui { active_ui.command.step() }
 
 if is_ship_navigating {
     is_ship_navigating = oShip.IsMoving()
