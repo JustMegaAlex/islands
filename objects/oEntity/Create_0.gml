@@ -117,7 +117,7 @@ function FindAttackTarget() {
             break
         }
         if (inst.is_creature or inst.is_structure)
-                and IsEnemySide(inst) {
+                and IsEnemySide(inst) and CanAttack(inst) {
             _insertSorted(sorted_by_dist, inst, DistCompare.compare)
         }
     }

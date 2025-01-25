@@ -68,6 +68,10 @@ function IsEnemySide(inst) {
     return inst.side != side and !(side & inst.friendly_with) and !(friendly_with & inst.side)
 }
 
+function CanAttack(inst) {
+    return (inst.is_flying and is_shooter) or !inst.is_flying
+}
+
 function RandomPlaceRect(x0, y0, x1, y1, inst, avoid_object=noone, avoid_attempts=3) {
     var randx = irandomer(x0, x1)
     var randy = irandomer(y0, y1)
