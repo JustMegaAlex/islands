@@ -6,5 +6,6 @@ if place_meeting(x, y, oShip) {
 			Show()	
 		}
 	}
+	oUIUpgradeToArcher.Show()
     instance_destroy()
 }

@@ -49,4 +49,8 @@ if mouse_check_button(drag_button)
 	mouse_y_prev = mouse_y
 }
 
+if oInput.Pressed("camera_focus") {
+    CameraSetCentPos(oShip.x, oShip.y)
+}
+
 

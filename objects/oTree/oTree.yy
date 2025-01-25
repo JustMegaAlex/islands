@@ -11,8 +11,8 @@
   "name":"oTree",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/Objects/Entities.yy",
+    "name":"Resources",
+    "path":"folders/Objects/Entities/Resources.yy",
   },
   "parentObjectId":{
     "name":"oEntity",

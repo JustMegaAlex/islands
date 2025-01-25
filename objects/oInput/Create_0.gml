@@ -159,7 +159,8 @@ mapping_config = {
           new Gamepad(gp_face1), new Gamepad(gp_face2),
           new Gamepad(gp_padu), new Gamepad(gp_padd),
           new Gamepad(gp_padr), new Gamepad(gp_padl),
-    ]
+    ],
+    camera_focus: [new Key(ord("C"))],
 }
 
 //// Initialize key mapping
