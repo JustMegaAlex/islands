@@ -118,11 +118,11 @@ function Cell(
             var trade_point = oGen.trade_points_generators.get_auto()
             if trade_point {
                 if trade_point == oScroll and array_length(global.locked_abilities_low_tier) == 1 {
-                    trade_point_low_conf[0] = 0
+                    oGen.trade_point_low_conf[0] = 0
                     oGen.trade_points_generators.init()
                 }
                 if trade_point == oScrollHigh and array_length(global.locked_abilities_high_tier) == 1 {
-                    trade_point_high_conf[0] = 0
+                    oGen.trade_point_high_conf[0] = 0
                     oGen.trade_points_generators.init()
                 }
             }
@@ -313,6 +313,7 @@ function Emerge() {
     if emerging_level == 15 {
         array_push(trade_points_config, trade_point_high_conf)
         trade_points_generators.init()
+		var test = true
     }
 }
 
