@@ -94,3 +94,5 @@ if speed_boost_timer.update() {
 if repair_timer.update() {
     hp += repair_rate
 }
+
+OnBoardShooters()

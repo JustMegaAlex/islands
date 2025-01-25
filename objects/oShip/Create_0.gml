@@ -1,5 +1,8 @@
 event_inherited()
 
+side = EntitySide.ours
+friendly_with = EntitySide.ours & EntitySide.nature & EntitySide.neutral
+
 z = -200
 sp_max = global.ship_speed
 sp_initial = sp_max
@@ -30,6 +33,57 @@ frame = 0
 wood = global.ship_starting_wood
 amber = global.ship_starting_amber
 
+on_board_shooters = 0
+on_board_shooters_max = 3
+on_board_shooters_range = 600
+on_board_shooters_timer = MakeTimer(60, 0)
+on_board_shooters_shots_timer = MakeTimer(10, 0)
+take_shots = 0
+on_board_shooters_targets = []
+
+function ShootAnArrow(target) {
+    instance_create_layer(x, y + z, "Instances", oArrow, 
+                          { shooter: id, target: target })
+}
+
+function OnBoardShooters() {
+    if on_board_shooters == 0 {
+        return
+    }
+    if !on_board_shooters_timer.update() {
+		on_board_shooters_timer.reset()
+        take_shots = on_board_shooters
+    }
+    if take_shots {
+        if !on_board_shooters_shots_timer.update() {
+            ///// clean from dead bodies
+            for (var i = 0; i < array_length(on_board_shooters_targets); ++i) {
+                if !instance_exists(on_board_shooters_targets[i]) {
+                    array_delete(on_board_shooters_targets, i, 1)
+                    i--
+                }
+            }
+            ///// add up to max shooters
+            if array_length(on_board_shooters_targets) < on_board_shooters {
+                var targets = EntitiesInCircle(x, y, on_board_shooters_range,
+                                            function(inst) {
+                                                return IsEnemySide(inst)
+                                            })
+                if !ArrayEmpty(targets) repeat on_board_shooters - array_length(on_board_shooters_targets) {
+                    array_push(on_board_shooters_targets, ArrayChoose(targets))
+                }
+            }
+            ///// shoot
+            var size = array_length(on_board_shooters_targets)
+            if size {
+                take_shots--
+                on_board_shooters_shots_timer.reset()
+                ShootAnArrow(on_board_shooters_targets[min(size-1, take_shots)])
+            }
+        }
+    }
+}
+
 function AddBuddy() {
     var inst = instance_create_layer(x, y, "Instances",  oBuddy)
     LoadCrew(inst)
@@ -37,6 +91,8 @@ function AddBuddy() {
 }
 
 function LoadCrew(inst) {
+    on_board_shooters += inst.is_shooter * (on_board_shooters < on_board_shooters_max)
+    on_board_shooters_shots_timer.time = min(10, 40 / on_board_shooters)
     inst.DropStateAttributes()
     array_push(crew[$ object_get_name(inst.object_index)], inst)
     instance_deactivate_object(inst)
