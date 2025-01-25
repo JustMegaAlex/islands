@@ -107,9 +107,7 @@ if !_ui {
     if _ui {
         _ui.mouse_over = true
         if oInput.Pressed("lclick") {
-            if _ui.command.press() {
-                instance_destroy(_ui)
-            }
+            _ui.command.press()
         }
     }
 }

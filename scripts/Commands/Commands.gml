@@ -231,6 +231,7 @@ function CommandSkipTut() constructor {
 		//show_debug_message("UI activated!")
 		instance_destroy(oUIButtonSkipTut)
 		oControl.active_ui = noone
+        oControl.alarm[0] = 1
     }
 }
 

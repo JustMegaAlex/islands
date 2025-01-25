@@ -1,7 +1,12 @@
 
 
+var img = min(mouse_over + active * 2, 2)
+if !command.available() {
+    img = 3
+}
+
 draw_sprite_ext(
-    sprite_index, active or mouse_over,
+    sprite_index, img,
     x, y, image_xscale, image_yscale,
     image_angle, image_blend, image_alpha)
 

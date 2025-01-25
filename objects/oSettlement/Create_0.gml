@@ -9,14 +9,26 @@ info_text = $"One buddy for\n{wood_cost} wd\n{amber_cost} amb\n{amount} left"
 
 function Trade() {
     var pos = new Vec2(x, y)
-    pos.add_polar(200, random(360))
-    instance_create_layer(
+    pos.add_polar(100, random(360))
+    var buddy = instance_create_layer(
         pos.x,
         pos.y,
         "Instances",
         oBuddy)
+    var tries = 100
+    with buddy {
+        while !place_meeting(x, y, oIsland) {
+            x = other.x + irandom_range(-100, 100)
+            y = other.y + irandom_range(-100, 100)
+            if !--tries {
+                show_debug_message("oSettlement buddy create error: failed to place on an island")
+                instance_destroy()
+                exit
+            }
+        }
+    }
     if !--amount {
-        instance_destroy()
+        instance_destroy(button)
     }
 }
 
