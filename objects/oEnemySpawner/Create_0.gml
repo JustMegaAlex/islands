@@ -8,6 +8,7 @@ spawn_distance = 3000
 spawn_number = irandom_range(2, 4)
 side = EntitySide.theirs
 friendly_with = EntitySide.nature
+is_spawning = false
 
 enemy_nearby = noone
 
