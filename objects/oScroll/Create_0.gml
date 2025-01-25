@@ -27,6 +27,7 @@ info_text = $"{ability.name} for\n{amber_cost} amb"
 
 function Trade() {
     ability.Show()
+    ArrayRemove(abilities_array, ability)
 	instance_destroy(button)
     instance_destroy()
 }
