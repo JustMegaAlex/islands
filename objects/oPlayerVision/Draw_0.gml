@@ -1,4 +1,8 @@
 
+if !enabled {
+    exit
+}
+
 surface_resize(surf, CamW(), CamH())
 
 surface_set_target(surf)
@@ -13,9 +17,9 @@ if point_in_rectangle(
     var xx = oShip.x - CamX()
     var yy = oShip.y - CamY()
     gpu_set_blendmode(bm_subtract)
-    draw_circle(xx, yy, vision_range, false)
+    draw_circle(xx, yy, vision_range * 0.8, false)
     draw_set_alpha(0.5)
-    draw_circle(xx, yy, vision_range * 1.25, false)
+    draw_circle(xx, yy, vision_range, false)
     draw_set_alpha(1)
     gpu_set_blendmode(bm_normal)
 }

@@ -1,3 +1,4 @@
 
 surf = surface_create(CamW(), CamH())
-vision_range = 1500
+vision_range = 1800
+enabled = true

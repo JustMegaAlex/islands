@@ -87,7 +87,15 @@ function Cell(
 
     FillIsland = function(isle, gen, trade_point) {
         if trade_point {
-            GenerateItems(isle, 1, trade_point)
+            if object_exists(trade_point) {
+                GenerateItems(isle, 1, trade_point)
+            } else {
+                var gap = 20
+                RandomPlaceRect(
+                    isle.bbox_left + gap, isle.bbox_top + gap,
+                    isle.bbox_right - gap, isle.bbox_bottom - gap,
+                    trade_point)
+            }
         }
 
         if gen.enemy_spawners {
@@ -116,16 +124,24 @@ function Cell(
         repeat(self.islands_count) {
 
             var trade_point = oGen.trade_points_generators.get_auto()
-            if trade_point {
-                if trade_point == oScroll and array_length(global.locked_abilities_low_tier) == 1 {
-                    oGen.trade_point_low_conf[0] = 0
-                    oGen.trade_points_generators.init()
-                }
-                if trade_point == oScrollHigh and array_length(global.locked_abilities_high_tier) == 1 {
-                    oGen.trade_point_high_conf[0] = 0
-                    oGen.trade_points_generators.init()
-                }
-            }
+            // if trade_point {
+            //     if trade_point == oScroll and array_length(global.locked_abilities_low_tier) == 1 {
+            //         if !ArrayEmpty(global.unseen_low_scrolls) {
+            //             trade_point = ArrayChoose(global.unseen_low_scrolls)
+            //         } else {
+	        //             oGen.trade_point_low_conf[0] = 0
+	        //             oGen.trade_points_generators.init()
+			// 		}
+            //     }
+            //     if trade_point == oScrollHigh and array_length(global.locked_abilities_high_tier) == 1 {
+            //         if !ArrayEmpty(global.unseen_high_scrolls) {
+            //             trade_point = ArrayChoose(global.unseen_high_scrolls)
+            //         } else {
+	        //             oGen.trade_point_high_conf[0] = 0
+	        //             oGen.trade_points_generators.init()
+			// 		}
+            //     }
+            // }
             var enemy_flag = oGen.enemy_generators.get_auto()
             var island_gen = oGen.island_generators.get_auto()
 

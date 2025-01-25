@@ -68,29 +68,36 @@ function IsEnemySide(inst) {
     return inst.side != side and !(side & inst.friendly_with) and !(friendly_with & inst.side)
 }
 
-function RandomSpawnRect(x0, y0, x1, y1, num, obj, avoid_object=noone, avoid_attempts=3) {
+function RandomPlaceRect(x0, y0, x1, y1, inst, avoid_object=noone, avoid_attempts=3) {
     var randx = irandomer(x0, x1)
     var randy = irandomer(y0, y1)
-    var avoided = false
-    repeat(num) {
-        var inst = instance_create_layer(randx(), randy(), "Instances", obj)
-        if (avoid_object) {
-            avoided = false
-            with inst {
-                repeat avoid_attempts {
-                    if !place_meeting(x, y, avoid_object) {
-                        avoided = true
-                        break
-                    }
-                    x = randx()
-                    y = randy()
+    with inst {
+        x = randx()
+        y = randy()
+		if (avoid_object) {
+            repeat avoid_attempts {
+                if !place_meeting(x, y, avoid_object) {
+                    return true
                 }
-                if !avoided {
-                    instance_destroy()
-                }
+                x = randx()
+                y = randy()
             }
+            return false
         }
     }
+    return true
+}
+
+function RandomSpawnRect(x0, y0, x1, y1, num, obj, avoid_object=noone, avoid_attempts=3) {
+    var failed = 0
+    repeat(num) {
+        var inst = instance_create_layer(0, 0, "Instances", obj)
+        if !RandomPlaceRect(x0, y0, x1, y1, inst, avoid_object, avoid_attempts) {
+            instance_destroy(inst)
+            failed++
+        }
+    }
+    return failed
 }
 
 function RectInstanceCount(x0, y0, x1, y1, obj) {

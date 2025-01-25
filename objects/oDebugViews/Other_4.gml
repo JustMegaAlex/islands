@@ -13,3 +13,7 @@ DebugViewAddRefs(oShip, [
     ["wood", dbg_text_input, "wood", "f"],
     ["amber", dbg_text_input, "amber", "f"],
 ])
+
+DebugViewAddRefs(oPlayerVision, [
+    ["enabled", dbg_checkbox],
+])
