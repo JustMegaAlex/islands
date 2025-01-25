@@ -85,9 +85,9 @@ function Cell(
         }
     }
 
-    FillIsland = function(isle, gen, add_settlement=false) {
-        if add_settlement {
-            GenerateItems(isle, 1, oSettlement)
+    FillIsland = function(isle, gen, trade_point) {
+        if trade_point {
+            GenerateItems(isle, 1, trade_point)
         }
 
         if gen.enemy_spawners {
@@ -115,7 +115,17 @@ function Cell(
         var area = oGen.grid[# i, j]
         repeat(self.islands_count) {
 
-            var add_settlement = oGen.settlement_generators.get_auto()
+            var trade_point = oGen.trade_points_generators.get_auto()
+            if trade_point {
+                if trade_point == oScroll and array_length(global.locked_abilities_low_tier) == 1 {
+                    trade_point_low_conf[0] = 0
+                    oGen.trade_points_generators.init()
+                }
+                if trade_point == oScrollHigh and array_length(global.locked_abilities_high_tier) == 1 {
+                    trade_point_high_conf[0] = 0
+                    oGen.trade_points_generators.init()
+                }
+            }
             var enemy_flag = oGen.enemy_generators.get_auto()
             var island_gen = oGen.island_generators.get_auto()
 
@@ -133,7 +143,7 @@ function Cell(
             isle.image_yscale = scaley
 
             self.FixIslandPlacement(isle)
-            self.FillIsland(isle, island_gen, add_settlement)
+            self.FillIsland(isle, island_gen, trade_point)
 
             if oGen.RectAreaCount(area, oEnemySpawner) < oGen.enemy_spawners_max_per_cell {
                 RandomSpawnRect(
@@ -176,13 +186,20 @@ islands_config = [
     [1, new Island(12, 0)],
     [1, new Island(2, 4)],
 ]
+trade_point_low_conf = [1, oScroll]
+trade_point_high_conf = [1, oScrollHigh]
+trade_points_config = [
+    trade_point_low_conf,
+    [5, oSettlement],
+    [30, noone],
+]
 enemy_generate_chance = 0.3
 settlement_generate_chance = 0.2
 
 cell_generators = new RandomerFromConfig(cell_generators_config)
 island_generators = new RandomerFromConfig(islands_config)
 enemy_generators = new RandomerByProbability(0.3, 20)
-settlement_generators = new RandomerByProbability(0.2, 20)
+trade_points_generators = new RandomerFromConfig(trade_points_config)
 harpy_generators = new RandomerByProbability(0, 20)
 amber_tree_generators = new RandomerByProbability(0, 20)
 
@@ -292,6 +309,11 @@ function Emerge() {
     harpy_generators.init()
     amber_tree_generators.probability += (emerging_level > 10) * 0.05
     amber_tree_generators.init()
+
+    if emerging_level == 15 {
+        array_push(trade_points_config, trade_point_high_conf)
+        trade_points_generators.init()
+    }
 }
 
 function SpawnEnemies() {

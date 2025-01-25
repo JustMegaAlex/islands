@@ -5,7 +5,7 @@ wood_cost = RandomCost(4)
 amber_cost = RandomCost(0.5)
 amount = irandom_range(2, 6)
 
-info_text = $"One buddy for\n{wood_cost} wd\n{amber_cost} amb"
+info_text = $"One buddy for\n{wood_cost} wd\n{amber_cost} amb\n{amount} left"
 
 function Trade() {
     var pos = new Vec2(x, y)
@@ -15,6 +15,9 @@ function Trade() {
         pos.y,
         "Instances",
         oBuddy)
+    if !--amount {
+        instance_destroy()
+    }
 }
 
 // function RemoveUnit(ent) {

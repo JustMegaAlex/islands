@@ -45,3 +45,6 @@ function RectCollisionInstances(x0, y0, x1, y1, fun) {
     ds_list_clear(collision_list)
     return found_instances
 }
+
+alarm[0] = 1
+
