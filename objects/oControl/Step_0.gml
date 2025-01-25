@@ -90,7 +90,7 @@ var _ui = collision_point(mx, my, oUIButtonParent, false, false)
 var clicked_on_ui = false
 if _ui {
     _ui.mouse_over = true
-    if oInput.Pressed("lclick") {
+    if oInput.Pressed("lclick") and _ui.command.available() {
         if active_ui {
             active_ui.command.deactivate()
         }

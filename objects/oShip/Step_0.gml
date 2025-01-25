@@ -84,3 +84,13 @@ if protection_aura_timer.timer > 0 {
         }
     }
 }
+
+if speed_boost_timer.update() {
+    sp_max = sp_initial * speed_boost_multiplier
+} else {
+    sp_max = sp_initial
+}
+
+if repair_timer.update() {
+    hp += repair_rate
+}

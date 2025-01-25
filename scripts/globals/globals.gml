@@ -13,6 +13,8 @@ function ResetGlobals() {
     locked_abilities_low_tier = [
         oUIButtonHealAura,
         oUIButtonProtectionAura,
+        oUIButtonShipRepair,
+        oUIButtonSpeedBoost,
     ]
     
     locked_abilities_high_tier = [

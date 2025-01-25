@@ -19,6 +19,10 @@ amber_wrath_struct = {
 }
 heal_aura_timer = MakeTimer(300, 0)
 protection_aura_timer = MakeTimer(300, 0)
+speed_boost_timer = MakeTimer(360, 0)
+repair_timer = MakeTimer(240, 0)
+repair_rate = 4 / repair_timer.time
+speed_boost_multiplier = 2
 heal_aura_radius = 200
 protection_aura_radius = 200
 frame = 0

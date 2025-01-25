@@ -1,6 +1,8 @@
 
 function __define_methods() {
     active = false
+    amber_cost = 0
+    wood_cost = 0
     activate = function() {
         active = true
     }
@@ -12,11 +14,14 @@ function __define_methods() {
         draw_sprite(sprite, 0, mouse_x, mouse_y)
     }
     available = function() {
-        return true
+        return self.cost_satisfied()
     }
     press = function() {}
     hold = function() {}
     release = function() {}
+    cost_satisfied = function() {
+        return oShip.amber >= amber_cost and oShip.wood >= wood_cost
+    }
 }
 
 function CommandTemplate() constructor {
@@ -61,8 +66,11 @@ function CommandCannon() constructor {
     self.charge_icon_angles = [0, 90, 180, 270]
     self.vec = new Vec2(0, 0)
     self.cursor_line_length = 50
+    self.amber_cost = global.cost_cannon_amber
     __define_methods()
-
+    deactivate = function() {
+        self.holded_frames = 0
+    }
     draw = function() {
         for (var i = 0; i < array_length(self.charge_icon_angles); ++i) {
             var angle = self.charge_icon_angles[i]
@@ -83,10 +91,6 @@ function CommandCannon() constructor {
     }
     press = function() {}
     hold = function() {
-        if oShip.amber < global.cost_cannon_amber {
-            self.holded_frames = 0
-            return
-        }
         self.holded_frames = min(self.holded_frames + 1, self.charge_frames)
     }
     release = function() {
@@ -218,24 +222,6 @@ function CommandTowerDropCrew(tower) constructor {
     press = tower.DropCrew
 }
 
-function CommandSkipTut() constructor {
-    self.sprite = noone
-    __define_methods()
-    activate = function() {
-        oGen.gen_enabled = true
-        layer_destroy_instances("TutTriggers")
-        layer_set_visible("Tutorial", false)
-        with oUIButtonParent {
-            Show()
-        }
-		oUIButtonRetry.Hide()
-		//show_debug_message("UI activated!")
-		instance_destroy(oUIButtonSkipTut)
-		oControl.active_ui = noone
-        oControl.alarm[0] = 1
-    }
-}
-
 function CommandAmberWrath() constructor {
     self.sprite = noone
     __define_methods()
@@ -260,10 +246,58 @@ function CommandProtectionAura() constructor {
     }
 }
 
+function CommandShipRepair() constructor {
+    self.sprite = noone
+    __define_methods()
+    self.amber_cost = 1
+    self.wood_cost = 15
+
+    activate = function() {
+        oShip.repair_timer.reset()
+    }
+    available = function() {
+        return self.cost_satisfied() 
+            and oShip.repair_timer.timer <= 0
+            and oShip.hp < oShip.hp_max
+    }
+}
+
+function CommandShipBoostSpeed() constructor {
+    self.sprite = noone
+    __define_methods()
+    self.amber_cost = 1
+
+    activate = function() {
+        oShip.speed_boost_timer.reset()
+    }
+    available = function() {
+        return self.cost_satisfied() 
+            and oShip.speed_boost_timer.timer <= 0
+    }
+}
+
 function CommandTryAgain() constructor {
     self.sprite = noone
     __define_methods()
     activate = function() {
 		Restart()
+    }
+}
+
+function CommandSkipTut() constructor {
+    self.sprite = noone
+    __define_methods()
+    activate = function() {
+        oGen.gen_enabled = true
+        layer_destroy_instances("TutTriggers")
+        layer_set_visible("Tutorial", false)
+        with oUIButtonParent {
+            Show()
+        }
+		oUIButtonRetry.Hide()
+		//show_debug_message("UI activated!")
+		instance_destroy(oUIButtonSkipTut)
+		oControl.active_ui = noone
+        oControl.alarm[0] = 1
     }
 }
