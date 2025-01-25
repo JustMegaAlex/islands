@@ -10,6 +10,9 @@ function __define_methods() {
         if !sprite_exists(self.sprite) { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
     }
+    available = function() {
+        return true
+    }
     press = function() {}
     hold = function() {}
     release = function() {}
@@ -111,29 +114,21 @@ function CommandCreateInstance(obj) constructor {
     release = function() {}
 }
 
-function CommandFullfillTask(settlement) constructor {
-    self.settlement = settlement
-    self.wood = settlement.wood_cost
-    self.amber = settlement.amber_cost
+function CommandFullfillTask(inst) constructor {
+    self.inst = inst
     __define_methods()
 
     draw = function() {}
 
+    available = function() {
+        return self.inst.TradeAvailable()
+    }
+
     press = function() {
-        if oShip.wood < self.wood or oShip.amber < self.amber {
+        if !self.available() {
             return false
         }
-        oShip.wood -= self.wood
-        oShip.amber -= self.amber
-        repeat array_length(self.settlement.units) {
-            var unit = self.settlement.units[0]
-            if !instance_exists(unit) {
-                continue 
-            }
-            unit.side = EntitySide.ours
-            self.settlement.RemoveUnit(unit)
-            unit.settlement = noone
-        }
+        self.inst.Trade()
         return true
     }
     hold = function() {}

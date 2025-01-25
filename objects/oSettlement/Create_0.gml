@@ -1,41 +1,22 @@
 
-side = EntitySide.neutral
-friendly_with = EntitySide.neutral & EntitySide.ours & EntitySide.nature
+event_inherited()
 
-units = []
-repeat(irandom_range(2, 4)) {
-    var unit = instance_create_layer(
-        x - 100 + random(200),
-        y - 100 + random(200),
-        layer,
-        oBuddy
-    )
-    unit.settlement = id
-    unit.side = EntitySide.neutral
-    unit.friendly_with = EntitySide.neutral & EntitySide.ours & EntitySide.nature
-    array_push(units, unit)
+wood_cost = RandomCost(4)
+amber_cost = RandomCost(0.5)
+amount = irandom_range(2, 6)
+
+info_text = $"One buddy for\n{wood_cost} wd\n{amber_cost} amb"
+
+function Trade() {
+    var pos = new Vec2(x, y)
+    pos.add_polar(200, random(360))
+    instance_create_layer(
+        pos.x,
+        pos.y,
+        "Instances",
+        oBuddy)
 }
 
-var mult = 1
-if Chance(0.15) {
-    mult = 0.4
-} else if Chance(0.15) {
-    mult = 2
-} else {
-    mult = random_range(0.8, 1.3)
-}
-
-wood_cost = 0
-amber_cost = 0
-var cost = array_length(units) * 10 * mult
-var split_factor = random(1)
-wood_cost = round(cost * split_factor)
-amber_cost = (cost - wood_cost) div 4
-
-///// UI button
-button = instance_create_layer(x, y - 140, "Instances", oUITaskButton, {settlement: id})
-
-
-function RemoveUnit(ent) {
-    ArrayRemove(units, ent)
-}
+// function RemoveUnit(ent) {
+//     ArrayRemove(units, ent)
+// }
