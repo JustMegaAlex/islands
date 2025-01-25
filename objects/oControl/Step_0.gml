@@ -38,10 +38,17 @@ if oInput.Released("lclick") {
         RectCollisionInstances(
             resource_select_box.x0, resource_select_box.y0, resource_select_box.x1, resource_select_box.y1,
             function(inst) {
-                if inst.is_resource {
-                    inst.marked_for_mining = !inst.marked_for_mining; return false}
+                if IsCrew(inst) {
+                    inst.marked_for_pickup = !inst.marked_for_pickup; return false}
             }
         )
+        // RectCollisionInstances(
+        //     resource_select_box.x0, resource_select_box.y0, resource_select_box.x1, resource_select_box.y1,
+        //     function(inst) {
+        //         if inst.is_resource {
+        //             inst.marked_for_mining = !inst.marked_for_mining; return false}
+        //     }
+        // )
     }
     resource_select_box.enabled = false
 }

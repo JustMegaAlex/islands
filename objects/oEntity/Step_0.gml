@@ -86,7 +86,8 @@ if is_fighter {
 if is_miner and side == EntitySide.ours and !attack_target {
     if !resource_to_mine or !instance_exists(resource_to_mine) {
         resource_to_mine = GetClosestInstanceFromArray(
-            array_filter(island.GetResources(), function(inst) { return inst.marked_for_mining })
+            island.GetResources()
+            // array_filter(island.GetResources(), function(inst) { return inst.marked_for_mining })
         )
         if resource_to_mine {
             move_target.setv(resource_to_mine.position)
