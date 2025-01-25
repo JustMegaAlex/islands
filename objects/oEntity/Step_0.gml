@@ -66,7 +66,7 @@ if object_index == oBuildingGuardTower {
 }
 
 if is_fighter {
-    var atk = attack_target ?? attack_target_move
+    var atk = attack_target ? attack_target : attack_target_move
     if !atk or !instance_exists(atk) {
         attack_target_move = FindAttackTarget()
     }

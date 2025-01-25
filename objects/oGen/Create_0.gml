@@ -6,7 +6,7 @@ grid_h = 100
 
 gen_enabled = false
 
-grid_area_size = 3000
+grid_area_size = 2500
 x0 = oShip.x - grid_w * grid_area_size / 2
 y0 = oShip.y - grid_h * grid_area_size / 2
 
@@ -22,7 +22,7 @@ for (var i = 0; i < grid_w; i++) {
 
 var sec = 60
 emerging_level = 0
-emerge_timer = MakeTimer(global.gen_emerge_secs * sec)
+emerge_timer = MakeTimer(45 * sec)
 emerge_spawn_crawlps = 0
 emerge_resource_gain = 0.1
 enemy_spawners_max_per_cell = 2

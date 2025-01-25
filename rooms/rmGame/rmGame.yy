@@ -50,6 +50,8 @@
     {"name":"inst_5C4C1124","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_54DDD70F","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_2F2A00C5","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_23401B44","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_6C62EB1A","path":"rooms/rmGame/rmGame.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -71,6 +73,8 @@
         {"$GMRInstance":"v1","%Name":"inst_18878D7E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_18878D7E","objectId":{"name":"oUIButtonProtectionAura","path":"objects/oUIButtonProtectionAura/oUIButtonProtectionAura.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":864.0,"y":704.0,},
         {"$GMRInstance":"v1","%Name":"inst_54DDD70F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54DDD70F","objectId":{"name":"oUIButtonSpeedBoost","path":"objects/oUIButtonSpeedBoost/oUIButtonSpeedBoost.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1120.0,"y":704.0,},
         {"$GMRInstance":"v1","%Name":"inst_2F2A00C5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2F2A00C5","objectId":{"name":"oUIButtonShipRepair","path":"objects/oUIButtonShipRepair/oUIButtonShipRepair.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":992.0,"y":704.0,},
+        {"$GMRInstance":"v1","%Name":"inst_23401B44","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_23401B44","objectId":{"name":"oArcherBuddy","path":"objects/oArcherBuddy/oArcherBuddy.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-512.0,"y":288.0,},
+        {"$GMRInstance":"v1","%Name":"inst_6C62EB1A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6C62EB1A","objectId":{"name":"oEnemyCrawlp","path":"objects/oEnemyCrawlp/oEnemyCrawlp.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-832.0,"y":288.0,},
       ],"layers":[],"name":"UI","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Tutorial","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_314295D5","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_314295D5","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":2.25,"scaleY":2.25,"spriteId":{"name":"sTutMouseR","path":"sprites/sTutMouseR/sTutMouseR.yy",},"x":448.0,"y":512.0,},

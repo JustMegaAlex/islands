@@ -36,3 +36,7 @@ if hp < hp_max {
     draw_line_width(x - 30, y - 40, x - 30 + len, y - 40, 2)
     draw_set_color(c_white)
 }
+
+if attackers_count != 0 {
+    draw_text(x, y - 100, attackers_count)
+}
