@@ -51,6 +51,7 @@
     {"name":"oInput","order":1,"path":"objects/oInput/oInput.yy",},
     {"name":"oIsland","order":5,"path":"objects/oIsland/oIsland.yy",},
     {"name":"oParticles","order":4,"path":"objects/oParticles/oParticles.yy",},
+    {"name":"oPlayerVision","order":6,"path":"objects/oPlayerVision/oPlayerVision.yy",},
     {"name":"oScroll","order":10,"path":"objects/oScroll/oScroll.yy",},
     {"name":"oScrollHigh","order":11,"path":"objects/oScrollHigh/oScrollHigh.yy",},
     {"name":"oSettlement","order":9,"path":"objects/oSettlement/oSettlement.yy",},

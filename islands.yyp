@@ -78,6 +78,7 @@
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},
     {"id":{"name":"oIsland","path":"objects/oIsland/oIsland.yy",},},
     {"id":{"name":"oParticles","path":"objects/oParticles/oParticles.yy",},},
+    {"id":{"name":"oPlayerVision","path":"objects/oPlayerVision/oPlayerVision.yy",},},
     {"id":{"name":"oScroll","path":"objects/oScroll/oScroll.yy",},},
     {"id":{"name":"oScrollHigh","path":"objects/oScrollHigh/oScrollHigh.yy",},},
     {"id":{"name":"oSettlement","path":"objects/oSettlement/oSettlement.yy",},},
