@@ -13,8 +13,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"oSettlementParent",
-    "path":"objects/oSettlementParent/oSettlementParent.yy",
+    "name":"oTradePointParent",
+    "path":"objects/oTradePointParent/oTradePointParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
