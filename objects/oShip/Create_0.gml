@@ -47,6 +47,7 @@ function ShootAnArrow(target) {
 }
 
 function OnBoardShooters() {
+    on_board_shooters = min(on_board_shooters_max, array_length(crew.oArcherBuddy))
     if on_board_shooters == 0 {
         return
     }

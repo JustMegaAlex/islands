@@ -105,6 +105,7 @@
     {"id":{"name":"oUIMarkDrop","path":"objects/oUIMarkDrop/oUIMarkDrop.yy",},},
     {"id":{"name":"oUITaskButton","path":"objects/oUITaskButton/oUITaskButton.yy",},},
     {"id":{"name":"oUIUpgradeToArcher","path":"objects/oUIUpgradeToArcher/oUIUpgradeToArcher.yy",},},
+    {"id":{"name":"oWorkshop","path":"objects/oWorkshop/oWorkshop.yy",},},
     {"id":{"name":"psWaterSplash","path":"particles/psWaterSplash/psWaterSplash.yy",},},
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
     {"id":{"name":"Balancing","path":"scripts/Balancing/Balancing.yy",},},
