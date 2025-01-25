@@ -7,7 +7,7 @@ active_ui = noone
 
 collision_list = ds_list_create()
 
-rclick_pressed_timer = MakeTimer(10)
+rclick_pressed_timer = MakeTimer(10000)
 lclick_pressed_timer = MakeTimer(10)
 crew_select_box = {
     x0: 0, y0: 0, x1: 0, y1: 0, enabled: false
