@@ -164,6 +164,15 @@ function CommandCreateInstance(obj) constructor {
 
 function CommandFullfillTask(inst) constructor {
     self.inst = inst
+    if self.inst.object_index == oWorkshop {
+        
+        //// For some reason debugger crashes on Mac if 
+        // Trade() is defined in oWorkshop Create
+        self.inst.Trade = function() {
+            oShip.on_board_shooters_max++
+            instance_destroy(button)
+        }
+    }
     __define_methods()
 
     draw = function() {}
