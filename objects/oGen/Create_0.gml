@@ -23,10 +23,23 @@ for (var i = 0; i < grid_w; i++) {
 var sec = 60
 emerging_level = 0
 emerge_timer = MakeTimer(45 * sec)
-emerge_spawn_crawlps = 0
 emerge_resource_gain = 0.1
-enemy_spawners_max_per_cell = 2
 resource_multiplier = 1
+
+enemy_spawn_timer = MakeTimer(45 * sec)
+enemy_spawn_sub_area_size = 200
+enemies_spawn = {
+    crawlp: {
+        count_per_spawn: 2,
+        area_limit: 6,
+        spawns: 2,
+    },
+    harpy: {
+        count_per_spawn: 0,
+        area_limit: 0,
+        spawns: 0,
+    },
+}
 
 
 function Island(trees, amber, enemy_spawners=0, big_trees=0) constructor {
@@ -161,13 +174,7 @@ function Cell(
             self.FixIslandPlacement(isle)
             self.FillIsland(isle, island_gen, trade_point)
 
-            if oGen.RectAreaCount(area, oEnemySpawner) < oGen.enemy_spawners_max_per_cell {
-                RandomSpawnRect(
-                    area.x0, area.y0,
-                    area.x1, area.y1,
-                    oGen.emerge_spawn_crawlps + enemy_flag * oGen.gen_enemy_spawners,
-                    oEnemySpawner, oIsland)
-            }
+            oGen.SpawnEnemiesArea(area)
 
         }
     }
@@ -181,7 +188,7 @@ function Area(i, j) constructor {
     self.x1 = self.x0 + oGen.grid_area_size
     self.y1 = self.y0 + oGen.grid_area_size
     self.generated = false
-    self.just_generated = true
+    self.last_gen_level = 0
 }
 
 //// Initialize generators
@@ -294,12 +301,16 @@ function RandomerByProbability(probability, total) constructor {
 
 function Emerge() {
     emerging_level++
+
+    //// Enemy gen chances
     if (emerging_level mod 5) == 0 {
         enemy_generate_chance += 0.1
-        emerge_spawn_crawlps += 1
-        enemy_spawners_max_per_cell += 1
     }
-    SpawnEnemies()
+    harpy_generators.probability += (emerging_level > 4) * 0.05
+    harpy_generators.init()
+    amber_tree_generators.probability += (emerging_level > 10) * 0.05
+    amber_tree_generators.init()
+
     switch (emerging_level) {
         case 1: break
         case 5: 
@@ -321,10 +332,6 @@ function Emerge() {
     if emerging_level > 4 {
         resource_multiplier += emerge_resource_gain
     }
-    harpy_generators.probability += (emerging_level > 4) * 0.05
-    harpy_generators.init()
-    amber_tree_generators.probability += (emerging_level > 10) * 0.05
-    amber_tree_generators.init()
 
     if emerging_level == 15 {
         array_push(trade_points_config, trade_point_high_conf)
@@ -333,34 +340,64 @@ function Emerge() {
     }
 }
 
+function SpawnEnemiesArea(area) {
+    var harpies_count = 0
+    var crawlps_count = 0
+    var size = enemy_spawn_sub_area_size
+    var is_crawp_spawner = false
+    var xspawn = irandomer(area.x0, area.x1 - size)
+    var yspawn = irandomer(area.y0, area.y1 - size)
+    while (area.last_gen_level < emerging_level) {
+        area.last_gen_level++
+        harpies_count = oGen.RectAreaCount(area, oEnemyHarpy)
+        crawlps_count = oGen.RectAreaCount(area, oEnemyCrawlp)
+        if harpies_count < enemies_spawn.harpy.area_limit {
+            var xx = xspawn()
+            var yy = yspawn()
+            show_debug_message($"Spawn harpy at {xx}, {yy}")
+            RandomSpawnRect(xx, yy, xx + size, yy + size,
+                            enemies_spawn.harpy.count_per_spawn, oEnemyHarpy)
+        }
+        if crawlps_count < enemies_spawn.crawlp.area_limit {
+            if !is_crawp_spawner {
+                is_crawp_spawner = true
+                var xx = xspawn()
+                var yy = yspawn()
+                show_debug_message($"Spawn crawlp at {xx}, {yy}")
+                RandomSpawnRect(xx, yy, xx + size, yy + size,
+                                enemies_spawn.crawlp.count_per_spawn, oEnemyCrawlp, oIsland)
+            } else {
+                is_crawp_spawner = false
+                show_debug_message($"Spawn crawlp spawner at {area.x0}, {area.y0}")
+                RandomSpawnRect(
+                    area.x0, area.y0,
+                    area.x1, area.y1,
+                    1, oEnemySpawner)
+            }
+        }
+    }
+}
+
 function SpawnEnemies() {
-    for (var i = 0; i < array_length(generated_areas); ++i) {
-        var area = generated_areas[i]
-        if area.just_generated {
-            area.just_generated = false
-            continue
-        }
-        if oGen.RectAreaCount(area, oEnemySpawner) < oGen.enemy_spawners_max_per_cell {
-            RandomSpawnRect(
-                area.x0, area.y0,
-                area.x1, area.y1,
-                emerge_spawn_crawlps, oEnemySpawner, oIsland)
-        }
-        if harpy_generators.get_auto() {
-            RandomSpawnRect(
-                area.x0, area.y0,
-                area.x1, area.y1,
-                1, oEnemyHarpy)
+    var vec_check = new Vec2(ship_grid_pos.x, ship_grid_pos.y)
+    for (var i = -1; i < 2; i++) {
+        for (var j = -1; j < 2; j++) {
+            vec_check.set(ship_grid_pos.x + i, ship_grid_pos.y + j)
+            if GridCheck(vec_check) {
+                SpawnEnemiesArea(grid[# vec_check.x, vec_check.y])
+            }
         }
     }
 }
 
 function GenerateArea(i, j) {
     var area = grid[# i, j]
-    if (area.generated) { return }
-    array_push(generated_areas, area)
-    area.generated = true
-    oGen.cell_generators.get_auto().run(i, j)
+    if (!area.generated) {
+        array_push(generated_areas, area)
+        area.generated = true
+        oGen.cell_generators.get_auto().run(i, j)
+    }
+
 }
 
 function UpdateShipGridPos() {

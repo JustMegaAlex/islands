@@ -6,7 +6,8 @@ DebugViewAddRefs(global, [
     ["draw grid", dbg_button, function() 
     { global.draw_grid = !global.draw_grid }],
     ["camera_clamp_zoom", dbg_checkbox],
-    ["emerge", dbg_button, function() { oGen.Emerge() }]
+    ["emerge", dbg_button, function() { oGen.Emerge() }],
+    ["spawn enemies", dbg_button, function() { oGen.SpawnEnemies() }]
 ])
 DebugViewAddRefs(oShip, [
     ["sp_initial", dbg_text_input, "ship speed", "f"],

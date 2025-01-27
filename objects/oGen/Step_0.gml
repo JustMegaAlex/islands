@@ -25,3 +25,8 @@ if !emerge_timer.update() {
     Emerge()
     emerge_timer.reset()
 }
+
+if !enemy_spawn_timer.update() {
+    SpawnEnemies()
+    enemy_spawn_timer.reset()
+}
