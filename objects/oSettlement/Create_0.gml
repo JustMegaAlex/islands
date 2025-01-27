@@ -30,6 +30,8 @@ function Trade() {
     if !--amount {
         instance_destroy(button)
     }
+    oShip.amber -= amber_cost
+    oShip.wood -= wood_cost
 }
 
 // function RemoveUnit(ent) {

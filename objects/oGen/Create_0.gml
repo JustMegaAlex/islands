@@ -201,13 +201,14 @@ cell_generators_config = [
     [2, new Cell(0)],
 ]
 islands_config = [
-    [5, new Island(0, 1)],
-    [5, new Island(1, 0)],
+    [2, new Island(0, 1)],
+    [8, new Island(1, 0)],
     [8, new Island(2, 1)],
-    [3, new Island(5, 1)],
+    [1, new Island(5, 1)],
+    [3, new Island(5, 0)],
     [1, new Island(8, 1)],
     [1, new Island(12, 0)],
-    [1, new Island(2, 4)],
+    [1, new Island(2, 2)],
 ]
 trade_point_low_conf = [1, oScroll]
 trade_point_high_conf = [1, oScrollHigh]

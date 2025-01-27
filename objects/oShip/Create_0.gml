@@ -36,7 +36,7 @@ wood = global.ship_starting_wood
 amber = global.ship_starting_amber
 
 on_board_shooters = 0
-on_board_shooters_max = 3
+on_board_shooters_max = 0
 on_board_shooters_range = 600
 on_board_shooters_timer = MakeTimer(60, 0)
 on_board_shooters_shots_timer = MakeTimer(10, 0)
@@ -89,6 +89,12 @@ function OnBoardShooters() {
 
 function AddBuddy() {
     var inst = instance_create_layer(x, y, "Instances",  oBuddy)
+    LoadCrew(inst)
+    return inst
+}
+
+function AddArcher() {
+    var inst = instance_create_layer(x, y, "Instances",  oArcherBuddy)
     LoadCrew(inst)
     return inst
 }
