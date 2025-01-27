@@ -78,6 +78,7 @@ if !active_ui and lclick_pressed_timer.timer <= 0 and oInput.Hold("lclick") {
 if rclick_pressed and !rclick_canceled_ui {
     oShip.move_target.set(mouse_x, mouse_y)
     is_ship_navigating = true
+	audio_play_sound(sfxUIMoveRR2, 0, 0)
 }
 
 
@@ -92,6 +93,7 @@ if _ui {
             active_ui.command.deactivate()
         }
         _ui.command.activate()
+        audio_play_sound(sfxUIClick, 0, 0)
 		if instance_exists(_ui) {
 			active_ui = _ui
 		}

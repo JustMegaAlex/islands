@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sfxFightSmallmonsterdeath",
+  "%Name":"sfxSmallmonsterdeath",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":3.873,
-  "name":"sfxFightSmallmonsterdeath",
+  "name":"sfxSmallmonsterdeath",
   "parent":{
     "name":"SFX",
     "path":"folders/Sounds/SFX.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxFightSmallmonsterdeath.wav",
+  "soundFile":"sfxSmallmonsterdeath.wav",
   "type":0,
   "volume":1.0,
 }

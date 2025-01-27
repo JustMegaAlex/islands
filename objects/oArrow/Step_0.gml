@@ -9,4 +9,5 @@ if dist <= 0 {
         target.Hit(id)
     }
     instance_destroy()
+	PlaySoundAt(x, y, sfxArrowHit)
 }

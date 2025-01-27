@@ -25,6 +25,10 @@ function __define_methods() {
     }
 }
 
+function PlayCommandSound() {
+    audio_play_sound(sfxUICommandRR1, 0, 0)
+}
+
 function CommandTemplate() constructor {
     self.sprite = noone
     __define_methods()
@@ -97,6 +101,7 @@ function CommandDropCrew(crew_type) constructor {
             var mark = instance_create_layer(self.spawn_vec.x, self.spawn_vec.y, "Instances", oUIMarkDrop)
             mark.crew_type = self.crew_type
         }
+        PlayCommandSound()
         self.isle = noone
         self.drag_radius = 0
     }
@@ -142,8 +147,10 @@ function CommandCannon() constructor {
             var core = instance_create_layer(
                 oShip.x, oShip.y, "Instances", oCannonCore)
             core.Launch(mouse_x, mouse_y)
+			PlaySoundAt(oShip.x, oShip.y, sfxCannonFire)
         }
         self.holded_frames = 0
+        PlayCommandSound()
     }
 }
 
@@ -186,6 +193,7 @@ function CommandFullfillTask(inst) constructor {
             return false
         }
         self.inst.Trade()
+        PlayCommandSound()
         return true
     }
     hold = function() {}
@@ -212,6 +220,7 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
         with crew[0] { instance_change(other.obj, true) }
         oShip.amber -= self.amber
         oShip.wood -= self.wood
+        PlayCommandSound()
         return true
     }
     hold = function() {}
@@ -262,6 +271,7 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
         oShip.wood -= self.wood
         oShip.amber -= self.amber
         instance_create_layer(mouse_x, mouse_y, "Instances", other.obj)
+        PlayCommandSound()
         return true
     }
     hold = function() {}
@@ -279,6 +289,7 @@ function CommandAmberWrath() constructor {
     __define_methods()
     activate = function() {
         oShip.amber_wrath_timer.reset()
+        PlayCommandSound()
     }
 }
 
@@ -287,6 +298,7 @@ function CommandHealAura() constructor {
     __define_methods()
     activate = function() {
         oShip.heal_aura_timer.reset()
+        PlayCommandSound()
     }
 }
 
@@ -295,6 +307,7 @@ function CommandProtectionAura() constructor {
     __define_methods()
     activate = function() {
         oShip.protection_aura_timer.reset()
+        PlayCommandSound()
     }
 }
 
@@ -306,6 +319,7 @@ function CommandShipRepair() constructor {
 
     activate = function() {
         oShip.repair_timer.reset()
+        PlayCommandSound()
     }
     available = function() {
         return self.cost_satisfied() 
@@ -321,6 +335,7 @@ function CommandShipBoostSpeed() constructor {
 
     activate = function() {
         oShip.speed_boost_timer.reset()
+        PlayCommandSound()
     }
     available = function() {
         return self.cost_satisfied() 

@@ -66,6 +66,8 @@ instances_list = ds_list_create() /// helper list for _collision_list functions
 marked_for_pickup = false
 marked_for_mining = false
 
+death_sound = noone
+
 
 function StartAttacking(entity) {
     attack_target = entity
@@ -168,6 +170,9 @@ function Die() {
     if settlement and instance_exists(settlement) {
         settlement.RemoveUnit(id)
     }
+	if death_sound != noone {
+		PlaySoundAt(x, y, death_sound)	
+	}
     instance_destroy()
 }
 

@@ -7,6 +7,9 @@ var dist = FlyingInstDist(oShip)
 
 if dist <= sp_max {
     OnCollect()
+	audio_play_sound(
+		choose(sfxCollect1, sfxCollect2, sfxCollect3, sfxCollect4),
+		0, false)
     instance_destroy()
     exit
 }

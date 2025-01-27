@@ -18,3 +18,5 @@ ai_random_walk = true
 hp_max = 2
 sp_max = 2
 attack_damage = 1
+
+death_sound = sfxSmallmonsterdeath

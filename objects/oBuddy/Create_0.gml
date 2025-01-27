@@ -16,3 +16,5 @@ is_miner = true
 hp_max = 4
 sp_max = 2
 attack_damage = 1
+
+death_sound = sfxCrewDeath

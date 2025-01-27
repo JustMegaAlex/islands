@@ -19,3 +19,5 @@ attack_distance = 400
 hp_max = 2
 sp_max = 2
 attack_attack_damage = 1
+
+death_sound = sfxCrewDeath

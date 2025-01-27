@@ -16,5 +16,6 @@ if distance_passed >= distance {
         var inst = list[| i]
         inst.Hit(id)
     }
+	PlaySoundAt(x, y, sfxCannonExplosion)
     instance_destroy()
 }
