@@ -14,7 +14,7 @@ position = new Vec2(x, y)
 sp_max = global.sp_entity_default
 
 enum EntitySide {
-    ours, theirs, nature,
+    __zero, ours, theirs, nature,
     neutral, rogue
 }
 
@@ -22,7 +22,8 @@ hp_max = 1
 hp = hp_max
 
 side = EntitySide.nature
-friendly_with = EntitySide.nature // bitwise mask
+friendly_with = 0 // bitwise mask
+SetFriendlyWith(EntitySide.nature)
 
 //// Type attributes
 is_resource = false
@@ -64,6 +65,7 @@ instances_list = ds_list_create() /// helper list for _collision_list functions
 
 marked_for_pickup = false
 marked_for_mining = false
+
 
 function StartAttacking(entity) {
     attack_target = entity

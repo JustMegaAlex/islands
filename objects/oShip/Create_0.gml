@@ -1,7 +1,9 @@
 event_inherited()
 
 side = EntitySide.ours
-friendly_with = EntitySide.ours & EntitySide.nature & EntitySide.neutral
+
+SetFriendlyWith(EntitySide.ours)
+SetFriendlyWith(EntitySide.neutral)
 
 z = -200
 sp_max = global.ship_speed

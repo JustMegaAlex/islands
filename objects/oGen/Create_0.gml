@@ -28,7 +28,7 @@ resource_multiplier = 1
 
 enemy_spawn_timer = MakeTimer(45 * sec)
 enemy_spawn_sub_area_size = 200
-enemies_spawn = {
+enemy_spawn = {
     crawlp: {
         count_per_spawn: 2,
         area_limit: 6,
@@ -216,7 +216,6 @@ trade_points_config = [
     [5, oSettlement],
     [30, noone],
 ]
-enemy_generate_chance = 0.3
 settlement_generate_chance = 0.2
 
 cell_generators = new RandomerFromConfig(cell_generators_config)
@@ -303,9 +302,6 @@ function Emerge() {
     emerging_level++
 
     //// Enemy gen chances
-    if (emerging_level mod 5) == 0 {
-        enemy_generate_chance += 0.1
-    }
     harpy_generators.probability += (emerging_level > 4) * 0.05
     harpy_generators.init()
     amber_tree_generators.probability += (emerging_level > 10) * 0.05
@@ -313,20 +309,30 @@ function Emerge() {
 
     switch (emerging_level) {
         case 1: break
-        case 5: 
+        case 4: 
+            enemy_spawn.harpy.spawns++
+            enemy_spawn.harpy.area_limit = 1
+        break
+        case 5:
             array_push(islands_config, island_gen_big_trees_conf)
+        break
+        case 7:
+            enemy_spawn.harpy.area_limit = 2
         break
         case 10: 
             island_gen_big_trees.big_trees = 2
             island_gen_big_trees.trees += 3
-        break
+            enemy_spawn.harpy.area_limit = 3
+            break
         case 15:
             island_gen_big_trees.big_trees = 3
             island_gen_big_trees.trees += 3
+            enemy_spawn.harpy.area_limit = 4
         break
         case 20:
             island_gen_big_trees.big_trees = 4
             island_gen_big_trees.trees += 3
+            enemy_spawn.harpy.area_limit = 6
         break
     }
     if emerging_level > 4 {
@@ -351,21 +357,21 @@ function SpawnEnemiesArea(area) {
         area.last_gen_level++
         harpies_count = oGen.RectAreaCount(area, oEnemyHarpy)
         crawlps_count = oGen.RectAreaCount(area, oEnemyCrawlp)
-        if harpies_count < enemies_spawn.harpy.area_limit {
+        if harpies_count < enemy_spawn.harpy.area_limit {
             var xx = xspawn()
             var yy = yspawn()
             show_debug_message($"Spawn harpy at {xx}, {yy}")
             RandomSpawnRect(xx, yy, xx + size, yy + size,
-                            enemies_spawn.harpy.count_per_spawn, oEnemyHarpy)
+                            enemy_spawn.harpy.count_per_spawn, oEnemyHarpy)
         }
-        if crawlps_count < enemies_spawn.crawlp.area_limit {
+        if crawlps_count < enemy_spawn.crawlp.area_limit {
             if !is_crawp_spawner {
                 is_crawp_spawner = true
                 var xx = xspawn()
                 var yy = yspawn()
                 show_debug_message($"Spawn crawlp at {xx}, {yy}")
                 RandomSpawnRect(xx, yy, xx + size, yy + size,
-                                enemies_spawn.crawlp.count_per_spawn, oEnemyCrawlp, oIsland)
+                                enemy_spawn.crawlp.count_per_spawn, oEnemyCrawlp, oIsland)
             } else {
                 is_crawp_spawner = false
                 show_debug_message($"Spawn crawlp spawner at {area.x0}, {area.y0}")

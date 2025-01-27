@@ -64,8 +64,17 @@ function EntitiesInRect(x0, y0, x1, y1, filter=undefined) {
     return res
 }
 
+function SetFriendlyWith(side) {
+    friendly_with |= power(2, side)
+}
+
 function IsEnemySide(inst) {
-    return inst.side != side and !(side & inst.friendly_with) and !(friendly_with & inst.side)
+	var inst_side = inst.side
+	var inst_fr = inst.friendly_with
+    var _side = inst.side != side
+    var _friendly_with = !(power(2, side) & inst.friendly_with)
+    var _side_friendly_with = !(friendly_with & power(2, inst.side))
+    return _side and _friendly_with and _side_friendly_with
 }
 
 function CanAttack(inst) {
@@ -99,6 +108,9 @@ function RandomSpawnRect(x0, y0, x1, y1, num, obj, avoid_object=noone, avoid_att
         if !RandomPlaceRect(x0, y0, x1, y1, inst, avoid_object, avoid_attempts) {
             instance_destroy(inst)
             failed++
+        } else if object_is_ancestor(inst.object_index, oEntity) {
+            inst.position.set(inst.x, inst.y)
+            inst.move_target.set(inst.x, inst.y)
         }
     }
     return failed

@@ -1,6 +1,6 @@
 
 side = EntitySide.neutral
-friendly_with = EntitySide.neutral & EntitySide.ours & EntitySide.nature
+friendly_with = EntitySide.neutral | EntitySide.ours | EntitySide.nature
 
 // units = []
 // repeat(irandom_range(2, 4)) {
