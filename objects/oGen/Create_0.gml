@@ -214,8 +214,9 @@ trade_point_low_conf = [1, oScroll]
 trade_point_high_conf = [1, oScrollHigh]
 trade_points_config = [
     trade_point_low_conf,
-    [5, oSettlement],
-    [30, noone],
+    [4, oSettlement],
+    [3, oWorkshop],
+    [20, noone],
 ]
 settlement_generate_chance = 0.2
 
@@ -324,6 +325,9 @@ function Emerge() {
             enemy_spawn.crawlp.area_limit = 15
             break
         case 10:
+            trade_point_low_conf[0] = 2
+            trade_points_generators.init()
+
             island_gen_big_trees.big_trees = 2
             island_gen_big_trees.trees += 3
             

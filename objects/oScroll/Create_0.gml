@@ -18,7 +18,7 @@ if ArrayEmpty(abilities_array) {
 
 event_inherited()
 
-amber_cost = irandom_range(5, 8)
+amber_cost = irandom_range(3, 6)
 button.command.amber_cost = amber_cost
 button.command.wood_cost = wood_cost
 
