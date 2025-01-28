@@ -110,15 +110,12 @@ function FindAttackTarget() {
     var count = collision_circle_list(
         x, y, enemy_detection_range, oEntity, false, false,
         instances_list, false)
-    var target = noone
-    var dist = infinity
     var sorted_by_dist = []
     DistCompare.inst = id
-    for (var i = 0; i < ds_list_size(instances_list); ++i) {
+    for (var i = 0; i < count; ++i) {
         var inst = instances_list[| i]
         if object_index == oEnemyHarpy and inst.object_index == oShip {
-            target = inst
-            break
+            return inst
         }
         if (inst.is_creature or inst.is_structure)
                 and IsEnemySide(inst) and CanAttack(inst) {
