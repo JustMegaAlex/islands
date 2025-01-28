@@ -104,7 +104,7 @@ if is_miner and side == EntitySide.ours and !attack_target {
 }
 
 //// Override any fight or mining behavior if there is a tower marked for crew nearby
-if move_to_tower {
+if move_to_tower and instance_exists(move_to_tower) {
     move_target.setv(move_to_tower.position)
     if InstDist(move_to_tower) < 100 {
         move_to_tower.TakeCrew(id)

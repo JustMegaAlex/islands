@@ -77,7 +77,7 @@ function StartAttacking(entity) {
 function CheckUndoAttackCounter() {
     var atk = attack_target ? attack_target : attack_target_move
     if atk and instance_exists(atk) {
-        atk.attackers_count--
+        atk.attackers_count = max(0, atk.attackers_count - 1)
     }
 }
 
@@ -158,6 +158,9 @@ function IsMoving() {
 function Hit(id) {
     if id.object_index == oCannonCore and is_flying {
         return
+    }
+    if object_index == oBuildingGuardTower {
+        var test = true
     }
     hp -= id.attack_damage * (protection_aura ? 0.5 : 1)
 }

@@ -6,11 +6,17 @@ default_rect.set(80, 120)
 
 
 side = EntitySide.ours
+SetFriendlyWith(EntitySide.nature)
+SetFriendlyWith(EntitySide.ours)
+SetFriendlyWith(EntitySide.neutral)
 
 is_structure = true
 is_fighter = true
 
 attack_distance = 800
+
+hp_max = global.hp_guard_tower
+hp = global.hp_guard_tower
 
 shots_timer = MakeTimer(10)
 take_shots = 0
@@ -23,11 +29,25 @@ crew = []
 gathering_crew = []
 
 function GatherCrew() {
+	if !instance_exists(island) {
+		var test = true	
+	}
     var island_crew = island.GetCrew()
     if !ArrayEmpty(island_crew) {
-        var inst = GetClosestInstanceFromArray(island_crew)
-        inst.move_to_tower = id
-        array_push(gathering_crew, inst)
+        var sorter = {inst: id,
+                        compare: function(a, b) {
+                            return InstInstDist(inst, a) - InstInstDist(inst, b)
+                        }
+            }
+        array_sort(island_crew, sorter.compare)
+        while !ArrayEmpty(island_crew) 
+                and (array_length(gathering_crew) < marked_for_number_of_crew) {
+            var inst = array_shift(island_crew)
+            if inst.move_to_tower == noone {
+                inst.move_to_tower = id
+                array_push(gathering_crew, inst)
+            }
+        }
     }
 }
 
@@ -55,6 +75,7 @@ function DropCrew() {
     var inst = array_pop(crew)
     instance_activate_object(inst)
     inst.AttachToIsland()
+	inst.move_to_tower = noone
     if ArrayEmpty(crew) {
         instance_deactivate_object(button)
     }
@@ -63,6 +84,11 @@ function DropCrew() {
 function SpecialAttack() {
     take_shots = array_length(crew)
     shots_timer.time = min(10, attack_timer.time / (take_shots ?? 1))
+}
+
+/// Mimic settlement behavior for reusage (should rework)
+function TradeAvailable() {
+    return true
 }
 
 button = instance_create_layer(x, y - 100, "Instances", oUIGuardTower, { tower: id })

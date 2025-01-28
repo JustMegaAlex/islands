@@ -15,6 +15,7 @@ gen_enemy_spawners = 2
 hp_amber = 16
 hp_tree = 8
 hp_big_tree = 40
+hp_guard_tower = 10
 
 ship_starting_amber = 4
 ship_starting_wood = 12
