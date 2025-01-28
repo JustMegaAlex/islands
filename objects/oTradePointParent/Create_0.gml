@@ -2,20 +2,6 @@
 side = EntitySide.neutral
 friendly_with = EntitySide.neutral | EntitySide.ours | EntitySide.nature
 
-// units = []
-// repeat(irandom_range(2, 4)) {
-//     var unit = instance_create_layer(
-//         x - 100 + random(200),
-//         y - 100 + random(200),
-//         layer,
-//         oBuddy
-//     )
-//     unit.settlement = id
-//     unit.side = EntitySide.neutral
-//     unit.friendly_with = EntitySide.neutral & EntitySide.ours & EntitySide.nature
-//     array_push(units, unit)
-// }
-
 function RandomCost(base) {
     var mult = 1
     if Chance(0.15) {
@@ -44,6 +30,5 @@ amount = 0
 button = instance_create_layer(x, y - 140, "Instances", oUITaskButton, {settlement: id})
 info_text = ""
 
-// function RemoveUnit(ent) {
-//     ArrayRemove(units, ent)
-// }
+island = instance_place(x, y, oIsland)
+if island { island.AddTradePoint(id) }

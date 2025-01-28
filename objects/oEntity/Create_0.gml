@@ -181,6 +181,8 @@ function Die() {
     instance_destroy()
 }
 
+function BuildingFinished() {}
+
 function SetPos(xx, yy=undefined) {
     if yy == undefined {
         position.set(xx.x, xx.y); x = xx.x; y = xx.y

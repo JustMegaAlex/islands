@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oUIBuildGuardTower",
+  "%Name":"oIslandScanMark",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oUIBuildGuardTower",
+  "name":"oIslandScanMark",
   "overriddenProperties":[],
   "parent":{
-    "name":"Skills",
-    "path":"folders/Objects/UI/Skills.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"oUIButtonParent",
-    "path":"objects/oUIButtonParent/oUIButtonParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,18 +25,14 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v1","%Name":"obj","filters":[
-        "GMObject",
-      ],"listItems":[],"multiselect":false,"name":"obj","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"oEnemyCrawlp","path":"objects/oEnemyCrawlp/oEnemyCrawlp.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"oEnemyCrawlp","varType":5,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sUIButton",
-    "path":"sprites/sUIButton/sUIButton.yy",
+    "name":"sIslandTile",
+    "path":"sprites/sIslandTile/sIslandTile.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

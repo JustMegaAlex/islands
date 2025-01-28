@@ -17,8 +17,12 @@ switch object_index {
 		test = true; break
 }
 
-if is_structure and build_timer.update() {
-    exit
+if is_structure and build_timer.timer {
+    if !build_timer.update() {
+        BuildingFinished()
+    } else {
+        exit
+    }
 } else {
     image_alpha = 1
 }

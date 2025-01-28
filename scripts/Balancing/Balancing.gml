@@ -7,7 +7,6 @@ cost_speed_boost_amber = 0.2
 cost_heal_aura_amber = 1
 cost_protection_aura_amber = 0.75
 
-
 damage_cannon = 10
 
 gen_enemy_spawners = 2
@@ -25,3 +24,7 @@ ship_speed = 5.5
 sp_entity_default = 0.7
 
 harpy_sp_max = 3
+
+watch_tower_scan_range = 4000
+watch_tower_wood_cost = 10
+guard_tower_wood_cost = 10
