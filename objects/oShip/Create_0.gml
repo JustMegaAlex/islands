@@ -8,7 +8,7 @@ SetFriendlyWith(EntitySide.neutral)
 z = -200
 sp_max = global.ship_speed
 sp_initial = sp_max
-hp_max = 16
+hp_max = global.ship_hp
 is_creature = true
 is_flying = true
 

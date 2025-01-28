@@ -71,7 +71,7 @@ death_sound = noone
 
 function StartAttacking(entity) {
     attack_target = entity
-    attack_timer.reset()
+    // attack_timer.reset()
 }
 
 function CheckUndoAttackCounter() {

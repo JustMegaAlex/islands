@@ -20,7 +20,7 @@ ai_random_walk_distance = 500
 hp_max = 4
 sp_max = global.harpy_sp_max
 attack_damage = 1
-attack_timer.time = 120
+attack_timer.time = 90
 
 attack_distance = 400
 enemy_detection_range = 1500
