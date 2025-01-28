@@ -1,5 +1,12 @@
 
-cost_cannon_amber = 0.5
+cost_cannon_amber = 0.2
+cost_amber_wrath_amber = 2
+cost_ship_repair_wood = 10
+cost_ship_repair_amber = 1
+cost_speed_boost_amber = 0.2
+cost_heal_aura_amber = 1
+cost_protection_aura_amber = 0.75
+
 
 damage_cannon = 10
 

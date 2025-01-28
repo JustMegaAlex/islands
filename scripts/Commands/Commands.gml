@@ -23,6 +23,10 @@ function __define_methods() {
     cost_satisfied = function() {
         return oShip.amber >= amber_cost and oShip.wood >= wood_cost
     }
+    take_resources = function() {
+        oShip.amber -= amber_cost
+        oShip.wood -= wood_cost
+    }
 }
 
 function PlayCommandSound() {
@@ -45,6 +49,8 @@ function CommandDropCrew(crew_type) constructor {
     self.amount_per_square_pixel = 1 / (sqr(40) * pi)
     self.drag_radius = 0
     self.check_hold_aux = 0
+    self.amber_cost = -infinity
+    self.wood_cost = -infinity
     __define_methods()
 
     step = function() { 
@@ -137,20 +143,21 @@ function CommandCannon() constructor {
             draw_set_color(c_white)
         }
     }
-    press = function() {}
+    press = function() {
+        PlayCommandSound()
+    }
     hold = function() {
         self.holded_frames = min(self.holded_frames + 1, self.charge_frames)
     }
     release = function() {
         if self.holded_frames >= self.charge_frames {
-            oShip.amber -= global.cost_cannon_amber
+            self.take_resources()
             var core = instance_create_layer(
                 oShip.x, oShip.y, "Instances", oCannonCore)
             core.Launch(mouse_x, mouse_y)
 			PlaySoundAt(oShip.x, oShip.y, sfxCannonFire)
         }
         self.holded_frames = 0
-        PlayCommandSound()
     }
 }
 
@@ -286,8 +293,10 @@ function CommandTowerDropCrew(tower) constructor {
 
 function CommandAmberWrath() constructor {
     self.sprite = noone
+    self.amber_cost = global.cost_amber_wrath_amber
     __define_methods()
     activate = function() {
+        self.take_resources()
         oShip.amber_wrath_timer.reset()
         PlayCommandSound()
     }
@@ -295,8 +304,10 @@ function CommandAmberWrath() constructor {
 
 function CommandHealAura() constructor {
     self.sprite = noone
+    self.amber_cost = global.cost_heal_aura_amber
     __define_methods()
     activate = function() {
+        self.take_resources()
         oShip.heal_aura_timer.reset()
         PlayCommandSound()
     }
@@ -304,8 +315,10 @@ function CommandHealAura() constructor {
 
 function CommandProtectionAura() constructor {
     self.sprite = noone
+    self.amber_cost = global.cost_protection_aura_amber
     __define_methods()
     activate = function() {
+        self.take_resources()
         oShip.protection_aura_timer.reset()
         PlayCommandSound()
     }
@@ -314,10 +327,11 @@ function CommandProtectionAura() constructor {
 function CommandShipRepair() constructor {
     self.sprite = noone
     __define_methods()
-    self.amber_cost = 1
-    self.wood_cost = 15
+    self.amber_cost = global.cost_ship_repair_amber
+    self.wood_cost = global.cost_ship_repair_wood
 
     activate = function() {
+        self.take_resources()
         oShip.repair_timer.reset()
         PlayCommandSound()
     }
@@ -331,9 +345,10 @@ function CommandShipRepair() constructor {
 function CommandShipBoostSpeed() constructor {
     self.sprite = noone
     __define_methods()
-    self.amber_cost = 1
+    self.amber_cost = global.cost_speed_boost_amber
 
     activate = function() {
+        self.take_resources()
         oShip.speed_boost_timer.reset()
         PlayCommandSound()
     }
