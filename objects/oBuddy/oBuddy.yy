@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sBuddy1",
+    "path":"sprites/sBuddy1/sBuddy1.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

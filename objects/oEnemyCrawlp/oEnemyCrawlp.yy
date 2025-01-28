@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sCrawlp",
+    "path":"sprites/sCrawlp/sCrawlp.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

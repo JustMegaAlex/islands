@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sSettlement",
-    "path":"sprites/sSettlement/sSettlement.yy",
+    "name":"sSettlement3",
+    "path":"sprites/sSettlement3/sSettlement3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

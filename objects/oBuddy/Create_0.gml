@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+sprite_index = choose(sBuddy1, sBuddy2, sBuddy3, sBuddy4, sBuddy5)
+
 side = EntitySide.ours
 SetFriendlyWith(EntitySide.neutral)
 
