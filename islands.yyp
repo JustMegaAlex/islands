@@ -57,6 +57,7 @@
   "resources":[
     {"id":{"name":"fntDefault","path":"fonts/fntDefault/fntDefault.yy",},},
     {"id":{"name":"oAmber","path":"objects/oAmber/oAmber.yy",},},
+    {"id":{"name":"oAmberRain","path":"objects/oAmberRain/oAmberRain.yy",},},
     {"id":{"name":"oArcherBuddy","path":"objects/oArcherBuddy/oArcherBuddy.yy",},},
     {"id":{"name":"oArrow","path":"objects/oArrow/oArrow.yy",},},
     {"id":{"name":"oBigTree","path":"objects/oBigTree/oBigTree.yy",},},

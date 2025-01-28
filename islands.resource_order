@@ -32,6 +32,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"oAmber","order":2,"path":"objects/oAmber/oAmber.yy",},
+    {"name":"oAmberRain","order":15,"path":"objects/oAmberRain/oAmberRain.yy",},
     {"name":"oArcherBuddy","order":5,"path":"objects/oArcherBuddy/oArcherBuddy.yy",},
     {"name":"oArrow","order":13,"path":"objects/oArrow/oArrow.yy",},
     {"name":"oBigTree","order":1,"path":"objects/oBigTree/oBigTree.yy",},
