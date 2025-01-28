@@ -163,6 +163,7 @@
     {"id":{"name":"sfxWaterSplash","path":"sounds/sfxWaterSplash/sfxWaterSplash.yy",},},
     {"id":{"name":"sfxWinningStinger","path":"sounds/sfxWinningStinger/sfxWinningStinger.yy",},},
     {"id":{"name":"sAmber","path":"sprites/sAmber/sAmber.yy",},},
+    {"id":{"name":"sAmberTitan","path":"sprites/sAmberTitan/sAmberTitan.yy",},},
     {"id":{"name":"sAmberWrath","path":"sprites/sAmberWrath/sAmberWrath.yy",},},
     {"id":{"name":"sAmberWrathIcon","path":"sprites/sAmberWrathIcon/sAmberWrathIcon.yy",},},
     {"id":{"name":"sArrow","path":"sprites/sArrow/sArrow.yy",},},

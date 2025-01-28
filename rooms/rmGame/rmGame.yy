@@ -51,6 +51,7 @@
     {"name":"inst_54DDD70F","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_2F2A00C5","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_75C8FD87","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_5785FD06","path":"rooms/rmGame/rmGame.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -75,6 +76,9 @@
         {"$GMRInstance":"v1","%Name":"inst_75C8FD87","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_75C8FD87","objectId":{"name":"oUICreateInstance","path":"objects/oUICreateInstance/oUICreateInstance.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUICreateInstance","path":"objects/oUICreateInstance/oUICreateInstance.yy",},"propertyId":{"name":"obj","path":"objects/oUICreateInstance/oUICreateInstance.yy",},"resource":{"name":"oEnemyHarpy","path":"objects/oEnemyHarpy/oEnemyHarpy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"oEnemyHarpy",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":224.0,},
+        {"$GMRInstance":"v1","%Name":"inst_5785FD06","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5785FD06","objectId":{"name":"oUICreateInstance","path":"objects/oUICreateInstance/oUICreateInstance.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUICreateInstance","path":"objects/oUICreateInstance/oUICreateInstance.yy",},"propertyId":{"name":"obj","path":"objects/oUICreateInstance/oUICreateInstance.yy",},"resource":{"name":"oEnemyAmberTitan","path":"objects/oEnemyAmberTitan/oEnemyAmberTitan.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"oEnemyAmberTitan",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":320.0,},
       ],"layers":[],"name":"UI","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Tutorial","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_314295D5","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_314295D5","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":2.25,"scaleY":2.25,"spriteId":{"name":"sTutMouseR","path":"sprites/sTutMouseR/sTutMouseR.yy",},"x":448.0,"y":512.0,},

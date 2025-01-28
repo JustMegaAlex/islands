@@ -126,6 +126,7 @@
     {"name":"sfxWaterSplash","order":32,"path":"sounds/sfxWaterSplash/sfxWaterSplash.yy",},
     {"name":"sfxWinningStinger","order":33,"path":"sounds/sfxWinningStinger/sfxWinningStinger.yy",},
     {"name":"sAmber","order":3,"path":"sprites/sAmber/sAmber.yy",},
+    {"name":"sAmberTitan","order":7,"path":"sprites/sAmberTitan/sAmberTitan.yy",},
     {"name":"sAmberWrath","order":1,"path":"sprites/sAmberWrath/sAmberWrath.yy",},
     {"name":"sAmberWrathIcon","order":12,"path":"sprites/sAmberWrathIcon/sAmberWrathIcon.yy",},
     {"name":"sArrow","order":11,"path":"sprites/sArrow/sArrow.yy",},

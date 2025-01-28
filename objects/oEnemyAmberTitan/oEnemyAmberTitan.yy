@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sAmberTitan",
+    "path":"sprites/sAmberTitan/sAmberTitan.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
