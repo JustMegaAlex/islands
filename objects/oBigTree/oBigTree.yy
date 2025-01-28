@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sPalm",
+    "path":"sprites/sPalm/sPalm.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

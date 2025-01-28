@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sUIMarkDrop",
-    "path":"sprites/sUIMarkDrop/sUIMarkDrop.yy",
+    "name":"sUIDropPoint",
+    "path":"sprites/sUIDropPoint/sUIDropPoint.yy",
   },
   "spriteMaskId":null,
   "visible":true,

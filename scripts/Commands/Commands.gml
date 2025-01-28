@@ -41,7 +41,7 @@ function CommandTemplate() constructor {
 function CommandDropCrew(crew_type) constructor {
     __define_methods()
     self.crew_type = crew_type
-    self.sprite = sUIMarkDrop
+    self.sprite = sUIDropPoint
     self.mouse_over_island = false
     self.isle = false
     self.drag_start = new Vec2(0, 0)
@@ -134,18 +134,14 @@ function CommandCannon() constructor {
         for (var i = 0; i < array_length(self.charge_icon_angles); ++i) {
             var angle = self.charge_icon_angles[i]
             var inner_radius = (self.charge_frames - self.holded_frames) * 1.5 + 20
-            draw_set_color(c_black)
-            draw_line_width(
+            draw_sprite_ext(sUICrosshair, 1,
                 mouse_x + lengthdir_x(inner_radius, angle),
                 mouse_y + lengthdir_y(inner_radius, angle),
-                mouse_x + lengthdir_x(inner_radius + self.cursor_line_length, angle),
-                mouse_y + lengthdir_y(inner_radius + self.cursor_line_length, angle),
-                3
-            )
+                2, 2, angle, c_white, 1)
             if self.holded_frames >= self.charge_frames {
-                draw_circle(mouse_x, mouse_y, 50, true)
+                draw_sprite_ext(sUICrosshair, 0, mouse_x, mouse_y,
+                                2, 2, 0, c_white, 1)
             }
-            draw_set_color(c_white)
         }
     }
     press = function() {

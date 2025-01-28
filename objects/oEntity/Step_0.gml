@@ -28,7 +28,7 @@ if is_structure and build_timer.timer {
 }
 
 if hp <= 0 {
-    Die(); exit
+    Die(); exit;
 }
 
 if IsMoving() {

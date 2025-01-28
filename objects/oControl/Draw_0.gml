@@ -4,7 +4,9 @@ if active_ui and !instance_exists(active_ui) {
 }
 
 if is_ship_navigating {
-    draw_sprite(sUINavigateArrow, 0, oShip.move_target.x, oShip.move_target.y)
+    draw_sprite_ext(sUINavigateArrow, 0,
+        oShip.move_target.x, oShip.move_target.y,
+        2, 2, 0, c_white, 1)
 }
 
 if active_ui {

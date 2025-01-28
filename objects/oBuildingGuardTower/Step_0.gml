@@ -1,6 +1,10 @@
 
 event_inherited()
 
+if hp <= 0 {
+    exit
+}
+
 if marked_for_number_of_crew > array_length(gathering_crew) {
     GatherCrew()
 }

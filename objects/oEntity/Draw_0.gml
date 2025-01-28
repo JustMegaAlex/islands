@@ -17,11 +17,11 @@ draw_sprite_ext(
 // }
 
 if marked_for_pickup {
-    draw_sprite(sUIDefault, 0, x, y - 30)
+    draw_sprite(sUIGrabIndicator, 0, x, y - 30)
 }
 
 if marked_for_mining {
-    draw_sprite(sUIDefault, 0, x, y - 30)
+    draw_sprite(sUIMineIndicator, 0, x, y - 30)
 }
 
 if is_structure and build_timer.timer {
