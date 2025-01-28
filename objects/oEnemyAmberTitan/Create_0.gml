@@ -63,3 +63,23 @@ function AmberRain() {
     var rain = instance_create_layer(randx(), randy(), "Instances", oAmberRain)
     rain.Launch(amber_rain.z, rand_angle())
 }
+
+function FindAmberRainTarget() {
+    arr = EntitiesInCircle(x, y, amber_rain.trigger_distance, IsEnemySide)
+    if ArrayEmpty(arr) { return noone }
+    var max_count = 0
+    var target = noone
+    while !ArrayEmpty(arr) {
+        var ent = array_shift(arr)
+        var _arr = EntitiesInCircle(ent.x, ent.y, amber_rain.area_size, IsEnemySide)
+        if array_length(_arr) > max_count {
+            max_count = array_length(_arr)
+            target = ent
+            for (var j = 0; j < array_length(_arr); ++j) {
+                var item = _arr[j]
+                ArrayRemove(arr, item)
+            }
+        }
+    }
+    return target
+}

@@ -7,8 +7,9 @@ if !harpies_swarm.timer.update() && dist < harpies_swarm.trigger_distance {
     harpies_swarm.timer.reset()
 }
 
-amber_rain.target = oShip
-
+if !amber_rain.target or !instance_exists(amber_rain.target) {
+    amber_rain.target = FindAmberRainTarget()
+}
 if !amber_rain.timer.update() and amber_rain.target {
     amber_rain.number_to_spawn = amber_rain.number
     amber_rain.timer.reset()
