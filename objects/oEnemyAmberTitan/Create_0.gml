@@ -32,10 +32,10 @@ harpies_swarm = {
 }
 
 amber_rain = {
-    timer: MakeTimer(32 * sec),
+    timer: MakeTimer(18 * sec),
     spawn_timer: MakeTimer(18),
     trigger_distance: 1200,
-    number: 6,
+    number: 4,
     number_to_spawn: 0,
     area_size: 300,
     target: noone,
