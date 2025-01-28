@@ -6,9 +6,17 @@ DebugViewAddRefs(global, [
     ["draw grid", dbg_button, function() 
     { global.draw_grid = !global.draw_grid }],
     ["camera_clamp_zoom", dbg_checkbox],
+])
+
+DebugViewAddRefs(oPlayerVision, [
+    ["enabled", dbg_checkbox, "player vision"],
+])
+    
+DebugViewAddRefs(global, [
     ["emerge", dbg_button, function() { oGen.Emerge() }],
     ["spawn enemies", dbg_button, function() { oGen.SpawnEnemies() }]
 ])
+
 DebugViewAddRefs(oShip, [
     ["sp_initial", dbg_text_input, "ship speed", "f"],
     ["wood", dbg_text_input, "wood", "f"],
@@ -45,7 +53,3 @@ for (var i = 0; i < array_length(global.locked_abilities_high_tier); ++i) {
         [item.name, dbg_button, struct.f],
     ])
 }
-
-DebugViewAddRefs(oPlayerVision, [
-    ["enabled", dbg_checkbox],
-])

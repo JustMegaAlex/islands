@@ -11,8 +11,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUIButtonParent","path":"objects/oUIButtonParent/oUIButtonParent.yy",},"propertyId":{"name":"icon_sprite","path":"objects/oUIButtonParent/oUIButtonParent.yy",},"resource":{"name":"sUIIconHeal","path":"sprites/sUIIconHeal/sUIIconHeal.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"sUIIconHeal",},
   ],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/UI.yy",
+    "name":"Skills",
+    "path":"folders/Objects/UI/Skills.yy",
   },
   "parentObjectId":{
     "name":"oUIButtonParent",

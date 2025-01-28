@@ -19,6 +19,8 @@ if ArrayEmpty(abilities_array) {
 event_inherited()
 
 amber_cost = irandom_range(5, 8)
+button.command.amber_cost = amber_cost
+button.command.wood_cost = wood_cost
 
 ability = ArrayChoose(abilities_array)
 // ArrayRemove(abilities_array, ability)

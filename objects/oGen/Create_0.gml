@@ -311,7 +311,8 @@ function Emerge() {
     switch (emerging_level) {
         case 1: break
         case 4: 
-            enemy_spawn.harpy.spawns++
+            enemy_spawn.harpy.spawns = 1
+            enemy_spawn.harpy.count_per_spawn = 1
             enemy_spawn.harpy.area_limit = 1
         break
         case 5:

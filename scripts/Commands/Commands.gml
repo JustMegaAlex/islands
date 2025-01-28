@@ -39,6 +39,7 @@ function CommandTemplate() constructor {
 }
 
 function CommandDropCrew(crew_type) constructor {
+    __define_methods()
     self.crew_type = crew_type
     self.sprite = sUIMarkDrop
     self.mouse_over_island = false
@@ -51,7 +52,6 @@ function CommandDropCrew(crew_type) constructor {
     self.check_hold_aux = 0
     self.amber_cost = -infinity
     self.wood_cost = -infinity
-    __define_methods()
 
     step = function() { 
         self.check_hold_aux--
@@ -177,9 +177,12 @@ function CommandCreateInstance(obj) constructor {
 }
 
 function CommandFullfillTask(inst) constructor {
+    __define_methods()
     self.inst = inst
+    self.amber_cost = inst.amber_cost
+    self.wood_cost = inst.wood_cost
     if self.inst.object_index == oWorkshop {
-        
+        // // // Leave this comment or debugger will crash (lol)
         //// For some reason debugger crashes on Mac if 
         // Trade() is defined in oWorkshop Create
         // self.inst.Trade = function() {
@@ -187,7 +190,6 @@ function CommandFullfillTask(inst) constructor {
         //     instance_destroy(button)
         // }
     }
-    __define_methods()
 
     draw = function() {}
 
@@ -200,6 +202,7 @@ function CommandFullfillTask(inst) constructor {
             return false
         }
         self.inst.Trade()
+        self.take_resources()
         PlayCommandSound()
         return true
     }

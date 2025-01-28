@@ -8,8 +8,8 @@
   "name":"oUIUpgradeToArcher",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/UI.yy",
+    "name":"Skills",
+    "path":"folders/Objects/UI/Skills.yy",
   },
   "parentObjectId":{
     "name":"oUIButtonParent",
