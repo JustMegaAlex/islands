@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+image_xscale = 2
+image_yscale = 2
+
 side = EntitySide.theirs
 
 default_color = c_black

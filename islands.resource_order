@@ -142,7 +142,6 @@
     {"name":"sCannonball","order":12,"path":"sprites/sCannonball/sCannonball.yy",},
     {"name":"sCollectibleAmber","order":8,"path":"sprites/sCollectibleAmber/sCollectibleAmber.yy",},
     {"name":"sCrawlp","order":3,"path":"sprites/sCrawlp/sCrawlp.yy",},
-    {"name":"sHarpy_orig","order":6,"path":"sprites/sHarpy_orig/sHarpy_orig.yy",},
     {"name":"sHarpy","order":5,"path":"sprites/sHarpy/sHarpy.yy",},
     {"name":"sIsland","order":4,"path":"sprites/sIsland/sIsland.yy",},
     {"name":"sIslandTile","order":1,"path":"sprites/sIslandTile/sIslandTile.yy",},

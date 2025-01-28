@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sHarpy",
+    "path":"sprites/sHarpy/sHarpy.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
