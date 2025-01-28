@@ -1,6 +1,3 @@
-if !EnsureSingleton() {
-	exit
-}
 
 function Mouse(key) constructor {
     self.key = key
