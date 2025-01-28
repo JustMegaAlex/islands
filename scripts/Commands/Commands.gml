@@ -100,10 +100,15 @@ function CommandDropCrew(crew_type) constructor {
             crew_commanded_to_drop += crew_type == other.crew_type
         }
         self.amount_to_drop = max(1, self.amount_to_drop)
+        var gap = 30
         repeat min(self.amount_to_drop, crew_left - crew_commanded_to_drop) {
             self.spawn_vec.setv(self.drag_start)
                           .add_polar(random(self.drag_radius*0.8), random(360))
-                          .clamp_coords(self.isle.bbox_left, self.isle.bbox_right, self.isle.bbox_top, self.isle.bbox_bottom)
+                          .clamp_coords(
+                            self.isle.bbox_left + gap,
+                            self.isle.bbox_right - gap,
+                            self.isle.bbox_top + gap,
+                            self.isle.bbox_bottom - gap)
             var mark = instance_create_layer(self.spawn_vec.x, self.spawn_vec.y, "Instances", oUIMarkDrop)
             mark.crew_type = self.crew_type
         }

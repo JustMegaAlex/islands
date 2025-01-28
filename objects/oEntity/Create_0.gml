@@ -153,8 +153,13 @@ function IsMoving() {
 }
 
 function Hit(id) {
-    if id.object_index == oCannonCore and is_flying {
-        return
+    if id.object_index == oCannonCore {
+        if is_flying {
+            return
+        }
+        if side == EntitySide.ours {
+            hp -= 0.2
+        }
     }
     if object_index == oBuildingGuardTower {
         var test = true

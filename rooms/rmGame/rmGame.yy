@@ -52,6 +52,7 @@
     {"name":"inst_2F2A00C5","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_75C8FD87","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_5785FD06","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_F2EF880","path":"rooms/rmGame/rmGame.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -159,6 +160,7 @@
         {"$GMRInstance":"v1","%Name":"inst_656B38DF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_656B38DF","objectId":{"name":"oTree","path":"objects/oTree/oTree.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5216.0,"y":2976.0,},
         {"$GMRInstance":"v1","%Name":"inst_74287F45","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_74287F45","objectId":{"name":"oTree","path":"objects/oTree/oTree.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5280.0,"y":2912.0,},
         {"$GMRInstance":"v1","%Name":"inst_17B010D7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_17B010D7","objectId":{"name":"oTree","path":"objects/oTree/oTree.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5344.0,"y":3008.0,},
+        {"$GMRInstance":"v1","%Name":"inst_F2EF880","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F2EF880","objectId":{"name":"oSettlement","path":"objects/oSettlement/oSettlement.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-416.0,"y":288.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Bottom","depth":10000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_1B48322B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1B48322B","objectId":{"name":"oIsland","path":"objects/oIsland/oIsland.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":2.5,"x":4032.0,"y":576.0,},

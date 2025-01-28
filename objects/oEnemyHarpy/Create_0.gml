@@ -23,6 +23,6 @@ attack_damage = 1
 attack_timer.time = 120
 
 attack_distance = 400
-enemy_detection_range = 1800
+enemy_detection_range = 1500
 
 z = -200

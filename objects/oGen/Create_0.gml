@@ -22,7 +22,7 @@ for (var i = 0; i < grid_w; i++) {
 
 var sec = 60
 emerging_level = 0
-emerge_timer = MakeTimer(45 * sec)
+emerge_timer = MakeTimer(60 * sec)
 emerge_resource_gain = 0.1
 resource_multiplier = 1
 
@@ -30,9 +30,9 @@ enemy_spawn_timer = MakeTimer(45 * sec)
 enemy_spawn_sub_area_size = 200
 enemy_spawn = {
     crawlp: {
+        spawns: 2,
         count_per_spawn: 2,
         area_limit: 6,
-        spawns: 2,
     },
     harpy: {
         count_per_spawn: 0,
@@ -201,14 +201,14 @@ cell_generators_config = [
     [2, new Cell(0)],
 ]
 islands_config = [
-    [2, new Island(0, 1)],
-    [8, new Island(1, 0)],
-    [8, new Island(2, 1)],
-    [1, new Island(5, 1)],
-    [3, new Island(5, 0)],
-    [1, new Island(8, 1)],
+    [16, new Island(1, 0)],
+    [16, new Island(2, 0)],
+    [6, new Island(5, 0)],
     [1, new Island(12, 0)],
-    [1, new Island(2, 2)],
+    [1, new Island(5, 1)],
+    [2, new Island(0, 1)],
+    [1, new Island(8, 1)],
+    [1, new Island(2, 1)],
 ]
 trade_point_low_conf = [1, oScroll]
 trade_point_high_conf = [1, oScrollHigh]
@@ -311,30 +311,49 @@ function Emerge() {
     switch (emerging_level) {
         case 1: break
         case 4: 
-            enemy_spawn.harpy.spawns = 1
-            enemy_spawn.harpy.count_per_spawn = 1
-            enemy_spawn.harpy.area_limit = 1
+            enemy_spawn.crawlp.area_limit = 10
+            enemy_spawn.crawlp.spawns = 3
         break
         case 5:
             array_push(islands_config, island_gen_big_trees_conf)
         break
         case 7:
-            enemy_spawn.harpy.area_limit = 2
-        break
-        case 10: 
+            enemy_spawn.harpy.spawns = 1
+            enemy_spawn.harpy.count_per_spawn = 1
+            enemy_spawn.harpy.area_limit = 1
+            enemy_spawn.crawlp.area_limit = 15
+            break
+        case 10:
             island_gen_big_trees.big_trees = 2
             island_gen_big_trees.trees += 3
-            enemy_spawn.harpy.area_limit = 3
+            
+            enemy_spawn.harpy.area_limit = 2
+
+            enemy_spawn.harpy.count_per_spawn = 2
+            enemy_spawn.harpy.area_limit = 4
             break
+        case 12:
+            enemy_spawn.crawlp.count_per_spawn = 4
+            enemy_spawn.crawlp.spawns = 3
+            enemy_spawn.crawlp.area_limit = 18
         case 15:
             island_gen_big_trees.big_trees = 3
             island_gen_big_trees.trees += 3
-            enemy_spawn.harpy.area_limit = 4
-        break
+
+            enemy_spawn.harpy.spawns = 2
+            enemy_spawn.harpy.area_limit = 8
+            enemy_spawn.harpy.count_per_spawn = 3
+
+            enemy_spawn.crawlp.count_per_spawn = 4
+            enemy_spawn.crawlp.spawns = 4
+            enemy_spawn.crawlp.area_limit = 25
+            break
         case 20:
             island_gen_big_trees.big_trees = 4
             island_gen_big_trees.trees += 3
             enemy_spawn.harpy.area_limit = 6
+            enemy_spawn.crawlp.area_limit = 20
+            SpawnBoss()
         break
     }
     if emerging_level > 4 {
@@ -424,6 +443,11 @@ function GridCheck(vec) {
 
 function RectAreaCount(area, obj) {
     return RectInstanceCount(area.x0, area.y0, area.x1, area.y1, obj)
+}
+
+function SpawnBoss() {
+    var pos = oShip.position.add_polar_(1000, random(360))
+    instance_create_layer(pos.x, pos.y, "Instances", oEnemyAmberTitan)
 }
 
 show_debug_message($"ship_grid_pos: {ship_grid_pos.x}, {ship_grid_pos.y}, ship_grid_pos_prev: {ship_grid_pos_prev.x}, {ship_grid_pos_prev.y}")
