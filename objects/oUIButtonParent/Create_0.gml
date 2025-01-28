@@ -5,7 +5,6 @@ mouse_over = false
 mouse_over_prev = false
 active = false
 hidden = false
-name = ""
 
 function Deactivate() {
     active = false
