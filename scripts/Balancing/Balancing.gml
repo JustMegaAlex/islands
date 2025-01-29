@@ -19,7 +19,7 @@ hp_guard_tower = 10
 ship_starting_amber = 4
 ship_starting_wood = 12
 ship_starting_crew_size = 8
-ship_speed = 5.5 * 30
+ship_speed = 5.5
 ship_hp = 30
 
 sp_entity_default = 0.7
@@ -29,3 +29,7 @@ harpy_sp_max = 3
 watch_tower_scan_range = 5000
 watch_tower_wood_cost = 10
 guard_tower_wood_cost = 10
+
+if DEBUG_ON {
+    ship_speed = 5.5 * 30
+}
