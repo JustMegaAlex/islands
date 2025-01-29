@@ -59,6 +59,7 @@
     {"name":"oInput","order":1,"path":"objects/oInput/oInput.yy",},
     {"name":"oInstanceManager","order":8,"path":"objects/oInstanceManager/oInstanceManager.yy",},
     {"name":"oIsland","order":6,"path":"objects/oIsland/oIsland.yy",},
+    {"name":"oMusic","order":9,"path":"objects/oMusic/oMusic.yy",},
     {"name":"oParticles","order":4,"path":"objects/oParticles/oParticles.yy",},
     {"name":"oPlayerVision","order":6,"path":"objects/oPlayerVision/oPlayerVision.yy",},
     {"name":"oScroll","order":3,"path":"objects/oScroll/oScroll.yy",},
