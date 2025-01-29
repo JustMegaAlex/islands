@@ -5,7 +5,8 @@ function UiSlider(
         value,
         min_value,
         max_value,
-		collision_raduis=-1) constructor {
+		collision_raduis=-1,
+        is_gui=false) constructor {
 	self.spr = spr
     self.sprw = sprite_get_width(spr)
     self.sprh = sprite_get_height(spr)
@@ -13,6 +14,7 @@ function UiSlider(
     self.draw_y_off = sprh * 0.5
     self.total_width = width
     self.width = max(0, width - sprw)
+    self.is_gui = is_gui
 
     self.value = clamp(value, min_value, max_value)
 	self.min_value = min_value
@@ -39,12 +41,12 @@ function UiSlider(
 	
 	function check_is_captured() {
 		return mouse_check_button_pressed(mb_left)
-			   and (point_distance(X + slider_rel_x, Y, mouse_x, mouse_y) < collision_raduis)
+			   and (point_distance(X + slider_rel_x, Y, mousex(), mousey()) < collision_raduis)
 	}
 
 	function step() {
 		if is_captured {
-			slider_rel_x = clamp(mouse_x - X, 0, width)
+			slider_rel_x = clamp(mousex() - X, 0, width)
 			set_value()
 			is_captured = !mouse_check_button_released(mb_left)
 		} else {
@@ -56,7 +58,14 @@ function UiSlider(
     function draw() {
         draw_sprite_stretched(spr, 0, X - draw_x_off, Y - draw_y_off, total_width, sprh)
         draw_sprite(spr, 1, X + slider_rel_x, Y)
-		draw_text_custom(X + total_width + 10, Y, value, fnt, fa_center, fa_middle)
+    }
+
+    function mousex() {
+        return is_gui ? window_mouse_get_x() : mouse_x
+    }
+
+    function mousey() {
+        return is_gui ? window_mouse_get_y() : mouse_y
     }
 	
 	function perform_hook(slf) {}

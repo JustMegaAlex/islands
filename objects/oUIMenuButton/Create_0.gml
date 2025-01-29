@@ -1,6 +1,9 @@
 
 event_inherited()
 
-command = new command_constructor()
+
+if command_constructor {
+    command = new command_constructor()
+}
 
 Hide()
