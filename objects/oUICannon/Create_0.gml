@@ -3,4 +3,4 @@ event_inherited()
 
 command = new CommandCannon()
 
-icon_sprite = sCannonCore
+icon_sprite = sCannonball
