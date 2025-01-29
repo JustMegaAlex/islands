@@ -1,5 +1,6 @@
 
 function __define_methods() {
+    self.sprite = noone
     active = false
     amber_cost = 0
     wood_cost = 0
@@ -385,5 +386,20 @@ function CommandSkipTut() constructor {
 		instance_destroy(oUIButtonSkipTut)
 		oControl.active_ui = noone
         oControl.alarm[0] = 1
+    }
+}
+
+function CommandContinue() constructor {
+    __define_methods()
+    activate = function() {
+        deactivate()
+        Unpause()
+    }
+}
+
+function CommandRestart() constructor {
+    __define_methods()
+    activate = function() {
+        Restart()
     }
 }

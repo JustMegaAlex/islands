@@ -158,6 +158,7 @@ mapping_config = {
           new Gamepad(gp_padr), new Gamepad(gp_padl),
     ],
     camera_focus: [new Key(ord("C"))],
+    pause: [new Key(ord("P"))],
 }
 
 //// Initialize key mapping

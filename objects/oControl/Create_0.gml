@@ -7,6 +7,8 @@ active_ui = noone
 
 collision_list = ds_list_create()
 
+ui_object = oUIMapButtonParent
+
 rclick_pressed_timer = MakeTimer(10000)
 lclick_pressed_timer = MakeTimer(10)
 crew_select_box = {

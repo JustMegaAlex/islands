@@ -1,6 +1,6 @@
 
 event_inherited()
 
-command = new CommandTryAgain()
+command = new command_constructor()
 
 Hide()

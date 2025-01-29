@@ -5,6 +5,7 @@
 draw_grid = false
 camera_clamp_zoom = true
 spawners_draw_enabled = false
+pause = false
 player_vision_enabled = true
 watch_tower_show_radius = false
 

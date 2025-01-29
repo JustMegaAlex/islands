@@ -115,7 +115,7 @@ if active_ui and !clicked_on_ui {
 
 //// Check for map buttons
 if !_ui {
-    _ui = collision_point(mouse_x, mouse_y, oUIMapButtonParent, false, false)
+    _ui = collision_point(mouse_x, mouse_y, ui_object, false, false)
     if _ui {
         _ui.mouse_over = true
         if oInput.Pressed("lclick") {
@@ -153,4 +153,12 @@ if is_ship_navigating {
 if oInput.Pressed("escape") and active_ui {
     active_ui.command.deactivate()
     active_ui = noone
+}
+
+if oInput.Pressed("pause") {
+    if global.pause {
+        Unpause()
+    } else {
+        Pause()
+    }
 }
