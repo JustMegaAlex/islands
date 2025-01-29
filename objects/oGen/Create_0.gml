@@ -189,7 +189,7 @@ function Area(i, j) constructor {
     self.y1 = self.y0 + oGen.grid_area_size
     self.generated = false
     self.last_gen_level = 0
-    self.is_activated = true
+    self.is_activated = false
     self.instances = []
 }
 
@@ -369,7 +369,6 @@ function Emerge() {
     if emerging_level == 15 {
         array_push(trade_points_config, trade_point_high_conf)
         trade_points_generators.init()
-		var test = true
     }
 }
 
@@ -473,4 +472,8 @@ function SpawnBoss() {
     instance_create_layer(pos.x, pos.y, "Instances", oEnemyAmberTitan)
 }
 
+ship_grid_pos.set(w2gx(oShip.x), w2gy(oShip.y))
+
 show_debug_message($"ship_grid_pos: {ship_grid_pos.x}, {ship_grid_pos.y}, ship_grid_pos_prev: {ship_grid_pos_prev.x}, {ship_grid_pos_prev.y}")
+
+

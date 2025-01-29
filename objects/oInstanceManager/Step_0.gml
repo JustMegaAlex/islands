@@ -7,7 +7,7 @@ for (var i = -grid_active_distance; i < grid_active_distance+1; ++i) {
         if oGen.GridCheck(vec_check) {
             var area = oGen.GridGet(vec_check)
             if area.is_activated {
-                continue    
+                continue
             }
             AreaActivate(area)
         }
@@ -16,7 +16,7 @@ for (var i = -grid_active_distance; i < grid_active_distance+1; ++i) {
 
 for (var i = 0; i < array_length(active_areas); ++i) {
     var area = active_areas[i]
-    if GridDist(area.grid_pos, shipv) > grid_active_distance {
+    if GridDist(area.i, area.j, shipv.x, shipv.y) > grid_active_distance {
         AreaDeactivate(area)
     }
 }
@@ -26,14 +26,7 @@ with oWorldEntity {
     if _area != world_grid_area {
         other.MoveToArea(id, _area)
     }
-	if world_grid_area == undefined {
-		var test = true
-	}
-	try {
-	    if !world_grid_area.is_activated {
-	        instance_deactivate_object(id)
-	    }
-	} catch (e) {
-		var test = true
+	if !world_grid_area.is_activated {
+	    instance_deactivate_object(id)
 	}
 }

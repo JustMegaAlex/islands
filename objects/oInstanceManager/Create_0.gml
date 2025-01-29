@@ -27,6 +27,9 @@ function MoveToArea(inst, area) {
     inst.world_grid_area = area
 }
 
-function GridDist(vec1, vec2) {
+function GridDistV(vec1, vec2) {
     return max(abs(vec1.x - vec2.x), abs(vec1.y - vec2.y))
+}
+function GridDist(x1, y1, x2, y2) {
+    return max(abs(x1 - x2), abs(y1 - y2))
 }
