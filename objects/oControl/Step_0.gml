@@ -84,7 +84,7 @@ if rclick_pressed and !rclick_canceled_ui {
 
 ///// UI
 mx = window_mouse_get_x(); my = window_mouse_get_y();
-var _ui = collision_point(mx, my, oUIButtonParent, false, false)
+var _ui = collision_point(mx, my, ui_object, false, false)
 var clicked_on_ui = false
 if _ui {
     _ui.mouse_over = true

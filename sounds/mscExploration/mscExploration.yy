@@ -2,8 +2,8 @@
   "$GMSound":"",
   "%Name":"mscExploration",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audio_group_msc",
+    "path":"audiogroups/audio_group_msc",
   },
   "bitDepth":1,
   "bitRate":128,

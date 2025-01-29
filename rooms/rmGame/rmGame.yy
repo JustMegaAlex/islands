@@ -57,6 +57,7 @@
     {"name":"inst_1EC2A44F","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_5462B919","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_14C26637","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_B5EFDE0","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_4B42F372","path":"rooms/rmGame/rmGame.yy",},
   ],
   "isDnd":false,
@@ -70,7 +71,12 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUIButtonParent","path":"objects/oUIButtonParent/oUIButtonParent.yy",},"propertyId":{"name":"name","path":"objects/oUIButtonParent/oUIButtonParent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Restart",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUIMenuButton","path":"objects/oUIMenuButton/oUIMenuButton.yy",},"propertyId":{"name":"command_constructor","path":"objects/oUIMenuButton/oUIMenuButton.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"CommandRestart",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.4545455,"scaleY":1.0,"x":692.0,"y":350.0,},
-        {"$GMRInstance":"v1","%Name":"inst_4B42F372","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4B42F372","objectId":{"name":"oUIMenuSlider","path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":688.0,"y":442.0,},
+        {"$GMRInstance":"v1","%Name":"inst_4B42F372","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4B42F372","objectId":{"name":"oUIMenuSlider","path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUIMenuSlider","path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},"propertyId":{"name":"aud_group","path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"audio_group_msc",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":724.0,"y":444.0,},
+        {"$GMRInstance":"v1","%Name":"inst_B5EFDE0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_B5EFDE0","objectId":{"name":"oUIMenuSlider","path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oUIMenuSlider","path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},"propertyId":{"name":"aud_group","path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"audio_group_sfx",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":725.0,"y":512.0,},
       ],"layers":[],"name":"Menu","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"UI","depth":-15000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_39AC5CC1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_39AC5CC1","objectId":{"name":"oUIButtonDrop","path":"objects/oUIButtonDrop/oUIButtonDrop.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":384.0,},

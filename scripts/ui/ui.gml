@@ -21,6 +21,9 @@ function UiSlider(
 	self.max_value = max_value
     self.slider_rel_x = (value - min_value) / max_value * self.width
 
+    self.prev_value = self.value
+    self.has_changed = false
+
     self.X = 0
     self.Y = 0
 	self.collision_raduis = collision_raduis
@@ -31,7 +34,7 @@ function UiSlider(
 	self.is_captured = false
 	
 	function set_pos(xx, yy) {
-		X = xx
+		X = xx - total_width * 0.5
 		Y = yy
 	}
 	
@@ -50,9 +53,14 @@ function UiSlider(
 			set_value()
 			is_captured = !mouse_check_button_released(mb_left)
 		} else {
-			is_captured = check_is_captured()
+            is_captured = check_is_captured()
 		}
-		perform_hook(self)
+        has_changed = false
+        if prev_value != value {
+            has_changed = true
+            perform_hook(self)
+        }
+        prev_value = value
 	}
 
     function draw() {

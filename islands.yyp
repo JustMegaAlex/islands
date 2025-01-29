@@ -3,6 +3,8 @@
   "%Name":"islands",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"audio_group_sfx","name":"audio_group_sfx","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"","%Name":"audio_group_msc","name":"audio_group_msc","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[
@@ -95,6 +97,7 @@
     {"id":{"name":"oScrollHigh","path":"objects/oScrollHigh/oScrollHigh.yy",},},
     {"id":{"name":"oSettlement","path":"objects/oSettlement/oSettlement.yy",},},
     {"id":{"name":"oShip","path":"objects/oShip/oShip.yy",},},
+    {"id":{"name":"oStart","path":"objects/oStart/oStart.yy",},},
     {"id":{"name":"oSys","path":"objects/oSys/oSys.yy",},},
     {"id":{"name":"oTradePointParent","path":"objects/oTradePointParent/oTradePointParent.yy",},},
     {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},},
@@ -124,6 +127,7 @@
     {"id":{"name":"oWorldEntity","path":"objects/oWorldEntity/oWorldEntity.yy",},},
     {"id":{"name":"psWaterSplash","path":"particles/psWaterSplash/psWaterSplash.yy",},},
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
+    {"id":{"name":"rmStart","path":"rooms/rmStart/rmStart.yy",},},
     {"id":{"name":"Audio","path":"scripts/Audio/Audio.yy",},},
     {"id":{"name":"Balancing","path":"scripts/Balancing/Balancing.yy",},},
     {"id":{"name":"camera","path":"scripts/camera/camera.yy",},},
@@ -240,6 +244,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rmStart","path":"rooms/rmStart/rmStart.yy",},},
     {"roomId":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
   ],
   "templateType":"game",
