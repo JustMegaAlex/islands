@@ -100,6 +100,7 @@
     {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},},
     {"id":{"name":"oTutTrigger","path":"objects/oTutTrigger/oTutTrigger.yy",},},
     {"id":{"name":"oTutTriggerArcherButton","path":"objects/oTutTriggerArcherButton/oTutTriggerArcherButton.yy",},},
+    {"id":{"name":"oUIActionButtonParent","path":"objects/oUIActionButtonParent/oUIActionButtonParent.yy",},},
     {"id":{"name":"oUIButtonAmberWrath","path":"objects/oUIButtonAmberWrath/oUIButtonAmberWrath.yy",},},
     {"id":{"name":"oUIButtonBuild","path":"objects/oUIButtonBuild/oUIButtonBuild.yy",},},
     {"id":{"name":"oUIButtonDrop","path":"objects/oUIButtonDrop/oUIButtonDrop.yy",},},

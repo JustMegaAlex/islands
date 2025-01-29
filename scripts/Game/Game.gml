@@ -14,6 +14,6 @@ function Pause() {
 }
 function Unpause() {
     with oUIMenuButton { Hide() }
-    oControl.ui_object = oUIButtonParent
+    oControl.ui_object = oUIActionButtonParent
     global.pause = false
 }

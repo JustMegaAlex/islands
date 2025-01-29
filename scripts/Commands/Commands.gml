@@ -378,7 +378,7 @@ function CommandSkipTut() constructor {
         oGen.gen_enabled = true
         layer_destroy_instances("TutTriggers")
         layer_set_visible("Tutorial", false)
-        with oUIButtonParent {
+        with oUIActionButtonParent {
             Show()
         }
 		oUIButtonRetry.Hide()

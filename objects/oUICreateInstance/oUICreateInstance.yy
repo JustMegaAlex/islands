@@ -12,8 +12,8 @@
     "path":"folders/Objects/UI.yy",
   },
   "parentObjectId":{
-    "name":"oUIButtonParent",
-    "path":"objects/oUIButtonParent/oUIButtonParent.yy",
+    "name":"oUIActionButtonParent",
+    "path":"objects/oUIActionButtonParent/oUIActionButtonParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
