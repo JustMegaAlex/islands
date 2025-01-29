@@ -1,4 +1,6 @@
 
+CHECK_PAUSE
+
 distance_passed += sp
 var xx = distance_passed / distance
 

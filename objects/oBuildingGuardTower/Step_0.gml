@@ -1,4 +1,6 @@
 
+CHECK_PAUSE
+
 event_inherited()
 
 if hp <= 0 {

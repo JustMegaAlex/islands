@@ -1,4 +1,6 @@
 
+#macro CHECK_PAUSE if global.pause { exit }
+
 #macro DEBUG_ON false
 #macro Debug:DEBUG_ON true
 

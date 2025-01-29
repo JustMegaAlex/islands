@@ -1,4 +1,6 @@
 
+CHECK_PAUSE
+
 if !gen_enabled {
     exit
 }

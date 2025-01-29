@@ -1,4 +1,6 @@
 
+CHECK_PAUSE
+
 dist_left -= abs(sp)
 
 x += spx

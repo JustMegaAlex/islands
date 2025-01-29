@@ -1,4 +1,6 @@
 
+CHECK_PAUSE
+
 x += lengthdir_x(sp, image_angle)
 y += lengthdir_y(sp, image_angle)
 

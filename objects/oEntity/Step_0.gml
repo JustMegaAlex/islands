@@ -1,4 +1,6 @@
 
+CHECK_PAUSE
+
 if is_miner {
     var test = true
 }

@@ -1,4 +1,7 @@
 
+CHECK_PAUSE
+
+
 if !is_collected {
     exit
 }

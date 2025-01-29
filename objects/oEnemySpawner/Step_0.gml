@@ -1,4 +1,6 @@
 
+CHECK_PAUSE
+
 if !check_timer.update() {
 	enemy_nearby = noone
     check_timer.reset()
