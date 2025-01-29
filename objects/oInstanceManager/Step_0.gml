@@ -22,6 +22,9 @@ for (var i = 0; i < array_length(active_areas); ++i) {
 }
 
 with oWorldEntity {
+    if object_index == oBuildingWatchTower {
+        continue
+    }
     var _area = oGen.GridGetByCoords(x, y)
     if _area != world_grid_area {
         other.MoveToArea(id, _area)

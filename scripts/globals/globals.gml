@@ -1,6 +1,9 @@
-draw_grid = false
-camera_clamp_zoom = true
+draw_grid = true
+camera_clamp_zoom = false
 spawners_draw_enabled = false
+player_vision_enabled = false
+
+watch_tower_show_radius = true
 
 locked_abilities_low_tier = []
 

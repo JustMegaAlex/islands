@@ -55,3 +55,7 @@ for (var i = 0; i < array_length(global.locked_abilities_high_tier); ++i) {
         [item.name, dbg_button, struct.f],
     ])
 }
+
+DebugViewAddRefs(global, [
+    ["watch_tower_show_radius", dbg_checkbox],
+])
