@@ -1,6 +1,4 @@
 
-depth = -(y - CamYCent())
-
 if is_miner {
     var test = true
 }

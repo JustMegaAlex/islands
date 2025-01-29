@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sCannonCore",
-    "path":"sprites/sCannonCore/sCannonCore.yy",
+    "name":"sCannonball",
+    "path":"sprites/sCannonball/sCannonball.yy",
   },
   "spriteMaskId":null,
   "visible":true,
