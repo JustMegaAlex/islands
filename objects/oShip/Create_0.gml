@@ -114,10 +114,14 @@ function DropCrew(crew_type, xx, yy) {
     inst.move_target.set(xx, yy)
 }
 
+is_dead = false
 function Die() {
+	if is_dead { return }
+    is_dead = true
     visible = false
     with oUIButtonParent { Hide()}
     oUIButtonRetry.Show()
+    oMusic.switchMusic(mscLooseStinger, false, 0)
 }
 
 crew = {

@@ -83,3 +83,8 @@ function FindAmberRainTarget() {
     }
     return target
 }
+
+function Die() {
+    instance_destroy()
+    Win()
+}

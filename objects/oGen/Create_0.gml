@@ -470,6 +470,7 @@ function RectAreaCount(area, obj) {
 function SpawnBoss() {
     var pos = oShip.position.add_polar_(1000, random(360))
     instance_create_layer(pos.x, pos.y, "Instances", oEnemyAmberTitan)
+    oMusic.switchMusic(mscBossFightStinger, false)
 }
 
 ship_grid_pos.set(w2gx(oShip.x), w2gy(oShip.y))

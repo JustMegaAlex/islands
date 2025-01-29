@@ -138,6 +138,8 @@
     {"id":{"name":"mscBossFightStinger","path":"sounds/mscBossFightStinger/mscBossFightStinger.yy",},},
     {"id":{"name":"mscExploration","path":"sounds/mscExploration/mscExploration.yy",},},
     {"id":{"name":"mscIntenseWaltz","path":"sounds/mscIntenseWaltz/mscIntenseWaltz.yy",},},
+    {"id":{"name":"mscLooseStinger","path":"sounds/mscLooseStinger/mscLooseStinger.yy",},},
+    {"id":{"name":"mscWinStinger","path":"sounds/mscWinStinger/mscWinStinger.yy",},},
     {"id":{"name":"sfxArrowHit","path":"sounds/sfxArrowHit/sfxArrowHit.yy",},},
     {"id":{"name":"sfxArrowSweep","path":"sounds/sfxArrowSweep/sfxArrowSweep.yy",},},
     {"id":{"name":"sfxArrowSweepLong","path":"sounds/sfxArrowSweepLong/sfxArrowSweepLong.yy",},},

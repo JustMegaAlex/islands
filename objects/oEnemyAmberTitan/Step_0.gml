@@ -1,6 +1,10 @@
 
 event_inherited()
 
+if hp <= 0 {
+    exit
+}
+
 var dist = InstDist(oShip)
 if !harpies_swarm.timer.update() && dist < harpies_swarm.trigger_distance {
     HarpiesSwarm()

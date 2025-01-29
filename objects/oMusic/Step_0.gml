@@ -10,3 +10,8 @@ if (current_music == mscExploration
 	switchMusic(msc, false)
 	alarm[0] = 300
 }
+
+if next_music == noone and current_music == mscBossFightStinger
+		and !audio_is_playing(current_music_instance) {
+    switchMusic(mscBossFight, true)
+}

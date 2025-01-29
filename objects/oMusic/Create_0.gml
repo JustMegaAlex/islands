@@ -17,7 +17,7 @@ function switchMusic(msc, loops=true, transition_time=music_transition_time_ms) 
 			// fade out current music
 			audio_sound_gain(current_music, 0, next_music_transition_time_ms)
 			// trigger next music
-			alarm[0] = next_music_transition_time_ms / 1000 * 60
+			alarm[0] = max(next_music_transition_time_ms / 1000 * 60, 1)
 		}
 	} else {
 		alarm[0] = 1
@@ -28,6 +28,7 @@ function CurrentMusic() {
 	return current_music
 }
 
+audio_stop_all()
 switchMusic(mscExploration, false)
 
 //audio_play_sound(mscExploration, 0, false)

@@ -21,6 +21,8 @@ DebugViewAddRefs(global, [
 
 DebugViewAddRefs(oShip, [
     ["sp_initial", dbg_text_input, "ship speed", "f"],
+    ["hp_max", dbg_text_input, "hp max", "f"],
+    ["hp", dbg_text_input, "hp", "f"],
     ["wood", dbg_text_input, "wood", "f"],
     ["amber", dbg_text_input, "amber", "f"],
     ["on_board_shooters_max", dbg_text_input, "shooters", "i"],

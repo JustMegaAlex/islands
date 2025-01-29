@@ -99,6 +99,8 @@
     {"name":"mscBossFightStinger","order":1,"path":"sounds/mscBossFightStinger/mscBossFightStinger.yy",},
     {"name":"mscExploration","order":2,"path":"sounds/mscExploration/mscExploration.yy",},
     {"name":"mscIntenseWaltz","order":3,"path":"sounds/mscIntenseWaltz/mscIntenseWaltz.yy",},
+    {"name":"mscLooseStinger","order":4,"path":"sounds/mscLooseStinger/mscLooseStinger.yy",},
+    {"name":"mscWinStinger","order":5,"path":"sounds/mscWinStinger/mscWinStinger.yy",},
     {"name":"sfxArrowSweep","order":1,"path":"sounds/sfxArrowSweep/sfxArrowSweep.yy",},
     {"name":"sfxArrowSweepLong","order":2,"path":"sounds/sfxArrowSweepLong/sfxArrowSweepLong.yy",},
     {"name":"sfxBigMonsterDeath","order":3,"path":"sounds/sfxBigMonsterDeath/sfxBigMonsterDeath.yy",},
