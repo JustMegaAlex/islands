@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oCollisionChecker",
+  "%Name":"oInstanceManager",
   "eventList":[],
   "managed":true,
-  "name":"oCollisionChecker",
+  "name":"oInstanceManager",
   "overriddenProperties":[],
   "parent":{
     "name":"System",
@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sWhiteSquare",
-    "path":"sprites/sWhiteSquare/sWhiteSquare.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

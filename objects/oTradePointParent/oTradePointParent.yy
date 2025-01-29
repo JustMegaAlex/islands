@@ -9,10 +9,13 @@
   "name":"oTradePointParent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"TradePoints",
+    "path":"folders/Objects/TradePoints.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oWorldEntity",
+    "path":"objects/oWorldEntity/oWorldEntity.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

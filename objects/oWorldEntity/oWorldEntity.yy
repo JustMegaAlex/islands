@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oCollisionChecker",
+  "%Name":"oWorldEntity",
   "eventList":[],
   "managed":true,
-  "name":"oCollisionChecker",
+  "name":"oWorldEntity",
   "overriddenProperties":[],
   "parent":{
-    "name":"System",
-    "path":"folders/Objects/System.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sWhiteSquare",
-    "path":"sprites/sWhiteSquare/sWhiteSquare.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

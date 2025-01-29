@@ -10,8 +10,8 @@
   "name":"oScrollHigh",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"TradePoints",
+    "path":"folders/Objects/TradePoints.yy",
   },
   "parentObjectId":{
     "name":"oScroll",
