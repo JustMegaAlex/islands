@@ -18,6 +18,42 @@ function Mouse(key) constructor {
     ]
 }
 
+function MouseWheelUp() constructor {
+    Pressed = function() {
+        return mouse_wheel_up()
+    }
+    Released = function() {
+        return mouse_wheel_up()
+    }
+    Hold = function() {
+        return mouse_wheel_up()
+    }
+    DefaultValue = function() { return false }
+    actions = [
+        ["pressed", Pressed],
+        ["released", Released],
+        ["hold", Hold],
+    ]
+}
+
+function MouseWheelDown() constructor {
+    Pressed = function() {
+        return mouse_wheel_down()
+    }
+    Released = function() {
+        return mouse_wheel_down()
+    }
+    Hold = function() {
+        return mouse_wheel_down()
+    }
+    DefaultValue = function() { return false }
+    actions = [
+        ["pressed", Pressed],
+        ["released", Released],
+        ["hold", Hold],
+    ]
+}
+
 function Key(key) constructor {
     self.key = key
     Pressed = function() {
@@ -159,6 +195,8 @@ mapping_config = {
     ],
     camera_focus: [new Key(ord("C"))],
     pause: [new Key(ord("P"))],
+    zoom_out: [new MouseWheelUp()],
+    zoom_in: [new MouseWheelDown()],
 }
 
 //// Initialize key mapping
@@ -188,37 +226,6 @@ function Hold(key) {
     return self.mapping[$ key].hold
 }
 
-left_pressed = false
-right_pressed = false
-up_pressed = false
-down_pressed = false
-up = false
-down = false
-left = false
-right = false
-jump = false
-attack = false
-any = false
-shoot_pressed = false
-shoot = false
-gp_hinp_pressed = false
-gp_vinp_pressed = false
-interact = false
-reload = false
-exit_pressed = false
-
-dash_pressed = false
-dash_released = false
-
-gp_hinp_threshold = 0.25
-gp_vinp_threshold = 0.85
-
-scroll_down = false
-scroll_up = false
-
-//// Mouse
-lmb_pressed = false
-lmb_released = false
 mouse_moved = false
 mouse_x_prev = mouse_x
 mouse_y_prev = mouse_y

@@ -10,15 +10,15 @@ if use_mouse_scroll {
 
 //// Keyboard input
 if inpx == 0 and inpy == 0 {
-    inpx = oInput.right - oInput.left
-    inpy = oInput.down - oInput.up
+    inpx = oInput.Hold("right") - oInput.Hold("left")
+    inpy = oInput.Hold("down") - oInput.Hold("up")
 }
 
 x += (inpx) * spd * zoom
 y += (inpy) * spd * zoom
 
 
-ChangeZoom(oInput.scroll_down - oInput.scroll_up)
+ChangeZoom(oInput.Pressed("zoom_in") - oInput.Pressed("zoom_out"))
 zoom_prev = zoom
 zoom = Approach2(zoom, zoom_to, 0.04, 0.01)
 //// Zoom with ancor in center of the screen
