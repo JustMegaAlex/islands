@@ -189,6 +189,8 @@ function Area(i, j) constructor {
     self.y1 = self.y0 + oGen.grid_area_size
     self.generated = false
     self.last_gen_level = 0
+    self.is_activated = true
+    self.instances = []
 }
 
 //// Initialize generators
@@ -439,6 +441,23 @@ function UpdateShipGridPos() {
 
 function GridGet(vec) {
     return grid[# vec.x, vec.y]
+}
+
+function w2gx(xx) {
+    return (xx - x0) div grid_area_size
+}
+
+function w2gy(yy) {
+    return (yy - y0) div grid_area_size
+}
+
+function GridGetByCoords(xx, yy) {
+    static ___grid_get_vec = new Vec2(0, 0)
+    ___grid_get_vec.set(w2gx(xx), w2gy(yy))
+    if GridCheck(___grid_get_vec) {
+        return GridGet(___grid_get_vec)
+    }
+    return undefined
 }
 
 function GridCheck(vec) {

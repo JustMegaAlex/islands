@@ -31,6 +31,11 @@ for (var _col = _start_col; _col <= _end_col; _col++) {
         draw_set_color(col)
         draw_rectangle(_x1, _y1, _x1 + grid_area_size, _y1 + grid_area_size, true)
         draw_set_color(c_white)
+        var area = oGen.grid[# _col, _row]
+        draw_text_transformed(_x1 + 500, _y1 + 500, 
+                              array_length(area.instances), 
+                              10, 10, 0)
     }
 }
+
 

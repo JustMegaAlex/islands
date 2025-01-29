@@ -7,7 +7,9 @@ DebugViewAddRefs(global, [
     { global.draw_grid = !global.draw_grid }],
     ["camera_clamp_zoom", dbg_checkbox],
 ])
-
+DebugViewAddRefs(oInstanceManager, [
+    ["grid_active_distance", dbg_text_input, "grid active distance", "i"],
+])
 DebugViewAddRefs(oPlayerVision, [
     ["enabled", dbg_checkbox, "player vision"],
 ])
