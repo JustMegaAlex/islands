@@ -120,6 +120,7 @@ function CommandDropCrew(crew_type) constructor {
 }
 
 function CommandCannon() constructor {
+    __define_methods()
     self.sprite = noone
     self.charge_frames = 18
     self.holded_frames = 0
@@ -127,9 +128,22 @@ function CommandCannon() constructor {
     self.vec = new Vec2(0, 0)
     self.cursor_line_length = 50
     self.amber_cost = global.cost_cannon_amber
-    __define_methods()
+    
+    self.range_max = 1000
+    self.range_min = 300
+
+    self.draw_helper = instance_create_layer(0, 0, "OverBottom", oUICannonDraw)
+    self.draw_helper.range_max = self.range_max
+    self.draw_helper.range_min = self.range_min
+
+    activate = function() {
+        self.active = true
+        self.draw_helper.visible = true
+    }
     deactivate = function() {
         self.holded_frames = 0
+        self.active = false
+        self.draw_helper.visible = false
     }
     draw = function() {
         for (var i = 0; i < array_length(self.charge_icon_angles); ++i) {
@@ -149,7 +163,9 @@ function CommandCannon() constructor {
         PlayCommandSound()
     }
     hold = function() {
+        var dist = point_distance(oShip.x, oShip.y, mouse_x, mouse_y)
         self.holded_frames = min(self.holded_frames + 1, self.charge_frames)
+                             * (dist > self.range_min and dist < self.range_max)
     }
     release = function() {
         if self.holded_frames >= self.charge_frames {

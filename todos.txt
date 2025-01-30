@@ -19,7 +19,6 @@ Next steps:
 
 
 /////// Polishing round 1
-> loading screen
 > flying creatures waving
 > finish implementing sfx
     > arrow swips
@@ -34,6 +33,7 @@ Next steps:
 > deactivate current button when it is clicked again
 
 /////// Polishing later
+> cannon ball smoke trace
 > entity throw state
 > crew throwing out of ship
 > crew pulling back to ship

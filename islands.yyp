@@ -121,6 +121,7 @@
     {"id":{"name":"oUIButtonSkipTut","path":"objects/oUIButtonSkipTut/oUIButtonSkipTut.yy",},},
     {"id":{"name":"oUIButtonSpeedBoost","path":"objects/oUIButtonSpeedBoost/oUIButtonSpeedBoost.yy",},},
     {"id":{"name":"oUICannon","path":"objects/oUICannon/oUICannon.yy",},},
+    {"id":{"name":"oUICannonDraw","path":"objects/oUICannonDraw/oUICannonDraw.yy",},},
     {"id":{"name":"oUICreateInstance","path":"objects/oUICreateInstance/oUICreateInstance.yy",},},
     {"id":{"name":"oUIGuardTower","path":"objects/oUIGuardTower/oUIGuardTower.yy",},},
     {"id":{"name":"oUIMapButtonParent","path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",},},
