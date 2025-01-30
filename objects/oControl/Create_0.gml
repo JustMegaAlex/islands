@@ -4,6 +4,7 @@ is_ship_navigating = false
 mx = 0
 my = 0
 active_ui = noone
+mouse_over_ui = noone
 
 collision_list = ds_list_create()
 

@@ -6,6 +6,9 @@ mouse_over_prev = false
 active = false
 hidden = false
 
+function Info() {
+    return command.info()
+}
 
 function Activate() {
     active = true

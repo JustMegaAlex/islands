@@ -4,6 +4,20 @@ function __define_methods() {
     active = false
     amber_cost = 0
     wood_cost = 0
+    info_text = "No info about this yet"
+
+    function info() {
+        var info = {
+            text: self.info_text,
+        }
+        if self.amber_cost > 0 {
+            info.amber_cost = self.amber_cost
+        }
+        if self.wood_cost > 0 {
+            info.wood_cost = self.wood_cost
+        }
+        return info
+    }
     step = function() {}
     activate = function() {
         active = true
@@ -42,6 +56,7 @@ function CommandTemplate() constructor {
 function CommandDropCrew(crew_type) constructor {
     __define_methods()
     self.crew_type = crew_type
+    self.crew_name = crew_type == oBuddy ? "Buddy" : "Archer"
     self.sprite = sUIDropPoint
     self.mouse_over_island = false
     self.isle = false
@@ -53,6 +68,15 @@ function CommandDropCrew(crew_type) constructor {
     self.check_hold_aux = 0
     self.amber_cost = -infinity
     self.wood_cost = -infinity
+
+    info = function() {
+        return {
+            text: $"Drop your {crew_name}s."
+                  + "\nSingle click to drop 1."
+                  + "\nClick + drag to drop multiple."
+                  + $"\nOn board: {array_length(oShip.crew[$ crew_type])}"
+        }
+    }
 
     step = function() { 
         self.check_hold_aux--

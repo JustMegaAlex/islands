@@ -84,18 +84,18 @@ if rclick_pressed and !rclick_canceled_ui {
 
 ///// UI
 mx = window_mouse_get_x(); my = window_mouse_get_y();
-var _ui = collision_point(mx, my, ui_object, false, false)
+mouse_over_ui = collision_point(mx, my, ui_object, false, false)
 var clicked_on_ui = false
-if _ui {
-    _ui.mouse_over = true
-    if oInput.Pressed("lclick") and _ui.command.available() {
+if mouse_over_ui {
+    mouse_over_ui.mouse_over = true
+    if oInput.Pressed("lclick") and mouse_over_ui.command.available() {
         if active_ui {
             active_ui.command.deactivate()
         }
-        _ui.command.activate()
+        mouse_over_ui.command.activate()
         audio_play_sound(sfxUIClick, 0, 0)
-		if instance_exists(_ui) {
-			active_ui = _ui
+		if instance_exists(mouse_over_ui) {
+			active_ui = mouse_over_ui
 		}
         clicked_on_ui = true
     }
@@ -114,12 +114,12 @@ if active_ui and !clicked_on_ui {
 }
 
 //// Check for map buttons
-if !_ui {
-    _ui = collision_point(mouse_x, mouse_y, ui_object, false, false)
-    if _ui {
-        _ui.mouse_over = true
+if !mouse_over_ui {
+    mouse_over_ui = collision_point(mouse_x, mouse_y, ui_object, false, false)
+    if mouse_over_ui {
+        mouse_over_ui.mouse_over = true
         if oInput.Pressed("lclick") {
-            _ui.command.press()
+            mouse_over_ui.command.press()
         }
     }
 }
