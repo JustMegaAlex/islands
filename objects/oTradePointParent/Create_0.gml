@@ -18,6 +18,10 @@ function Trade() {
 
 }
 
+function Info() {
+    return button.command.info()
+}
+
 function TradeAvailable() {
     return oShip.wood >= wood_cost && oShip.amber >= amber_cost
 }
