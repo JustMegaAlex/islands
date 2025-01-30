@@ -31,7 +31,7 @@ amber_cost = 0
 amount = 0
 
 ///// UI button
-button = instance_create_layer(x, y - 140, "Instances", oUITaskButton, {settlement: id})
+button = instance_create_layer(x, y - 140, "UI", oUITaskButton, {settlement: id})
 info_text = ""
 
 island = instance_place(x, y, oIsland)

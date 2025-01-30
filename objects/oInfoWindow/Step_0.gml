@@ -9,6 +9,7 @@ var mx = window_mouse_get_x()
 var my = window_mouse_get_y()
 var hint = collision_point(mx, my, oUIHintParent, false, false)
 if hint {
+    hint.seen_by_player = true
     info = hint.Info()
     exit
 }

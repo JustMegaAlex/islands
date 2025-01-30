@@ -1,20 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oUIHintParent",
+  "%Name":"oUIButtonToggleHints",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oUIHintParent",
+  "name":"oUIButtonToggleHints",
   "overriddenProperties":[],
   "parent":{
     "name":"Hints",
     "path":"folders/Objects/UI/Hints.yy",
   },
   "parentObjectId":{
-    "name":"oUIButtonParent",
-    "path":"objects/oUIButtonParent/oUIButtonParent.yy",
+    "name":"oUIActionButtonParent",
+    "path":"objects/oUIActionButtonParent/oUIActionButtonParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sUIHint",
-    "path":"sprites/sUIHint/sUIHint.yy",
+    "name":"sUIHintToggle",
+    "path":"sprites/sUIHintToggle/sUIHintToggle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
