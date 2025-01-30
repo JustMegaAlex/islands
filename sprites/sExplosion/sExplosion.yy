@@ -34,8 +34,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"islands",
+    "path":"islands.yyp",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

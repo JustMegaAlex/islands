@@ -11,6 +11,8 @@ spawners_draw_enabled = false
 pause = false
 player_vision_enabled = true
 watch_tower_show_radius = false
+player_hit_effect_color = c_red
+player_hit_effect_alpha = 0.9
 
 locked_abilities_low_tier = []
 
@@ -18,6 +20,9 @@ locked_abilities_high_tier = []
 
 unseen_low_scrolls = []
 unseen_high_scrolls = []
+
+enemy_hit_sfx = [sfxPunch5, sfxHit, sfxHit1]
+player_hit_sfx = [sfxPunch1]
 
 if DEBUG_ON {
 	draw_grid = true

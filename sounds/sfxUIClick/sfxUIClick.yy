@@ -12,8 +12,8 @@
   "duration":0.5,
   "name":"sfxUIClick",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"UI and Commands",
+    "path":"folders/Sounds/SFX/UI and Commands.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

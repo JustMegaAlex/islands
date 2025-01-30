@@ -37,6 +37,10 @@ if hp < hp_max {
     draw_set_color(c_white)
 }
 
+if hit_blinking_timer.update() {
+    DrawHitBlinking(hit_effect_alpha * hit_blinking_timer.timer / hit_blinking_timer.time, hit_effect_color)
+}
+
 if attackers_count != 0 {
     draw_text(x, y - 100, attackers_count)
 }

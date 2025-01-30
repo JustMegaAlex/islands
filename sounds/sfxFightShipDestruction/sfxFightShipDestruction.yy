@@ -12,8 +12,8 @@
   "duration":5.018562,
   "name":"sfxFightShipDestruction",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"Fighting",
+    "path":"folders/Sounds/SFX/Fighting.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

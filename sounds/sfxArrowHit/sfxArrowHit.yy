@@ -12,8 +12,8 @@
   "duration":0.989687,
   "name":"sfxArrowHit",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"Fighting",
+    "path":"folders/Sounds/SFX/Fighting.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

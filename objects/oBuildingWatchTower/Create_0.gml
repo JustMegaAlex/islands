@@ -1,6 +1,9 @@
 
 event_inherited()
 
+hit_effect_color = global.player_hit_effect_color
+hit_effect_alpha = global.player_hit_effect_alpha
+
 default_color = c_silver
 default_rect.set(80, 120)
 

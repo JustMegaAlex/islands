@@ -12,8 +12,8 @@
   "duration":1.921687,
   "name":"sfxFightWoodenHit",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"Fighting",
+    "path":"folders/Sounds/SFX/Fighting.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

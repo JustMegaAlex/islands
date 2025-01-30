@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sfxFightShipHurt",
+  "%Name":"sfxPunch3",
   "audioGroupId":{
     "name":"audio_group_sfx",
     "path":"audiogroups/audio_group_sfx",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.496354,
-  "name":"sfxFightShipHurt",
+  "duration":0.258562,
+  "name":"sfxPunch3",
   "parent":{
     "name":"Fighting",
     "path":"folders/Sounds/SFX/Fighting.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxFightShipHurt.wav",
+  "soundFile":"sfxPunch3.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.11,
 }

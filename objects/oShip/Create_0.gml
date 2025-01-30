@@ -1,5 +1,10 @@
 event_inherited()
 
+hit_effect_color = global.player_hit_effect_color
+hit_effect_alpha = global.player_hit_effect_alpha
+
+hit_sounds = [sfxFightShipHurt]
+
 side = EntitySide.ours
 
 SetFriendlyWith(EntitySide.ours)
@@ -121,6 +126,7 @@ function Die() {
     visible = false
     with oUIButtonParent { Hide()}
     oUIButtonRetry.Show()
+    PlaySoundAt(x, y, sfxFightShipDestruction)
     oMusic.switchMusic(mscLooseStinger, false, 0)
 }
 

@@ -4,7 +4,11 @@
 // Inherit the parent event
 event_inherited();
 
+hit_sounds = global.player_hit_sfx
+
 sprite_index = choose(sBuddy1, sBuddy2, sBuddy3, sBuddy4, sBuddy5)
+hit_effect_color = global.player_hit_effect_color
+hit_effect_alpha = global.player_hit_effect_alpha
 
 side = EntitySide.ours
 SetFriendlyWith(EntitySide.neutral)

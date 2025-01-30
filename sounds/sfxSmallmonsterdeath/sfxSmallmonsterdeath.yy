@@ -12,8 +12,8 @@
   "duration":3.873,
   "name":"sfxSmallmonsterdeath",
   "parent":{
-    "name":"SFX",
-    "path":"folders/Sounds/SFX.yy",
+    "name":"Fighting",
+    "path":"folders/Sounds/SFX/Fighting.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

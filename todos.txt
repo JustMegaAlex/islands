@@ -19,11 +19,8 @@ Next steps:
 
 
 /////// Polishing round 1
-> archer sprite
 > moon in the water
-> cannon splash
-> cannon explosion
-> entity hit effect
+> archer sprite
 > loading screen
 > flying creatures waving
 > finish implementing sfx
@@ -105,6 +102,7 @@ Next steps:
     > witches' punishment (long range beam)
 > turn archers back to buddies
 > select box trigger by coords
+> set timer on some sfx
 
 
 ////// Lessons learned

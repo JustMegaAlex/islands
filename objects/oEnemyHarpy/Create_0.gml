@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+hit_sounds = global.enemy_hit_sfx
+
 image_xscale = 2
 image_yscale = 2
 

@@ -1,5 +1,7 @@
 event_inherited()
 
+hit_sounds = global.enemy_hit_sfx
+
 side = EntitySide.theirs
 
 default_color = c_lime

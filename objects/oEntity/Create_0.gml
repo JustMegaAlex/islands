@@ -3,6 +3,11 @@ default_color = c_white
 default_rect = new Vec2(100, 100)
 sprite_index = sprite_index == -1 ? sWhitePixel : sprite_index
 
+hit_blinking_timer = MakeTimer(15, 0)
+hit_effect_alpha = 0.5
+hit_effect_color = c_white
+hit_sounds = noone
+
 /// stay inside an island
 island_collision_paddingx = sprite_width * 0.5
 island_collision_paddingy = sprite_height * 0.5
@@ -165,6 +170,10 @@ function Hit(id) {
         var test = true
     }
     hp -= id.attack_damage * (protection_aura ? 0.5 : 1)
+    hit_blinking_timer.reset()
+    if hit_sounds != noone {
+        PlaySoundAt(x, y, ArrayChoose(hit_sounds))
+    }
 }
 
 function Die() {
@@ -223,6 +232,17 @@ function ShootAnArrow() {
 
 function Heal(amount) {
     hp = min(hp + amount, hp_max)
+}
+
+function DrawHitBlinking(alpha, color=c_white) {
+	gpu_set_fog(true, color, 0, 0)
+	draw_sprite_ext(
+		sprite_index,
+		image_index,
+		x, y,
+		image_xscale, image_yscale,
+		image_angle, c_white, alpha)
+	gpu_set_fog(false, color, 0, 0)
 }
 
 SpecialAttack = undefined

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.5,
+  "duration":0.0,
   "name":"sfxCollect1",
   "parent":{
     "name":"SFX",
