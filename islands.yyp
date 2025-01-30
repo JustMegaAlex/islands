@@ -92,7 +92,8 @@
     {"id":{"name":"oInstanceManager","path":"objects/oInstanceManager/oInstanceManager.yy",},},
     {"id":{"name":"oIsland","path":"objects/oIsland/oIsland.yy",},},
     {"id":{"name":"oMusic","path":"objects/oMusic/oMusic.yy",},},
-    {"id":{"name":"oParticles","path":"objects/oParticles/oParticles.yy",},},
+    {"id":{"name":"oParticle","path":"objects/oParticle/oParticle.yy",},},
+    {"id":{"name":"oParticleSystem","path":"objects/oParticleSystem/oParticleSystem.yy",},},
     {"id":{"name":"oPlayerVision","path":"objects/oPlayerVision/oPlayerVision.yy",},},
     {"id":{"name":"oScroll","path":"objects/oScroll/oScroll.yy",},},
     {"id":{"name":"oScrollHigh","path":"objects/oScrollHigh/oScrollHigh.yy",},},
@@ -251,5 +252,6 @@
   "templateType":"game",
   "TextureGroups":[
     {"$GMTextureGroup":"","%Name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"Default","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMTextureGroup":"","%Name":"texgroup1","autocrop":true,"border":2,"compressFormat":"bz2","customOptions":"","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"name":"texgroup1","resourceType":"GMTextureGroup","resourceVersion":"2.0","targets":-1,},
   ],
 }

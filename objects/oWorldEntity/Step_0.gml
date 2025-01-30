@@ -1,1 +1,1 @@
-depth = -(y - z - CamYCent())
+UPDATE_DEPTH

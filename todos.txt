@@ -6,7 +6,6 @@ Remidners:
 Next steps:
 
 ////////////// Milestones //////////////
-// 6. Optimize and test on a weaker machine
 1. Finish the raw version of generation
 2. Implement all assets
 3. Add effects and animations
@@ -35,6 +34,7 @@ Next steps:
 > display ui
     > crew count
     > ship hp
+    > resources
 > fix: cancel drop points if too far
 > deactivate current button when it is clicked again
 
