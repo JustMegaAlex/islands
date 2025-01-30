@@ -33,6 +33,7 @@ Next steps:
 > deactivate current button when it is clicked again
 
 /////// Polishing later
+> cannon ball shoot burst
 > cannon ball smoke trace
 > entity throw state
 > crew throwing out of ship

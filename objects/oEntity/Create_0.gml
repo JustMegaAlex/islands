@@ -8,11 +8,16 @@ hit_effect_alpha = 0.5
 hit_effect_color = c_white
 hit_sounds = noone
 
+frames = 0
+fly_waving_angular_speed = 0.4
+fly_waving_magnitude = 30
+
 /// stay inside an island
 island_collision_paddingx = sprite_width * 0.5
 island_collision_paddingy = sprite_height * 0.5
 shadow_size = sprite_width
 z = 0
+z_base = z
 
 velocity = new Vec2(0, 0)
 position = new Vec2(x, y)

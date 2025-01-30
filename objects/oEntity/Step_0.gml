@@ -1,6 +1,11 @@
 
 CHECK_PAUSE
 
+frames++
+if is_flying {
+    z = z_base + lengthdir_x(fly_waving_magnitude, frames * fly_waving_angular_speed)
+}
+
 if is_miner {
     var test = true
 }

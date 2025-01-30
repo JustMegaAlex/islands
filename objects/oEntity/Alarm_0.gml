@@ -7,8 +7,10 @@ if sprite_index == sWhitePixel {
 }
 
 if !is_flying {
-    AttachToIsland()	
+    AttachToIsland()
 }
+
+z_base = z
 
 image_xscale_start = image_xscale
 

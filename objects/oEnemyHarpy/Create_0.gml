@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+fly_waving_angular_speed = 0.6
+fly_waving_magnitude = 15
+
 hit_sounds = global.enemy_hit_sfx
 
 image_xscale = 2
