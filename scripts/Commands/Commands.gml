@@ -261,7 +261,8 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
     __define_methods()
     info = function() {
         return {
-            text: $"Upgrade a buddy to an archer.\nLeft click on a buddy to upgrade.",
+            text: $"Upgrade a buddy to an archer.\nLeft click on a buddy to upgrade."
+                  + "(can upgrade when buddies are on an island)",
             amber_cost: amber,
             wood_cost: wood,
         }

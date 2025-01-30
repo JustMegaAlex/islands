@@ -14,11 +14,11 @@ if info {
     draw_set_valign(fa_middle)
     if amber != undefined {
         draw_sprite_ext(sCollectibleAmber, 0, xx, yy, scale, scale, 0, c_white, 1)
-        draw_text(xx + 16, yy, amber)
+        draw_text(xx + 24, yy, amber)
     }
-    xx += 80
+    xx += 100
     if wood != undefined {
         draw_sprite_ext(sCollectibleWood, 0, xx, yy, scale, scale, 0, c_white, 1)
-        draw_text(xx + 16, yy, wood)
+        draw_text(xx + 24, yy, wood)
     }
 }
