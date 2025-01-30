@@ -1,0 +1,112 @@
+
+Remidners:
+1. Drawing isn't meant for planning, don't waste your time on it.
+2. Approach for balancing. Build difficulty progression -> then build and balance player's progression and tools
+
+Next steps:
+
+////////////// Milestones //////////////
+// 6. Optimize and test on a weaker machine
+1. Finish the raw version of generation
+2. Implement all assets
+3. Add effects and animations
+4. Implement menus and pause
+5. Finish game loop, victory/defeat states
+7. Rework the tutorial
+
+////////////// Check
+> fix attacker counters
+> make your crew immune to cannons
+
+
+/////// Polishing round 1
+> archer sprite
+> moon in the water
+> cannon splash
+> cannon explosion
+> entity hit effect
+> loading screen
+> flying creatures waving
+> finish implementing sfx
+    > arrow swips
+    > splashes
+    > explosions
+> cannon limit and draw range
+> display ui
+    > crew count
+    > ship hp
+> fix: cancel drop points if too far
+> deactivate current button when it is clicked again
+
+/////// Polishing later
+> entity throw state
+> crew throwing out of ship
+> crew pulling back to ship
+> turn off select box in menu
+> button icons
+> better units hp
+> heal vfx
+> protectin vfx
+
+
+//// Check
+> cost for all actions
+
+//// Gameplay core
+> info window !!!
+> victory state
+> ship shooters -> fays
+> limit cannon shoot range
+> spread mining reources
+> boarded crew count
+> limit boarding speed
+> bind ui to nums
+> ui actions cooldown
+> ui actions visualize active state
+
+
+
+/////// Feedback
+> show crew total counts
+> better communicate buying
+> tell them to switch to Chrome
+> enemies constantly threaten, give players pauses from fighting
+
+
+////////// Polishing, improvments and ideas //////////
+> fix: change Esc button to Q?
+> balance: make ship arrows and cannon balls consumables
+> fix instance manager: leave areas with player presence (buildings/crew) active
+> drop crew by launching from the ship "wheee"
+> protection aura tower?
+> fix ui state not resetting when Esc or click on other ui (cannon)
+> fix audio: play ui click only on successful action
+> controls rebind
+> more live UI: animations, scaling, shaking, etc.
+> ai
+    > make them spread
+> life quality
+    > let rebind mouse actions
+    > commands ui: cursor sprites
+> buildings
+    > watch tower - expand your view in the area
+
+> temporary rich islands
+> settlements actively mining resources
+> if not moving far for a long time, spawn enemies nearby
+
+> wrath usage: kill underwater stuff
+
+> idea: no crew mod, cannon cost = 0
+
+> scrolls
+    > minions boost
+    > teleport
+    > witches' punishment (long range beam)
+> turn archers back to buddies
+> select box trigger by coords
+
+
+////// Lessons learned
+> GM: don't use layer_destroy() and instance_activate/deactivate()
+> I love optimization!!! (but not the graphics one)
