@@ -259,6 +259,13 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
     self.wood = wood
     self.sprite = noone
     __define_methods()
+    info = function() {
+        return {
+            text: $"Upgrade a buddy to an archer.\nLeft click on a buddy to upgrade.",
+            amber_cost: amber,
+            wood_cost: wood,
+        }
+    }
     draw = function() {
         if !sprite_exists(self.sprite) { return }
         draw_sprite(sprite, 0, mouse_x, mouse_y)
@@ -282,6 +289,7 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
 
 function CommandPlaceBuilding(obj, wood, amber) constructor {
 	self.obj = obj
+    self.building_name = obj == oBuildingWatchTower ? "watch tower" : "guard tower"
     self.sprite = noone
     self.wood = wood
     self.amber = amber
@@ -294,6 +302,9 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
     self.checker.image_yscale = inst.sprite_height / self.checker.sprite_height
     instance_deactivate_object(self.checker)
     instance_destroy(inst)
+
+    info_text = $"Place a {self.building_name}.\nLeft click to place.\n"
+                + "Watch towers reveal distant islands"
 
     __define_methods()
     activate = function() {
@@ -334,6 +345,7 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
 function CommandTowerDropCrew(tower) constructor {
     __define_methods()
 
+    info_text = "Release archers"
     press = tower.DropCrew
 }
 
@@ -341,6 +353,7 @@ function CommandAmberWrath() constructor {
     self.sprite = noone
     self.amber_cost = global.cost_amber_wrath_amber
     __define_methods()
+    info_text = "Unleash Amber Wrath.\n"
     activate = function() {
         self.take_resources()
         oShip.amber_wrath_timer.reset()
@@ -350,8 +363,9 @@ function CommandAmberWrath() constructor {
 
 function CommandHealAura() constructor {
     self.sprite = noone
-    self.amber_cost = global.cost_heal_aura_amber
     __define_methods()
+    self.amber_cost = global.cost_heal_aura_amber
+    info_text = "Activate healing aura.\nHeals your unboarded crew."
     activate = function() {
         self.take_resources()
         oShip.heal_aura_timer.reset()
@@ -361,8 +375,9 @@ function CommandHealAura() constructor {
 
 function CommandProtectionAura() constructor {
     self.sprite = noone
-    self.amber_cost = global.cost_protection_aura_amber
     __define_methods()
+    self.amber_cost = global.cost_protection_aura_amber
+    info_text = "Activate protection aura.\nIncreases your crew's defense."
     activate = function() {
         self.take_resources()
         oShip.protection_aura_timer.reset()
@@ -375,6 +390,7 @@ function CommandShipRepair() constructor {
     __define_methods()
     self.amber_cost = global.cost_ship_repair_amber
     self.wood_cost = global.cost_ship_repair_wood
+    info_text = "Repair part of your ship's damage."
 
     activate = function() {
         self.take_resources()
@@ -392,6 +408,7 @@ function CommandShipBoostSpeed() constructor {
     self.sprite = noone
     __define_methods()
     self.amber_cost = global.cost_speed_boost_amber
+    info_text = "Activate speed boost."
 
     activate = function() {
         self.take_resources()

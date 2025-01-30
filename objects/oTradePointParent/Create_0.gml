@@ -36,3 +36,5 @@ info_text = ""
 
 island = instance_place(x, y, oIsland)
 if island { island.AddTradePoint(id) }
+
+alarm[0] = 1
