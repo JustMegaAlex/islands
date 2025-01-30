@@ -63,6 +63,7 @@
     {"name":"inst_74ED3D1C","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_CA4B9BE","path":"rooms/rmGame/rmGame.yy",},
     {"name":"inst_95A15C1","path":"rooms/rmGame/rmGame.yy",},
+    {"name":"inst_1BF834E1","path":"rooms/rmGame/rmGame.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -203,6 +204,7 @@
         {"$GMRInstance":"v1","%Name":"inst_17B010D7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_17B010D7","objectId":{"name":"oTree","path":"objects/oTree/oTree.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":5344.0,"y":3008.0,},
         {"$GMRInstance":"v1","%Name":"inst_CA4B9BE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_CA4B9BE","objectId":{"name":"oSettlement","path":"objects/oSettlement/oSettlement.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-512.0,"y":320.0,},
         {"$GMRInstance":"v1","%Name":"inst_95A15C1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_95A15C1","objectId":{"name":"oWorkshop","path":"objects/oWorkshop/oWorkshop.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-352.0,"y":416.0,},
+        {"$GMRInstance":"v1","%Name":"inst_1BF834E1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1BF834E1","objectId":{"name":"oUIHintBasics","path":"objects/oUIHintBasics/oUIHintBasics.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":883.0,"y":45.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Moon","depth":-14300,"effectEnabled":true,"effectType":"_filter_underwater","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_B8BBC97","colour":654311423,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_B8BBC97","objectId":{"name":"oMoon","path":"objects/oMoon/oMoon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1280.0,"y":729.0,},

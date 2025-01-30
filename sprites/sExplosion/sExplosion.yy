@@ -34,8 +34,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"islands",
-    "path":"islands.yyp",
+    "name":"Effects",
+    "path":"folders/Sprites/Effects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
