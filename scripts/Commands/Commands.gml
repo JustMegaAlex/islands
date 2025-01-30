@@ -290,6 +290,12 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
 }
 
 function CommandPlaceBuilding(obj, wood, amber) constructor {
+    __define_methods()
+
+    /*
+    
+    wtf again?
+    */
 	self.obj = obj
     self.building_name = obj == oBuildingWatchTower ? "watch tower" : "guard tower"
     self.sprite = noone
@@ -304,11 +310,19 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
     self.checker.image_yscale = inst.sprite_height / self.checker.sprite_height
     instance_deactivate_object(self.checker)
     instance_destroy(inst)
-
+    
     info_text = $"Place a {self.building_name}.\nLeft click to place.\n"
                 + "Watch towers reveal distant islands"
 
-    __define_methods()
+
+        // // // Leave this comment or debugger will crash (lol)
+        //// For some reason debugger crashes on Mac if 
+        // Trade() is defined in oWorkshop Create
+        // self.inst.Trade = function() {
+        //     oShip.on_board_shooters_max++
+        //     instance_destroy(button)
+        // }
+
     activate = function() {
         instance_activate_object(self.checker)
     }
@@ -441,8 +455,8 @@ function CommandSkipTut() constructor {
         with oUIActionButtonParent {
             Show()
         }
+        global.playground_mode = false
 		oUIButtonRetry.Hide()
-		//show_debug_message("UI activated!")
 		instance_destroy(oUIButtonSkipTut)
 		oControl.active_ui = noone
         oControl.alarm[0] = 1

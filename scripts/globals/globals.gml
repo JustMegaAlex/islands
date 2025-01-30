@@ -14,6 +14,8 @@ watch_tower_show_radius = false
 player_hit_effect_color = c_red
 player_hit_effect_alpha = 0.9
 
+playground_mode = true
+
 locked_abilities_low_tier = []
 
 locked_abilities_high_tier = []
