@@ -19,7 +19,6 @@ Next steps:
 
 
 /////// Polishing round 1
-> archer sprite
 > loading screen
 > flying creatures waving
 > finish implementing sfx
