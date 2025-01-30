@@ -451,8 +451,8 @@ function CommandSkipTut() constructor {
     __define_methods()
     activate = function() {
         oGen.gen_enabled = true
-        layer_destroy_instances("TutTriggers")
-        layer_set_visible("Tutorial", false)
+        //layer_destroy_instances("TutTriggers")
+        //layer_set_visible("Tutorial", false)
         with oUIActionButtonParent {
             Show()
         }

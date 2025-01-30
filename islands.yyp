@@ -142,8 +142,8 @@
     {"id":{"name":"oUIUpgradeToArcher","path":"objects/oUIUpgradeToArcher/oUIUpgradeToArcher.yy",},},
     {"id":{"name":"oWorkshop","path":"objects/oWorkshop/oWorkshop.yy",},},
     {"id":{"name":"oWorldEntity","path":"objects/oWorldEntity/oWorldEntity.yy",},},
-    {"id":{"name":"psWaterSplash","path":"particles/psWaterSplash/psWaterSplash.yy",},},
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
+    {"id":{"name":"rmGameBU","path":"rooms/rmGameBU/rmGameBU.yy",},},
     {"id":{"name":"rmStart","path":"rooms/rmStart/rmStart.yy",},},
     {"id":{"name":"Audio","path":"scripts/Audio/Audio.yy",},},
     {"id":{"name":"Balancing","path":"scripts/Balancing/Balancing.yy",},},
@@ -278,6 +278,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rmStart","path":"rooms/rmStart/rmStart.yy",},},
     {"roomId":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
+    {"roomId":{"name":"rmGameBU","path":"rooms/rmGameBU/rmGameBU.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

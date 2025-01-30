@@ -187,7 +187,7 @@ mapping_config = {
     down: [new Key(vk_down), new Key(ord("S")), new Gamepad(gp_padd)],
     lclick: [new Mouse(mb_left), new Gamepad(gp_face1)],
     rclick: [new Mouse(mb_right)],
-    escape: [new Key(vk_escape), new Gamepad(gp_start), new Gamepad(gp_select)],
+    escape: [new Key(ord("Q")), new Gamepad(gp_start), new Gamepad(gp_select)],
     any: [new Key(vk_anykey), new Mouse(mb_any),
           new Gamepad(gp_face1), new Gamepad(gp_face2),
           new Gamepad(gp_padu), new Gamepad(gp_padd),

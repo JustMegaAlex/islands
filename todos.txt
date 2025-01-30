@@ -61,6 +61,7 @@ Next steps:
 > fix island not finding his resources (instance_exists)
 > fix watch multiple tower bug
 > fix map button not becoming greya
+> fix moon movement delay (html?)
 
 
 /////// Feedback
@@ -108,3 +109,5 @@ Next steps:
 ////// Lessons learned
 > GM: don't use layer_destroy() and instance_activate/deactivate()
 > I love optimization!!! (but not the graphics one)
+> At some html build was broken by pure presence of a particle system IN THE PROJECT, not in the game
+  Removing it fixed the problem.
