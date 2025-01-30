@@ -66,6 +66,7 @@
   "name":"islands",
   "resources":[
     {"id":{"name":"fntDefault","path":"fonts/fntDefault/fntDefault.yy",},},
+    {"id":{"name":"fntInfoWindow","path":"fonts/fntInfoWindow/fntInfoWindow.yy",},},
     {"id":{"name":"fntSmall","path":"fonts/fntSmall/fntSmall.yy",},},
     {"id":{"name":"oAmber","path":"objects/oAmber/oAmber.yy",},},
     {"id":{"name":"oAmberRain","path":"objects/oAmberRain/oAmberRain.yy",},},
@@ -91,6 +92,7 @@
     {"id":{"name":"oEntity","path":"objects/oEntity/oEntity.yy",},},
     {"id":{"name":"oEntityChildTemplate","path":"objects/oEntityChildTemplate/oEntityChildTemplate.yy",},},
     {"id":{"name":"oGen","path":"objects/oGen/oGen.yy",},},
+    {"id":{"name":"oInfoWindow","path":"objects/oInfoWindow/oInfoWindow.yy",},},
     {"id":{"name":"oInput","path":"objects/oInput/oInput.yy",},},
     {"id":{"name":"oInstanceManager","path":"objects/oInstanceManager/oInstanceManager.yy",},},
     {"id":{"name":"oIsland","path":"objects/oIsland/oIsland.yy",},},

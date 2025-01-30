@@ -36,6 +36,7 @@
     {"name":"Timelines","order":5,"path":"folders/unused groups/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fntInfoWindow","order":2,"path":"fonts/fntInfoWindow/fntInfoWindow.yy",},
     {"name":"fntSmall","order":1,"path":"fonts/fntSmall/fntSmall.yy",},
     {"name":"oAmber","order":2,"path":"objects/oAmber/oAmber.yy",},
     {"name":"oAmberRain","order":9,"path":"objects/oAmberRain/oAmberRain.yy",},
@@ -59,6 +60,7 @@
     {"name":"oEntity","order":2,"path":"objects/oEntity/oEntity.yy",},
     {"name":"oEntityChildTemplate","order":3,"path":"objects/oEntityChildTemplate/oEntityChildTemplate.yy",},
     {"name":"oGen","order":3,"path":"objects/oGen/oGen.yy",},
+    {"name":"oInfoWindow","order":12,"path":"objects/oInfoWindow/oInfoWindow.yy",},
     {"name":"oInput","order":1,"path":"objects/oInput/oInput.yy",},
     {"name":"oInstanceManager","order":9,"path":"objects/oInstanceManager/oInstanceManager.yy",},
     {"name":"oIsland","order":6,"path":"objects/oIsland/oIsland.yy",},

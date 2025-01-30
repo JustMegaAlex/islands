@@ -19,8 +19,6 @@ Next steps:
 
 
 /////// Polishing round 1
-> finish implementing sfx
-    > arrow swips
 > display ui
     > crew count
     > ship hp
@@ -45,21 +43,24 @@ Next steps:
 //// Check
 > cost for all actions
 
-//// Gameplay core
-> fix island not finding his resources (instance_exists)
-> fix watch multiple tower bug
-> fix map button not becoming greya
+//// Gameplay core top priority
 > info window !!!
 > victory state
+> loose state
+> bind ui to nums
+
+//// Second priority
 > ship shooters -> fays
-> limit cannon shoot range
 > spread mining reources
 > boarded crew count
 > limit boarding speed
-> bind ui to nums
 > ui actions cooldown
 > ui actions visualize active state
 
+//// Fixes
+> fix island not finding his resources (instance_exists)
+> fix watch multiple tower bug
+> fix map button not becoming greya
 
 
 /////// Feedback
