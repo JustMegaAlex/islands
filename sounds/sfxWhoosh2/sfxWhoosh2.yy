@@ -1,16 +1,16 @@
 {
   "$GMSound":"",
-  "%Name":"sfxBigMonsterDeath",
+  "%Name":"sfxWhoosh2",
   "audioGroupId":{
-    "name":"audio_group_sfx",
-    "path":"audiogroups/audio_group_sfx",
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.956021,
-  "name":"sfxBigMonsterDeath",
+  "duration":0.288,
+  "name":"sfxWhoosh2",
   "parent":{
     "name":"Fighting",
     "path":"folders/Sounds/SFX/Fighting.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxBigMonsterDeath.wav",
+  "soundFile":"sfxWhoosh2.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.15,
 }

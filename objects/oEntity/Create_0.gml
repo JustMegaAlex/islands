@@ -8,6 +8,8 @@ hit_effect_alpha = 0.5
 hit_effect_color = c_white
 hit_sounds = noone
 
+shoot_sounds = noone
+
 frames = 0
 fly_waving_angular_speed = 0.4
 fly_waving_magnitude = 30
@@ -233,6 +235,9 @@ function GetClosestInstanceFromArray(array) {
 function ShootAnArrow() {
     instance_create_layer(x, y + z, "Instances", oArrow, 
                           { shooter: id, target: attack_target })
+    if shoot_sounds != noone {  
+        PlaySoundAt(x, y, ArrayChoose(shoot_sounds))
+    }
 }
 
 function Heal(amount) {

@@ -19,12 +19,8 @@ Next steps:
 
 
 /////// Polishing round 1
-> flying creatures waving
 > finish implementing sfx
     > arrow swips
-    > splashes
-    > explosions
-> cannon limit and draw range
 > display ui
     > crew count
     > ship hp
@@ -33,6 +29,7 @@ Next steps:
 > deactivate current button when it is clicked again
 
 /////// Polishing later
+> add crawlps attack animation
 > cannon ball shoot burst
 > cannon ball smoke trace
 > entity throw state
@@ -49,6 +46,9 @@ Next steps:
 > cost for all actions
 
 //// Gameplay core
+> fix island not finding his resources (instance_exists)
+> fix watch multiple tower bug
+> fix map button not becoming greya
 > info window !!!
 > victory state
 > ship shooters -> fays

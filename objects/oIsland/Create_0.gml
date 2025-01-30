@@ -17,6 +17,9 @@ function RemoveEntity(ent) {
 
 function GetResources() {
     return array_filter(entities, function(ent) {
+        if !instance_exists(ent) {
+            return false
+        }
         return ent.is_resource
     })
 }
@@ -91,6 +94,9 @@ function ScanHide(update_counter=true) {
     image_alpha = 1
     for (var i = 0; i < array_length(entities); ++i) {
         var item = entities[i]
+        if !instance_exists(item) {
+			instance_activate_object(item)
+        }
         if (item.is_resource) {
             item.layer = lay
             item.image_alpha = 1

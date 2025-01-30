@@ -195,6 +195,7 @@
     {"id":{"name":"sfxUIMoveRR2","path":"sounds/sfxUIMoveRR2/sfxUIMoveRR2.yy",},},
     {"id":{"name":"sfxWaterSplash","path":"sounds/sfxWaterSplash/sfxWaterSplash.yy",},},
     {"id":{"name":"sfxWhoosh","path":"sounds/sfxWhoosh/sfxWhoosh.yy",},},
+    {"id":{"name":"sfxWhoosh2","path":"sounds/sfxWhoosh2/sfxWhoosh2.yy",},},
     {"id":{"name":"sfxWinningStinger","path":"sounds/sfxWinningStinger/sfxWinningStinger.yy",},},
     {"id":{"name":"sAmber","path":"sprites/sAmber/sAmber.yy",},},
     {"id":{"name":"sAmberTitan","path":"sprites/sAmberTitan/sAmberTitan.yy",},},

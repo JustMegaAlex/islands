@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
+shoot_sounds = [sfxWhoosh, sfxWhoosh2]
 hit_sounds = global.player_hit_sfx
 
 hit_effect_color = global.player_hit_effect_color
