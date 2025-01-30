@@ -25,6 +25,8 @@ velocity = new Vec2(0, 0)
 position = new Vec2(x, y)
 sp_max = global.sp_entity_default
 
+info_text = ""
+
 enum EntitySide {
     __zero, ours, theirs, nature,
     neutral, rogue
@@ -242,6 +244,12 @@ function ShootAnArrow() {
 
 function Heal(amount) {
     hp = min(hp + amount, hp_max)
+}
+
+function Info() {
+    return {
+        text: info_text
+    }
 }
 
 function DrawHitBlinking(alpha, color=c_white) {

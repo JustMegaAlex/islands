@@ -56,7 +56,8 @@ function CommandTemplate() constructor {
 function CommandDropCrew(crew_type) constructor {
     __define_methods()
     self.crew_type = crew_type
-    self.crew_name = crew_type == oBuddy ? "Buddy" : "Archer"
+    self.crew_name = crew_type == "oBuddy" ? "Buddies" : "Archers"
+    show_debug_message($"{self.crew_type} {self.crew_name}")
     self.sprite = sUIDropPoint
     self.mouse_over_island = false
     self.isle = false
@@ -71,7 +72,7 @@ function CommandDropCrew(crew_type) constructor {
 
     info = function() {
         return {
-            text: $"Drop your {crew_name}s."
+            text: $"Drop your {crew_name}."
                   + "\nSingle click to drop 1."
                   + "\nClick + drag to drop multiple."
                   + "\nTo pick up crew use select box (left click + drag)"
@@ -160,7 +161,7 @@ function CommandCannon() constructor {
     self.draw_helper = instance_create_layer(0, 0, "OverBottom", oUICannonDraw)
     self.draw_helper.range_max = self.range_max
     self.draw_helper.range_min = self.range_min
-    self.info_text = "Cannonball.\nHold to charge.\nRelease to fire."
+    self.info_text = "Cannonball.\nHold to charge. Release to fire.\nOnly ground targets.\nDon't fire at your crew."
 
     activate = function() {
         self.active = true
@@ -311,7 +312,7 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
     instance_deactivate_object(self.checker)
     instance_destroy(inst)
     
-    info_text = $"Place a {self.building_name}.\nLeft click to place.\n"
+    info_text = $"Build a {self.building_name}.\nLeft click to place.\n"
                 + "Watch towers reveal distant islands"
 
 

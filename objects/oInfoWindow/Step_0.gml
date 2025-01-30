@@ -13,3 +13,9 @@ if hint {
     info = hint.Info()
     exit
 }
+
+var entity = collision_point(mouse_x, mouse_y, oEntity, false, false)
+if entity {
+    info = entity.Info()
+    exit
+}

@@ -115,7 +115,7 @@ if active_ui and !clicked_on_ui {
 
 //// Check for map buttons
 if !mouse_over_ui {
-    mouse_over_ui = collision_point(mouse_x, mouse_y, ui_object, false, false)
+    mouse_over_ui = collision_point(mouse_x, mouse_y, oUIMapButtonParent, false, false)
     if mouse_over_ui {
         mouse_over_ui.mouse_over = true
         if oInput.Pressed("lclick") {

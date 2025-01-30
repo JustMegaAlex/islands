@@ -10,3 +10,5 @@ is_resource = true
 hp_max = global.hp_tree
 
 wood = 1
+
+info_text = "Tree.\nBuddies can chop it for wood."
