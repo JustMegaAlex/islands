@@ -22,6 +22,7 @@
     {"name":"Abilites","order":1,"path":"folders/Sprites/Abilites.yy",},
     {"name":"Entities","order":27,"path":"folders/Sprites/Art/Entities.yy",},
     {"name":"UI","order":26,"path":"folders/Sprites/Art/UI.yy",},
+    {"name":"Effects","order":16,"path":"folders/Sprites/Effects.yy",},
     {"name":"UI","order":3,"path":"folders/Sprites/UI.yy",},
     {"name":"Tutorial","order":8,"path":"folders/Tutorial.yy",},
     {"name":"unused groups","order":10,"path":"folders/unused groups.yy",},

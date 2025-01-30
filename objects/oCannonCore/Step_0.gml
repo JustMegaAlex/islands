@@ -11,7 +11,7 @@ x += velocity.x
 y += velocity.y
 
 if distance_passed >= distance {
-	oParticleSystem.SpriteEffect(x, y, sPartWaterSplash)
+	oParticleSystem.SpriteEffect(x, y, sWaterSplash)
     var list = ds_list_create()
     EntitiesListCircle(x, y, damage_radius, list)
     for (var i = 0; i < ds_list_size(list); ++i) {
