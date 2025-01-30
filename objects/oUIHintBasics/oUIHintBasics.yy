@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sUIButton",
-    "path":"sprites/sUIButton/sUIButton.yy",
+    "name":"sUIHint",
+    "path":"sprites/sUIHint/sUIHint.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,6 +1,6 @@
 
 with oUIActionButtonParent {
-	if object_index != oUIButtonSkipTut {
+	if object_index != oUIButtonSkipTut and object_index != oUIButtonToggleHints {
 		Hide()
 	}
 }

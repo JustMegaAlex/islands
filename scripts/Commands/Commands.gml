@@ -74,6 +74,7 @@ function CommandDropCrew(crew_type) constructor {
             text: $"Drop your {crew_name}s."
                   + "\nSingle click to drop 1."
                   + "\nClick + drag to drop multiple."
+                  + "\nTo pick up crew use select box (left click + drag)"
                   + $"\nOn board: {array_length(oShip.crew[$ crew_type])}"
         }
     }
@@ -460,5 +461,17 @@ function CommandRestart() constructor {
     __define_methods()
     activate = function() {
         Restart()
+    }
+}
+
+
+function CommandToggleHints() constructor {
+    self.sprite = noone
+    __define_methods()
+    activate = function() {
+        with oUIHintParent {
+            if hidden { Show() }
+            else { Hide() }
+        }
     }
 }
