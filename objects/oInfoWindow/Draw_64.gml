@@ -5,5 +5,19 @@ if info {
     draw_set_font(fntInfoWindow)
     draw_set_halign(fa_left)
     draw_set_valign(fa_top)
-    draw_text_ext(textx, texty, info.text, 16, text_w)
+    draw_text_ext(textx, texty, info.text, 22, text_w)
+    var amber = struct_get(info, "amber_cost")
+    var wood = struct_get(info, "wood_cost")
+    var yy = bbox_bottom - 16
+    var xx = textx + 10
+    var scale = 0.66
+    draw_set_valign(fa_middle)
+    if amber != undefined {
+        draw_sprite_ext(sCollectibleAmber, 0, xx, yy, scale, scale, 0, c_white, 1)
+        draw_text(xx + 16, yy, amber)
+    }
+    if wood != undefined {
+        draw_sprite_ext(sCollectibleWood, 0, xx + 40, yy, scale, scale, 0, c_white, 1)
+        draw_text(xx + 56, yy, wood)
+    }
 }

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sWood",
-    "path":"sprites/sWood/sWood.yy",
+    "name":"sCollectibleWood",
+    "path":"sprites/sCollectibleWood/sCollectibleWood.yy",
   },
   "spriteMaskId":null,
   "visible":true,

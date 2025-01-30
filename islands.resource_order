@@ -169,6 +169,7 @@
     {"name":"sBuildingWatchTower","order":1,"path":"sprites/sBuildingWatchTower/sBuildingWatchTower.yy",},
     {"name":"sCannonball","order":12,"path":"sprites/sCannonball/sCannonball.yy",},
     {"name":"sCollectibleAmber","order":9,"path":"sprites/sCollectibleAmber/sCollectibleAmber.yy",},
+    {"name":"sCollectibleWood","order":10,"path":"sprites/sCollectibleWood/sCollectibleWood.yy",},
     {"name":"sCrawlp","order":3,"path":"sprites/sCrawlp/sCrawlp.yy",},
     {"name":"sExplosion","order":11,"path":"sprites/sExplosion/sExplosion.yy",},
     {"name":"sHarpy","order":5,"path":"sprites/sHarpy/sHarpy.yy",},
@@ -210,6 +211,5 @@
     {"name":"sWhitePixel","order":6,"path":"sprites/sWhitePixel/sWhitePixel.yy",},
     {"name":"sWhiteRect","order":8,"path":"sprites/sWhiteRect/sWhiteRect.yy",},
     {"name":"sWhiteSquare","order":7,"path":"sprites/sWhiteSquare/sWhiteSquare.yy",},
-    {"name":"sWood","order":10,"path":"sprites/sWood/sWood.yy",},
   ],
 }

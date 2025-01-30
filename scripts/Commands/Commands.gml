@@ -159,6 +159,7 @@ function CommandCannon() constructor {
     self.draw_helper = instance_create_layer(0, 0, "OverBottom", oUICannonDraw)
     self.draw_helper.range_max = self.range_max
     self.draw_helper.range_min = self.range_min
+    self.info_text = "Cannonball.\nHold to charge.\nRelease to fire."
 
     activate = function() {
         self.active = true
