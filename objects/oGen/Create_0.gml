@@ -67,7 +67,6 @@ function Cell(
                     show_message($"Failed to place island at {xx}, {yy}")
                     break
                 }
-                // show_debug_message($"Placed island at {xx}, {yy}")
             }
         }
     }
@@ -413,7 +412,6 @@ function SpawnEnemiesArea(area) {
         if harpies_count < enemy_spawn.harpy.area_limit {
             var xx = xspawn()
             var yy = yspawn()
-            show_debug_message($"Spawn harpy at {xx}, {yy}")
             RandomSpawnRect(xx, yy, xx + size, yy + size,
                             enemy_spawn.harpy.count_per_spawn, oEnemyHarpy)
         }
@@ -422,12 +420,10 @@ function SpawnEnemiesArea(area) {
                 is_crawp_spawner = true
                 var xx = xspawn()
                 var yy = yspawn()
-                show_debug_message($"Spawn crawlp at {xx}, {yy}")
                 RandomSpawnRect(xx, yy, xx + size, yy + size,
                                 enemy_spawn.crawlp.count_per_spawn, oEnemyCrawlp, oIsland)
             } else {
                 is_crawp_spawner = false
-                show_debug_message($"Spawn crawlp spawner at {area.x0}, {area.y0}")
                 RandomSpawnRect(
                     area.x0, area.y0,
                     area.x1, area.y1,
@@ -502,7 +498,3 @@ function SpawnBoss() {
 }
 
 ship_grid_pos.set(w2gx(oShip.x), w2gy(oShip.y))
-
-show_debug_message($"ship_grid_pos: {ship_grid_pos.x}, {ship_grid_pos.y}, ship_grid_pos_prev: {ship_grid_pos_prev.x}, {ship_grid_pos_prev.y}")
-
-

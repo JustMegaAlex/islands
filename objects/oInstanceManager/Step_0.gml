@@ -30,6 +30,7 @@ with oWorldEntity {
         other.MoveToArea(id, _area)
     }
 	if !world_grid_area.is_activated {
+		show_debug_message($"deactivating {id} of {object_get_name(id.object_index)}")
 	    instance_deactivate_object(id)
 	}
 }
