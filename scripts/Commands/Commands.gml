@@ -254,6 +254,19 @@ function CommandFullfillTask(inst) constructor {
     release = function() {}
 }
 
+function CommandHireFay(inst, amber_cost) constructor {
+    __define_methods()
+    self.amber_cost = amber_cost
+    self.sprite = noone
+    self.inst = inst
+
+    press = function() {
+        if !self.cost_satisfied() { return false }
+        self.take_resources()
+        inst.Trade()
+    }
+}
+
 function CommandCrewUpgrade(obj, amber, wood) constructor {
     self.obj = obj
     self.amber = amber

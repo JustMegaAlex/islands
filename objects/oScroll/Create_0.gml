@@ -25,8 +25,6 @@ button.command.wood_cost = wood_cost
 ability = ArrayChoose(abilities_array)
 // ArrayRemove(abilities_array, ability)
 
-info_text = $"{ability.name} for\n{amber_cost} amb"
-
 function Trade() {
     ability.Show()
     ArrayRemove(abilities_array, ability)

@@ -50,17 +50,17 @@ Next steps:
 > victory state
 > loose state
 > bind ui to nums
+> boss fight
+    > focus camera on the boss after spawning
+    > finish boss music transition
 
 //// Second priority
-> spread mining reources
-> boarded crew count
 > limit boarding speed
 > ui actions cooldown
 > ui actions visualize active state
 
-> boss fight
-    > focus camera on the boss after spawning
-    > finish boss music transition
+
+> spread mining reources
 
 //// Fixes
 > fix island not finding his resources (instance_exists)
