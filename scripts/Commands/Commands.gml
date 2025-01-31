@@ -289,6 +289,41 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
     release = function() {}
 }
 
+function CommandCrewUpgrade2(inst, amber, wood) constructor {
+    self.inst = inst
+    self.obj = oArcherBuddy
+    self.amber = amber
+    self.wood = wood
+    self.sprite = noone
+    __define_methods()
+    info = function() {
+        return {
+            text: $"Upgrade a buddy to an archer.\nDeploy buddies on this island to upgrade.",
+            amber_cost: amber,
+            wood_cost: wood,
+        }
+    }
+    draw = function() {
+        if !sprite_exists(self.sprite) { return }
+        draw_sprite(sprite, 0, mouse_x, mouse_y)
+    }
+    available = function() {
+        if !self.cost_satisfied() { return false }
+        with self.inst.island {
+            return place_meeting(x, y, oBuddy)
+        }
+    }
+    press = function() {
+        if !self.available() { return false }
+        self.take_resources()
+        with instance_nearest(inst.x, inst.y, oBuddy) { instance_change(other.obj, true) }
+        PlayCommandSound()
+        return true
+    }
+    hold = function() {}
+    release = function() {}
+}
+
 function CommandPlaceBuilding(obj, wood, amber) constructor {
     __define_methods()
 

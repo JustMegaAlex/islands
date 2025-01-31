@@ -64,6 +64,7 @@ Next steps:
 
 //// Fixes
 > fix island not finding his resources (instance_exists)
+> fix building ui not becoming greyed out when not available
 > fix watch multiple tower bug
 > fix map button not becoming greya
 > fix moon movement delay (html?)
