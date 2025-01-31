@@ -71,6 +71,8 @@ Next steps:
 > fix watch multiple tower bug
 > fix map button not becoming greya
 > fix moon movement delay (html?)
+> fix archers focusing on unreachable targets
+> fix select box delay
 
 
 /////// Feedback

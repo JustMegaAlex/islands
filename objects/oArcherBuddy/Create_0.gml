@@ -21,6 +21,7 @@ is_fighter = true
 is_shooter = true
 
 attack_distance = 400
+enemy_detection_range = 500
 
 hp_max = 2
 sp_max = 2

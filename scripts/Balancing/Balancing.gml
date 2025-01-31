@@ -27,8 +27,8 @@ sp_entity_default = 0.7
 harpy_sp_max = 3
 
 watch_tower_scan_range = 5000
-watch_tower_wood_cost = 10
-guard_tower_wood_cost = 10
+watch_tower_wood_cost = 5
+guard_tower_wood_cost = 5
 
 if DEBUG_ON {
     ship_speed = 5.5 * 30

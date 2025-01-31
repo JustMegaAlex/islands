@@ -1,4 +1,6 @@
 
+event_inherited()
+
 side = EntitySide.neutral
 friendly_with = EntitySide.neutral | EntitySide.ours | EntitySide.nature
 

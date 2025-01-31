@@ -1,3 +1,6 @@
+
+event_inherited()
+
 //// If no sprite, draw a rectangle
 default_color = c_white
 default_rect = new Vec2(100, 100)

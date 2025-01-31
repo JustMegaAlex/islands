@@ -61,13 +61,15 @@ function ScanReveal(update_counter=true) {
     image_alpha = 0.3
     for (var i = 0; i < array_length(entities); ++i) {
         var item = entities[i]
-        if (item.is_resource) {
+        if instance_exists(item) and (item.is_resource) {
             item.layer = lay
+            item.depth_lock = true
             item.image_alpha = 0.3
         }
     }
     for (var i = 0; i < array_length(trade_points); ++i) {
         var item = trade_points[i]
+        item.depth_lock = true
         item.layer = lay
         item.image_alpha = 0.3
     }
@@ -99,6 +101,7 @@ function ScanHide(update_counter=true) {
         }
         if (item.is_resource) {
             item.layer = lay
+            item.depth_lock = false
             item.image_alpha = 1
         }
     }
@@ -106,5 +109,6 @@ function ScanHide(update_counter=true) {
         var item = trade_points[i]
         item.layer = lay
         item.image_alpha = 1
+        item.depth_lock = false
     }
 }

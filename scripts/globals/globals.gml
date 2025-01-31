@@ -1,6 +1,6 @@
 
 #macro CHECK_PAUSE if global.pause { exit }
-#macro UPDATE_DEPTH depth = -(y - z - CamYCent())
+#macro UPDATE_DEPTH if !depth_lock { depth = -(y - z - CamYCent()) }
 
 #macro DEBUG_ON false
 #macro Debug:DEBUG_ON true

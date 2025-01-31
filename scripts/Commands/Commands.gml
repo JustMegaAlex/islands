@@ -260,6 +260,8 @@ function CommandHireFay(inst, amber_cost) constructor {
     self.sprite = noone
     self.inst = inst
 
+    info_text = "Summon a Fay. Fays follows you and fight enemies."
+
     press = function() {
         if !self.cost_satisfied() { return false }
         self.take_resources()
