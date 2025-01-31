@@ -76,7 +76,6 @@ function CommandDropCrew(crew_type) constructor {
                   + "\nSingle click to drop 1."
                   + "\nClick + drag to drop multiple."
                   + "\nTo pick up crew use select box (left click + drag)"
-                  + $"\nOn board: {array_length(oShip.crew[$ crew_type])}"
         }
     }
 

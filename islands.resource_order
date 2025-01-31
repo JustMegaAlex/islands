@@ -221,7 +221,6 @@
     {"name":"sUIMarkMining","order":4,"path":"sprites/sUIMarkMining/sUIMarkMining.yy",},
     {"name":"sUIMineIndicator","order":5,"path":"sprites/sUIMineIndicator/sUIMineIndicator.yy",},
     {"name":"sUINavigateArrow","order":2,"path":"sprites/sUINavigateArrow/sUINavigateArrow.yy",},
-    {"name":"sUIShipHPBar","order":6,"path":"sprites/sUIShipHPBar/sUIShipHPBar.yy",},
     {"name":"sUISlider","order":13,"path":"sprites/sUISlider/sUISlider.yy",},
     {"name":"sWhitePixel","order":7,"path":"sprites/sWhitePixel/sWhitePixel.yy",},
     {"name":"sWhiteRect","order":9,"path":"sprites/sWhiteRect/sWhiteRect.yy",},

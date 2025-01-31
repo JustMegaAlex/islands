@@ -44,7 +44,6 @@ Next steps:
 > cost for all actions
 
 //// Gameplay core top priority
-> ui: ship's health bar
 > ui: crew count
 > fairies
 > train archers in settlements

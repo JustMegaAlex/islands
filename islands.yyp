@@ -270,7 +270,6 @@
     {"id":{"name":"sUIMarkMining","path":"sprites/sUIMarkMining/sUIMarkMining.yy",},},
     {"id":{"name":"sUIMineIndicator","path":"sprites/sUIMineIndicator/sUIMineIndicator.yy",},},
     {"id":{"name":"sUINavigateArrow","path":"sprites/sUINavigateArrow/sUINavigateArrow.yy",},},
-    {"id":{"name":"sUIShipHPBar","path":"sprites/sUIShipHPBar/sUIShipHPBar.yy",},},
     {"id":{"name":"sUISlider","path":"sprites/sUISlider/sUISlider.yy",},},
     {"id":{"name":"sWaterSplash","path":"sprites/sWaterSplash/sWaterSplash.yy",},},
     {"id":{"name":"sWhitePixel","path":"sprites/sWhitePixel/sWhitePixel.yy",},},
