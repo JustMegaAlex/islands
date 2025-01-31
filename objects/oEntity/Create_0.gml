@@ -100,6 +100,7 @@ function CheckUndoAttackCounter() {
 
 function DropStateAttributes() {
     CheckUndoAttackCounter()
+	DetachFromIsland()
     attack_target = noone
     attack_target_move = noone
     attack_timer.reset()
