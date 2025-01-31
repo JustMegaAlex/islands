@@ -44,7 +44,11 @@ Next steps:
 > cost for all actions
 
 //// Gameplay core top priority
-> info window !!!
+> add ambient music
+> rework music queue
+> ship's health bar
+> fairies
+> train archers in settlements
 > victory state
 > loose state
 > bind ui to nums

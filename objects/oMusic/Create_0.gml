@@ -31,4 +31,6 @@ function CurrentMusic() {
 audio_stop_all()
 switchMusic(mscExploration, false)
 
+audio_play_sound(mscOceanAmbience, 1, true)
+
 //audio_play_sound(mscExploration, 0, false)
