@@ -213,12 +213,14 @@ islands_config = [
     [1, new Island(2, 1)],
 ]
 trade_point_low_conf = [1, oScroll]
+trade_point_fay_conf = [1, oScrollFay]
 trade_point_high_conf = [1, oScrollHigh]
 trade_points_config = [
     trade_point_low_conf,
-    [4, oSettlement],
-    [3, oWorkshop],
-    [20, noone],
+    trade_point_fay_conf,
+    [3, oSettlement],
+    [2, oWorkshop],
+    [15, noone],
 ]
 settlement_generate_chance = 0.2
 
@@ -318,6 +320,7 @@ function Emerge() {
             enemy_spawn.crawlp.spawns = 3
         break
         case 5:
+            trade_point_fay_conf[0] = 2
             array_push(islands_config, island_gen_big_trees_conf)
         break
         case 7:

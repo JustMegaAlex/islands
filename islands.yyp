@@ -15,6 +15,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Test","folderPath":"folders/Test.yy","name":"Test","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Libraries","folderPath":"folders/Libraries.yy","name":"Libraries","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"AlexLibs","folderPath":"folders/Libraries/AlexLibs.yy","name":"AlexLibs","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Libraries/AlexLibs/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -111,6 +112,7 @@
     {"id":{"name":"oShip","path":"objects/oShip/oShip.yy",},},
     {"id":{"name":"oStart","path":"objects/oStart/oStart.yy",},},
     {"id":{"name":"oSys","path":"objects/oSys/oSys.yy",},},
+    {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},},
     {"id":{"name":"oTradePointParent","path":"objects/oTradePointParent/oTradePointParent.yy",},},
     {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},},
     {"id":{"name":"oTutTrigger","path":"objects/oTutTrigger/oTutTrigger.yy",},},
@@ -149,6 +151,7 @@
     {"id":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
     {"id":{"name":"rmGameBU","path":"rooms/rmGameBU/rmGameBU.yy",},},
     {"id":{"name":"rmStart","path":"rooms/rmStart/rmStart.yy",},},
+    {"id":{"name":"rmTest","path":"rooms/rmTest/rmTest.yy",},},
     {"id":{"name":"Audio","path":"scripts/Audio/Audio.yy",},},
     {"id":{"name":"Balancing","path":"scripts/Balancing/Balancing.yy",},},
     {"id":{"name":"camera","path":"scripts/camera/camera.yy",},},
@@ -287,6 +290,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rmStart","path":"rooms/rmStart/rmStart.yy",},},
     {"roomId":{"name":"rmGame","path":"rooms/rmGame/rmGame.yy",},},
+    {"roomId":{"name":"rmTest","path":"rooms/rmTest/rmTest.yy",},},
     {"roomId":{"name":"rmGameBU","path":"rooms/rmGameBU/rmGameBU.yy",},},
   ],
   "templateType":"game",

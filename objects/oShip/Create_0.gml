@@ -105,8 +105,8 @@ function AddArcher() {
 }
 
 function LoadCrew(inst) {
-    on_board_shooters += inst.is_shooter * (on_board_shooters < on_board_shooters_max)
-    on_board_shooters_shots_timer.time = min(10, 40 / on_board_shooters)
+    // on_board_shooters += inst.is_shooter * (on_board_shooters < on_board_shooters_max)
+    // on_board_shooters_shots_timer.time = min(10, 40 / on_board_shooters)
     inst.DropStateAttributes()
     array_push(crew[$ object_get_name(inst.object_index)], inst)
     instance_deactivate_object(inst)
@@ -115,6 +115,10 @@ function LoadCrew(inst) {
 function DropCrew(crew_type, xx, yy) {
     var inst = array_pop(crew[$ crew_type])
     instance_activate_object(inst)
+    if !instance_exists(inst) {
+        show_debug_message("ERROR: DropCrew: no instance")
+        exit
+    }
     inst.SetPos(xx, yy)
     inst.move_target.set(xx, yy)
 }

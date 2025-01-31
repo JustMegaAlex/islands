@@ -100,6 +100,13 @@ if mouse_over_ui {
         clicked_on_ui = true
     }
 }
+
+if !clicked_on_ui {
+    if oInput.Pressed("skill1") {
+        
+    }
+}
+
 /// Preform button
 if active_ui and !clicked_on_ui {
     if oInput.Pressed("lclick") {

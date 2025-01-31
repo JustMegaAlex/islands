@@ -197,6 +197,7 @@ mapping_config = {
     pause: [new Key(ord("P"))],
     zoom_out: [new MouseWheelUp()],
     zoom_in: [new MouseWheelDown()],
+    skill1: [new Key(ord("1"))],
 }
 
 //// Initialize key mapping

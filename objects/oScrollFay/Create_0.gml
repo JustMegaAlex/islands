@@ -10,11 +10,11 @@ button.command.wood_cost = wood_cost
 
 function Trade() {
     var pos = new Vec2(oShip.x, oShip.y)
-    pos.add_polar(100, random_range(180, 360))
-    instance_create_layer(pos.x, pos.y, "Instances", oFay, { z: oShip.z})
+    pos.add_polar(100, random_range(200, 340))
+    instance_create_layer(pos.x, pos.y, "Instances", oFay, { z: oShip.z - random(30)})
 
-	// instance_destroy(button)
-    // instance_destroy()
+	instance_destroy(button)
+    instance_destroy()
 }
 
 function TradeAvailable() {

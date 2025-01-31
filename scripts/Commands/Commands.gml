@@ -417,7 +417,7 @@ function CommandAmberWrath() constructor {
     self.sprite = noone
     self.amber_cost = global.cost_amber_wrath_amber
     __define_methods()
-    info_text = "Unleash Amber Wrath.\n"
+    info_text = "Unleash Enfir Wrath.\n"
     activate = function() {
         self.take_resources()
         oShip.amber_wrath_timer.reset()

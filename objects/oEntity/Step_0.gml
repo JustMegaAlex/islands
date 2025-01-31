@@ -1,4 +1,6 @@
 
+event_inherited()
+
 CHECK_PAUSE
 
 frames++

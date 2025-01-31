@@ -53,6 +53,9 @@ Next steps:
 > boss fight
     > focus camera on the boss after spawning
     > finish boss music transition
+> fay scroll info text
+> fix disappearing folks
+> add pause menu hint
 
 //// Second priority
 > limit boarding speed

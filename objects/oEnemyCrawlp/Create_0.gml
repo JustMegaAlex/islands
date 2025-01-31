@@ -22,3 +22,5 @@ sp_max = 2
 attack_damage = 1
 
 death_sound = sfxSmallmonsterdeath
+
+enemy_detection_range = 500

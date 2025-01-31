@@ -1,6 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
+    {"name":"Test","order":11,"path":"folders/Test.yy",},
     {"name":"Libraries","order":1,"path":"folders/Libraries.yy",},
     {"name":"Objects","order":2,"path":"folders/Libraries/AlexLibs/Objects.yy",},
     {"name":"Scripts","order":3,"path":"folders/Libraries/AlexLibs/Scripts.yy",},
@@ -111,6 +112,7 @@
     {"name":"oWorldEntity","order":11,"path":"objects/oWorldEntity/oWorldEntity.yy",},
     {"name":"rmGameBU","order":1,"path":"rooms/rmGameBU/rmGameBU.yy",},
     {"name":"rmStart","order":2,"path":"rooms/rmStart/rmStart.yy",},
+    {"name":"rmTest","order":1,"path":"rooms/rmTest/rmTest.yy",},
     {"name":"Audio","order":5,"path":"scripts/Audio/Audio.yy",},
     {"name":"Balancing","order":2,"path":"scripts/Balancing/Balancing.yy",},
     {"name":"Commands","order":1,"path":"scripts/Commands/Commands.yy",},

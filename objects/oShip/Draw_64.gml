@@ -1,2 +1,3 @@
 DebugDrawVar("wood")
-DebugDrawVar("amber")
+DebugDrawVar("enfir")
+DebugDrawVar("ship depth", depth)

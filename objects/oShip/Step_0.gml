@@ -1,6 +1,7 @@
-CHECK_PAUSE
 
 event_inherited()
+
+CHECK_PAUSE
 
 collision_circle_list(x, y, drop_crew_radius, oUIMarkDrop, false, false, drop_crew_marks, false)
 collision_circle_list(x, y, drop_crew_radius, oEntity, false, false, crew_instances, false)
