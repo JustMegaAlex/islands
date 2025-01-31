@@ -44,7 +44,6 @@ Next steps:
 > cost for all actions
 
 //// Gameplay core top priority
-> add ambient music
 > rework music queue
 > ship's health bar
 > fairies

@@ -20,9 +20,13 @@ function DebugViewAddRefs(ref, refparams) {
 		var _ref = array_shift(ref)
         subrefs = ref
         ref = _ref
+        
+        // show_debug_message($"Array: {ref}")
 	}
     if !instance_exists(ref) 
-		and !is_struct(ref) { return }
+		and !is_struct(ref) { 
+            // show_debug_message("Bad ref") 
+            return }
 
     if is_array(subrefs) {
         // retrieve target subref
@@ -31,12 +35,16 @@ function DebugViewAddRefs(ref, refparams) {
         for (var i = 1; i < array_length(subrefs); ++i) {
             ref = variable_struct_get(ref, subrefs[i])
         }
+        
+        // show_debug_message($"Subref: {ref}")
     }
     //// Add debug refs
 	for (var i = 0; i < array_length(refparams); ++i) {
         var params = refparams[i]
         var name = params[0]
         var fun = params[1]
+        
+        // show_debug_message($"Create ref: {ref} {name}")
         switch array_length(params) {
             case 2:
                 fun(ref_create(ref, name))

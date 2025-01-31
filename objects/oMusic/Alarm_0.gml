@@ -9,3 +9,5 @@ audio_sound_gain(next_music, 0.5, next_music_transition_time_ms)
 
 current_music = next_music
 next_music = noone
+
+bgm_current.inst = current_music_instance

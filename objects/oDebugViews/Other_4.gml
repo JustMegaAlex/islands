@@ -61,3 +61,8 @@ for (var i = 0; i < array_length(global.locked_abilities_high_tier); ++i) {
 DebugViewAddRefs(global, [
     ["watch_tower_show_radius", dbg_checkbox],
 ])
+
+dbg_section("Music", true)
+DebugViewAddRefs(oMusic, [
+    ["switch to ending", dbg_button, oMusic.SwitchToEnding],
+])
