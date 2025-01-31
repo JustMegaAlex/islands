@@ -1,4 +1,8 @@
 
+if bgm_current == noone {
+    exit
+}
+
 if bgm_debug.pos != bgm_debug.pos_prev {
     audio_sound_set_track_position(bgm_debug.msc, bgm_debug.pos * bgm_debug.length)
 }

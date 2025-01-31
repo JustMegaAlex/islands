@@ -43,6 +43,8 @@ if instance_exists(oShip) {
     y = oShip.y
 }
 
+boss_timer = MakeTimer(120, 0)
+
 
 
 

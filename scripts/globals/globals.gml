@@ -14,6 +14,9 @@ watch_tower_show_radius = false
 player_hit_effect_color = c_red
 player_hit_effect_alpha = 0.9
 
+gameover =false
+victory = false
+
 playground_mode = true
 
 locked_abilities_low_tier = []
@@ -34,19 +37,22 @@ if DEBUG_ON {
 }
 
 function ResetGlobals() {
-    locked_abilities_low_tier = [
+    global.locked_abilities_low_tier = [
         oUIButtonHealAura,
         oUIButtonProtectionAura,
         oUIButtonShipRepair,
         oUIButtonSpeedBoost,
     ]
     
-    locked_abilities_high_tier = [
+    global.locked_abilities_high_tier = [
         oUIButtonAmberWrath
     ]
 
-    unseen_low_scrolls = []
-    unseen_high_scrolls = []
+    global.unseen_low_scrolls = []
+    global.unseen_high_scrolls = []
+    global.gameover = false
+    global.victory = false
+    
 }
 
 ResetGlobals()

@@ -132,6 +132,7 @@ function Die() {
     oUIButtonRetry.Show()
     PlaySoundAt(x, y, sfxFightShipDestruction)
     oMusic.switchMusic(mscLooseStinger, false, 0)
+    global.gameover = true
 }
 
 crew = {

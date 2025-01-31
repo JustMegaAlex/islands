@@ -10,3 +10,18 @@ if global.playground_mode {
     draw_text(window_get_width() / 2, window_get_height() / 2 - 300, 
         "Playground mode. Take your time to learn controls.\nYou can start with hints in the bottom left corner.")
 }
+
+if global.gameover {
+    draw_set_halign(fa_center)
+    draw_set_font(fntDefault)
+    draw_set_color(c_red)
+    draw_text(window_get_width() / 2, window_get_height() / 2 - 150, 
+        "Defeated")
+} else if global.victory {
+    draw_set_halign(fa_center)
+    draw_set_font(fntDefault)
+    draw_set_color(c_aqua)
+    draw_text(window_get_width() / 2, window_get_height() / 2 - 150, 
+        "Victory!")
+}
+

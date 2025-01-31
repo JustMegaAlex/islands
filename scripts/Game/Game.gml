@@ -1,10 +1,14 @@
 
 function Restart() {
+	ResetGlobals()
 	room_restart()
 }
 
 function Win() {
-    oMusic.switchMusic(mscWinStinger, false, 0)
+    oMusic.Victory()
+    global.victory = true
+    with oEnemyHarpy { instance_destroy() }
+    with oEnemyCrawlp { instance_destroy() }
 }
 
 function Pause() {

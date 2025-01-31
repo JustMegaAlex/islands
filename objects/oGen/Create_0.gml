@@ -202,15 +202,18 @@ cell_generators_config = [
     [4, new Cell(1)],
     [2, new Cell(0)],
 ]
+islands_enfir_conf1 = [1, new Island(8, 1)]
+islands_enfir_conf2 = [1, new Island(2, 1)]
+islands_enfir_conf3 = [2, new Island(0, 1)]
 islands_config = [
     [16, new Island(1, 0)],
     [16, new Island(2, 0)],
     [6, new Island(5, 0)],
     [1, new Island(12, 0)],
     [1, new Island(5, 1)],
-    [2, new Island(0, 1)],
-    [1, new Island(8, 1)],
-    [1, new Island(2, 1)],
+    islands_enfir_conf1,
+    islands_enfir_conf2,
+    islands_enfir_conf3,
 ]
 trade_point_low_conf = [1, oScroll]
 trade_point_fay_conf = [1, oScrollFay]
@@ -218,9 +221,9 @@ trade_point_high_conf = [1, oScrollHigh]
 trade_points_config = [
     trade_point_low_conf,
     trade_point_fay_conf,
-    [3, oSettlement],
-    [2, oWorkshop],
-    [15, noone],
+    [4, oSettlement],
+    [3, oWorkshop],
+    [20, noone],
 ]
 settlement_generate_chance = 0.2
 
@@ -321,13 +324,22 @@ function Emerge() {
         break
         case 5:
             trade_point_fay_conf[0] = 2
+            islands_enfir_conf1[1].amber++
+            islands_enfir_conf2[1].amber++
+            islands_enfir_conf3[1].amber++
             array_push(islands_config, island_gen_big_trees_conf)
-        break
+            island_generators.init()
+            break
         case 7:
             enemy_spawn.harpy.spawns = 1
             enemy_spawn.harpy.count_per_spawn = 1
             enemy_spawn.harpy.area_limit = 1
             enemy_spawn.crawlp.area_limit = 15
+
+            islands_enfir_conf1[1].amber++
+            islands_enfir_conf2[0]++
+            islands_enfir_conf3[0]++
+            island_generators.init()
             break
         case 10:
             trade_point_low_conf[0] = 2
@@ -340,12 +352,22 @@ function Emerge() {
 
             enemy_spawn.harpy.count_per_spawn = 2
             enemy_spawn.harpy.area_limit = 4
+
+            islands_enfir_conf1[1].amber++
+            islands_enfir_conf2[0]++
+            islands_enfir_conf3[0]++
+            island_generators.init()
             break
         case 12:
             enemy_spawn.crawlp.count_per_spawn = 4
             enemy_spawn.crawlp.spawns = 3
             enemy_spawn.crawlp.area_limit = 18
-        case 15:
+
+            islands_enfir_conf1[1].amber++
+            islands_enfir_conf2[0]++
+            islands_enfir_conf3[0]++
+            island_generators.init()
+        case 13:
             island_gen_big_trees.big_trees = 3
             island_gen_big_trees.trees += 3
 
@@ -357,11 +379,13 @@ function Emerge() {
             enemy_spawn.crawlp.spawns = 4
             enemy_spawn.crawlp.area_limit = 25
             break
-        case 20:
+        case 14:
             island_gen_big_trees.big_trees = 4
             island_gen_big_trees.trees += 3
             enemy_spawn.harpy.area_limit = 6
             enemy_spawn.crawlp.area_limit = 20
+        break
+        case 15:
             SpawnBoss()
         break
     }
@@ -473,7 +497,8 @@ function RectAreaCount(area, obj) {
 function SpawnBoss() {
     var pos = oShip.position.add_polar_(1000, random(360))
     instance_create_layer(pos.x, pos.y, "Instances", oEnemyAmberTitan)
-    oMusic.switchMusic(mscBossFightStinger, false)
+    oMusic.BossPhase()
+    oCamera.boss_timer.reset()
 }
 
 ship_grid_pos.set(w2gx(oShip.x), w2gy(oShip.y))

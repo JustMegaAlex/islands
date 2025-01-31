@@ -57,6 +57,7 @@ Next steps:
 > fix disappearing folks
 > add pause menu hint
 
+
 //// Second priority
 > limit boarding speed
 > ui actions cooldown

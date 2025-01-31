@@ -29,10 +29,6 @@ if zoom_prev != zoom {
     CameraSetPos(xx, yy)
 }
 
-// update camera position with clampint to room bounds
-CameraSetCentPos(x, y)
-
-
 //// Mouse drag
 if mouse_check_button_pressed(drag_button) {
     drag_xst = mouse_x
@@ -54,4 +50,16 @@ if oInput.Pressed("camera_focus") {
     y = oShip.y
 }
 
+if boss_timer.update() and instance_exists(oEnemyAmberTitan) {
+    if boss_timer.timer > (boss_timer.time * 0.65) {
+        x = Approach2(x, oEnemyAmberTitan.x, 0.05, 0.1)
+        y = Approach2(y, oEnemyAmberTitan.y, 0.05, 0.1)
+    } else if boss_timer.timer < (boss_timer.time * 0.35) {
+        x = Approach2(x, oShip.x, 0.05, 0.1)
+        y = Approach2(y, oShip.y, 0.05, 0.1) 
+    }
+}
+
+// update camera position with clampint to room bounds
+CameraSetCentPos(x, y)
 

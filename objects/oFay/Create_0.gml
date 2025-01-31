@@ -1,3 +1,4 @@
+event_inherited()
 
 xrel = x - oShip.x
 yrel = y - oShip.y

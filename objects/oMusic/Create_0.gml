@@ -42,7 +42,7 @@ function BGM(msc, loops=1, pause_sec=3) constructor {
 
 bgm1 = new BGM(mscExploration)
 bgm2 = new BGM(mscIntenseWaltz, 4)
-bgm3 = new BGM(mscBossFight, 999, 1)
+bgm3 = new BGM(mscBossFight, 999, audio_sound_length(mscBossFightStinger))
 
 bgm1.next = bgm2
 bgm2.next = bgm1
@@ -54,6 +54,18 @@ check_finished_timer = MakeTimer(90)
 
 function SwitchToEnding() {
     audio_sound_set_track_position(bgm_current.inst, bgm_current.length_sec - 3)
+}
+
+function BossPhase(msc) {
+    switchMusic(noone, false, 0)
+    audio_play_sound(mscBossFightStinger, 0, false)
+    bgm_current = bgm3
+}
+
+function Victory() {
+    switchMusic(noone, false, 0)
+    audio_play_sound(mscWinStinger, 0, false)
+    bgm_current = noone
 }
 
 bgm_debug = {
