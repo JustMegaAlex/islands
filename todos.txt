@@ -44,8 +44,8 @@ Next steps:
 > cost for all actions
 
 //// Gameplay core top priority
-> rework music queue
-> ship's health bar
+> ui: ship's health bar
+> ui: crew count
 > fairies
 > train archers in settlements
 > victory state
@@ -53,12 +53,15 @@ Next steps:
 > bind ui to nums
 
 //// Second priority
-> ship shooters -> fays
 > spread mining reources
 > boarded crew count
 > limit boarding speed
 > ui actions cooldown
 > ui actions visualize active state
+
+> boss fight
+    > focus camera on the boss after spawning
+    > finish boss music transition
 
 //// Fixes
 > fix island not finding his resources (instance_exists)
@@ -75,6 +78,7 @@ Next steps:
 
 
 ////////// Polishing, improvments and ideas //////////
+> import the newest audio assets
 > fix: change Esc button to Q?
 > balance: make ship arrows and cannon balls consumables
 > fix instance manager: leave areas with player presence (buildings/crew) active
