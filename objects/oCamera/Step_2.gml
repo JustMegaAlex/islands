@@ -26,8 +26,11 @@ if zoom_prev != zoom {
     var xx = CamXCent()
     var yy = CamYCent()
     SetZoom(zoom)
-    CameraSetPos(xx, yy)
+    // CameraSetPos(xx, yy)
 }
+
+// update camera position with clampint to room bounds
+CameraSetCentPos(x, y)
 
 //// Mouse drag
 if mouse_check_button_pressed(drag_button) {
@@ -58,8 +61,7 @@ if boss_timer.update() and instance_exists(oEnemyAmberTitan) {
         x = Approach2(x, oShip.x, 0.05, 0.1)
         y = Approach2(y, oShip.y, 0.05, 0.1) 
     }
+    CameraSetCentPos(x, y)
 }
 
-// update camera position with clampint to room bounds
-CameraSetCentPos(x, y)
 
