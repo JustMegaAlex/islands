@@ -122,3 +122,23 @@ function RectInstanceCount(x0, y0, x1, y1, obj) {
     ds_list_destroy(list)
     return count
 }
+
+function InstanceDeactivate(inst, caller=noone) {
+    var caller_log = ""
+    if caller != noone and instance_exists(inst) 
+            and ((inst.object_index == oBuddy) or (inst.object_index == oArcherBuddy)) 
+            and caller != oShip {
+        var test = true
+    }
+    if instance_exists(caller) {
+        caller_log = $"caller: {object_get_name(caller.object_index)}"
+    } else {
+        caller_log = $"caller: {caller}"
+    }
+    var inst_log = inst
+    if instance_exists(inst) {
+        inst_log = $"{object_get_name(inst.object_index)}"
+    }
+    show_debug_message($"InstanceDeactivate: {inst_log} {caller_log}")
+    instance_deactivate_object(inst)
+}

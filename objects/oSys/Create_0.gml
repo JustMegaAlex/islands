@@ -7,5 +7,5 @@ draw_set_font(fntDefault)
 
 randomize()
 
-//instance_deactivate_object(oUIButtonParent)
+//InstanceDeactivate(oUIButtonParent)
 //instance_activate_object(oUIButtonSkipTut)

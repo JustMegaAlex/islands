@@ -3,7 +3,7 @@ var dist = InstDist(oShip)
 if dist < 200 {
     instance_activate_object(button)
 } else {
-    instance_deactivate_object(button)
+    InstanceDeactivate(button, id)
 } 
 
 // if unseen and dist < oPlayerVision.vision_range {

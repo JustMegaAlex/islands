@@ -109,7 +109,7 @@ function LoadCrew(inst) {
     // on_board_shooters_shots_timer.time = min(10, 40 / on_board_shooters)
     inst.DropStateAttributes()
     array_push(crew[$ object_get_name(inst.object_index)], inst)
-    instance_deactivate_object(inst)
+    InstanceDeactivate(inst, oShip)
 }
 
 function DropCrew(crew_type, xx, yy) {

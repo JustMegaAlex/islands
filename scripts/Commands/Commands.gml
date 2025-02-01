@@ -358,7 +358,7 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
     self.building_sprite = inst.sprite_index
     self.checker.image_xscale = inst.sprite_width / self.checker.sprite_width
     self.checker.image_yscale = inst.sprite_height / self.checker.sprite_height
-    instance_deactivate_object(self.checker)
+    InstanceDeactivate(self.checker)
     instance_destroy(inst)
     
     info_text = $"Build a {self.building_name}.\nLeft click to place.\n"
@@ -377,7 +377,7 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
         instance_activate_object(self.checker)
     }
     deactivate = function() {
-        instance_deactivate_object(self.checker)
+        InstanceDeactivate(self.checker)
     }
     draw = function() {
         self.checker.x = mouse_x
