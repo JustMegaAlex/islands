@@ -67,7 +67,7 @@ Next steps:
 > spread mining reources
 
 //// Fixes
-> fix island not finding his resources (instance_exists)
+> fix island not finding its resources (instance_exists)
 > fix building ui not becoming greyed out when not available
 > fix watch multiple tower bug
 > fix map button not becoming greya
@@ -104,23 +104,31 @@ Next steps:
 > settlements actively mining resources
 > if not moving far for a long time, spawn enemies nearby
 
-> wrath usage: kill underwater stuff
 
+> idea: wrath usage: kill underwater stuff
 > idea: no crew mod, cannon cost = 0
 > idea: a screaming enemy that attracts all enemies around
 > idea: harpoon ability: attack underwater creatures and pull resources
+> idea: gen: 
+    - static generation: cells generate more resources and enemies over time
+    - dynamic enemies spawn as is
+    - option to choose "chill" mode without dynamic enemies
+> idea: turn archers back to buddies
 
 > scrolls
     > minions boost
     > teleport
     > witches' punishment (long range beam)
-> turn archers back to buddies
 > select box trigger by coords
 > set timer on some sfx
 
 
+////// Ideas for other incarnations
+> starcraft-like roguelike strategy
+
+
 ////// Lessons learned
-> GM: don't use layer_destroy() and instance_activate/deactivate()
+> GM: in html don't use layer_destroy() and instance_activate/deactivate()
 > I love optimization!!! (but not the graphics one)
 > At some html build was broken by pure presence of a particle system IN THE PROJECT, not in the game
   Removing it fixed the problem.

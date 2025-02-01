@@ -69,8 +69,6 @@ function SetFriendlyWith(side) {
 }
 
 function IsEnemySide(inst) {
-	var inst_side = inst.side
-	var inst_fr = inst.friendly_with
     var _side = inst.side != side
     var _friendly_with = !(power(2, side) & inst.friendly_with)
     var _side_friendly_with = !(friendly_with & power(2, inst.side))
@@ -142,3 +140,24 @@ function InstanceDeactivate(inst, caller=noone) {
     show_debug_message($"InstanceDeactivate: {inst_log} {caller_log}")
     instance_deactivate_object(inst)
 }
+
+function InstanceActivate(inst, caller=noone) {
+    instance_activate_object(inst)
+    var caller_log = ""
+    if caller != noone and instance_exists(inst) 
+            and ((inst.object_index == oBuddy) or (inst.object_index == oArcherBuddy)) 
+            and caller != oShip {
+        var test = true
+    }
+    if instance_exists(caller) {
+        caller_log = $"caller: {object_get_name(caller.object_index)}"
+    } else {
+        caller_log = $"caller: {caller}"
+    }
+    var inst_log = inst
+    if instance_exists(inst) {
+        inst_log = $"{object_get_name(inst.object_index)}"
+    }
+    show_debug_message($"InstanceDeactivate: {inst_log} {caller_log}")
+}
+

@@ -61,7 +61,6 @@ island = noone
 resource_to_mine = noone
 build_timer = MakeTimer(10 * 60)
 move_to_tower = noone
-settlement = noone
 
 //// Stats
 ai_random_walk = false
@@ -195,9 +194,6 @@ function Die() {
 	if island {
 		island.RemoveEntity(id)
 	}
-    if settlement and instance_exists(settlement) {
-        settlement.RemoveUnit(id)
-    }
 	if death_sound != noone {
 		PlaySoundAt(x, y, death_sound)	
 	}

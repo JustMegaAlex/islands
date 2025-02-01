@@ -5,7 +5,7 @@ wood_cost = RandomCost(4)
 amber_cost = RandomCost(0.5)
 amount = irandom_range(2, 6)
 
-button.command.info = function() {
+button.Info = function() {
     return {
         text: $"Hire a buddy.\n{id.amount} left",
         wood_cost: id.wood_cost,

@@ -105,7 +105,7 @@
     {"name":"oUIIndi","order":9,"path":"objects/oUIIndi/oUIIndi.yy",},
     {"name":"oUIIndiEnfir","order":11,"path":"objects/oUIIndiEnfir/oUIIndiEnfir.yy",},
     {"name":"oUIIndiWood","order":10,"path":"objects/oUIIndiWood/oUIIndiWood.yy",},
-    {"name":"oUIMapButtonParent","order":6,"path":"objects/oUIMapButtonParent/oUIMapButtonParent.yy",},
+    {"name":"oUIMarkDrop","order":3,"path":"objects/oUIMarkDrop/oUIMarkDrop.yy",},
     {"name":"oUIMenuButton","order":2,"path":"objects/oUIMenuButton/oUIMenuButton.yy",},
     {"name":"oUIMenuSlider","order":3,"path":"objects/oUIMenuSlider/oUIMenuSlider.yy",},
     {"name":"oUIShipHealthBar","order":8,"path":"objects/oUIShipHealthBar/oUIShipHealthBar.yy",},
