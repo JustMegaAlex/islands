@@ -374,7 +374,7 @@ function CommandPlaceBuilding(obj, wood, amber) constructor {
         // }
 
     activate = function() {
-        instance_activate_object(self.checker)
+        InstanceActivate(self.checker)
     }
     deactivate = function() {
         InstanceDeactivate(self.checker)

@@ -8,7 +8,7 @@ function AreaActivate(area) {
     array_push(active_areas, area)
     for (var i = 0; i < array_length(area.instances); ++i) {
         var inst = area.instances[i]
-        instance_activate_object(inst)
+        InstanceActivate(inst, id)
     }
 }
 function AreaDeactivate(area) {

@@ -1,5 +1,5 @@
 
 if !array_length(crew) {
-	instance_activate_object(button)
+	InstanceActivate(button, id)
 }
 instance_destroy(button)

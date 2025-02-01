@@ -65,7 +65,7 @@ function MarkForCrew() {
 
 function TakeCrew(inst) {
     if ArrayEmpty(crew) {
-        instance_activate_object(button)
+        InstanceActivate(button, id)
     }
     inst.DetachFromIsland()
     array_push(crew, inst)
@@ -76,7 +76,7 @@ function TakeCrew(inst) {
 
 function DropCrew() {
     var inst = array_pop(crew)
-    instance_activate_object(inst)
+    InstanceActivate(inst, id)
     inst.AttachToIsland()
 	inst.move_to_tower = noone
     if ArrayEmpty(crew) {

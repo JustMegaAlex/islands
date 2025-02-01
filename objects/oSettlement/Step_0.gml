@@ -1,6 +1,6 @@
 
 if InstDist(oShip) < 200 {
-    instance_activate_object(button)
+    InstanceActivate(button, id)
 } else {
     InstanceDeactivate(button, id)
 }

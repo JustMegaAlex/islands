@@ -114,7 +114,7 @@ function LoadCrew(inst) {
 
 function DropCrew(crew_type, xx, yy) {
     var inst = array_pop(crew[$ crew_type])
-    instance_activate_object(inst)
+    InstanceActivate(inst, id)
     if !instance_exists(inst) {
         show_debug_message("ERROR: DropCrew: no instance")
         exit
