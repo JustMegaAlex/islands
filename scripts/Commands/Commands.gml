@@ -5,10 +5,12 @@ function __define_methods() {
     amber_cost = 0
     wood_cost = 0
     info_text = "No info about this yet"
+    shortcut_key = ""
 
     function info() {
         var info = {
             text: self.info_text,
+            shortcut_key: self.shortcut_key,
         }
         if self.amber_cost > 0 {
             info.amber_cost = self.amber_cost
@@ -75,7 +77,8 @@ function CommandDropCrew(crew_type) constructor {
             text: $"Drop your {crew_name}."
                   + "\nSingle click to drop 1."
                   + "\nClick + drag to drop multiple."
-                  + "\nTo pick up crew use select box (left click + drag)"
+                  + "\nTo pick up crew use select box (left click + drag)",
+            shortcut_key: shortcut_key,
         }
     }
 
@@ -160,7 +163,7 @@ function CommandCannon() constructor {
     self.draw_helper = instance_create_layer(0, 0, "OverBottom", oUICannonDraw)
     self.draw_helper.range_max = self.range_max
     self.draw_helper.range_min = self.range_min
-    self.info_text = "Cannonball.\nHold to charge. Release to fire.\nOnly ground targets.\nDon't fire at your crew."
+    self.info_text = "Cannonball.\nHold to charge. Release to fire.\nOnly ground targets."
 
     activate = function() {
         self.active = true
