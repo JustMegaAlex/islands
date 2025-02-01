@@ -15,14 +15,16 @@ if ArrayEmpty(abilities_array) {
     exit
 }
 
+ability = ArrayChoose(abilities_array)
+item_name = ability.name
 
 event_inherited()
 
 amber_cost = irandom_range(3, 6)
 button.command.amber_cost = amber_cost
 button.command.wood_cost = wood_cost
+button.command.info_text = $"Posses the {item_name}."
 
-ability = ArrayChoose(abilities_array)
 // ArrayRemove(abilities_array, ability)
 
 function Trade() {

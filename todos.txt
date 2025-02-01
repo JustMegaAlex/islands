@@ -77,10 +77,8 @@ Next steps:
 
 
 /////// Feedback
-> show crew total counts
-> better communicate buying
-> tell them to switch to Chrome
 > enemies constantly threaten, give players pauses from fighting
+> players are lost and don't know what to do at the start
 
 
 ////////// Polishing, improvments and ideas //////////
@@ -109,6 +107,8 @@ Next steps:
 > wrath usage: kill underwater stuff
 
 > idea: no crew mod, cannon cost = 0
+> idea: a screaming enemy that attracts all enemies around
+> idea: harpoon ability: attack underwater creatures and pull resources
 
 > scrolls
     > minions boost

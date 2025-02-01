@@ -9,8 +9,8 @@
   "name":"oUITaskButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/UI.yy",
+    "name":"Map",
+    "path":"folders/Objects/UI/Map.yy",
   },
   "parentObjectId":{
     "name":"oUIMapButtonParent",

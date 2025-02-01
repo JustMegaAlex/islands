@@ -52,13 +52,6 @@ if oInput.Released("lclick") {
                     inst.marked_for_pickup = !inst.marked_for_pickup; return false}
             }
         )
-        // RectCollisionInstances(
-        //     resource_select_box.x0, resource_select_box.y0, resource_select_box.x1, resource_select_box.y1,
-        //     function(inst) {
-        //         if inst.is_resource {
-        //             inst.marked_for_mining = !inst.marked_for_mining; return false}
-        //     }
-        // )
     }
     resource_select_box.enabled = false
 }
@@ -102,8 +95,16 @@ if mouse_over_ui {
 }
 
 if !clicked_on_ui {
-    if oInput.Pressed("skill1") {
-        
+	//if keyboard_check_pressed(vk_anykey) {
+	//	var test = true	
+	//}
+    var _ui = oUIShortcuts.CheckShortcutUsed()
+    if _ui and !_ui.hidden {
+        if active_ui {
+            active_ui.command.deactivate()
+        }
+        active_ui = _ui
+        active_ui.command.activate()
     }
 }
 

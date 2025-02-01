@@ -9,8 +9,8 @@
   "name":"oUIButtonSkipTut",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/UI.yy",
+    "name":"Menus",
+    "path":"folders/Objects/UI/Menus.yy",
   },
   "parentObjectId":{
     "name":"oUIActionButtonParent",
