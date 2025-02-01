@@ -306,7 +306,7 @@ function CommandCrewUpgrade(obj, amber, wood) constructor {
 
 function CommandCrewUpgrade2(inst, amber, wood) constructor {
     self.inst = inst
-    self.obj = oArcherBuddy
+    self.upgrade_to = oArcherBuddy
     self.amber = amber
     self.wood = wood
     self.sprite = noone
@@ -331,7 +331,9 @@ function CommandCrewUpgrade2(inst, amber, wood) constructor {
     press = function() {
         if !self.available() { return false }
         self.take_resources()
-        with instance_nearest(inst.x, inst.y, oBuddy) { instance_change(other.obj, true) }
+        var buddy = instance_nearest(inst.x, inst.y, oBuddy)
+        instance_create_layer(buddy.x, buddy.y, "Instances", upgrade_to)
+        instance_destroy(buddy)
         PlayCommandSound()
         return true
     }
