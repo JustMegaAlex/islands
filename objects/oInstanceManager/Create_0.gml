@@ -3,6 +3,9 @@ grid_active_distance = 2
 vec_check = new Vec2(0, 0)
 active_areas = []
 
+current_instance_index = 0
+max_instances_per_step = 100
+
 function AreaActivate(area) {
     area.is_activated = true
     array_push(active_areas, area)

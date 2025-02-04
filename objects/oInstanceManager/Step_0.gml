@@ -34,3 +34,13 @@ with oWorldEntity {
 	    InstanceDeactivate(id, id)
 	}
 }
+
+
+
+///// Running instances
+CHECK_PAUSE
+repeat max_instances_per_step {
+    var inst = instance_find(oEntity, current_instance_index)
+    with inst { event_user(1) }
+    current_instance_index = (current_instance_index + 1) % instance_number(oEntity)
+}

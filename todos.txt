@@ -82,13 +82,10 @@ Next steps:
 
 
 ////////// Polishing, improvments and ideas //////////
-> import the newest audio assets
-> fix: change Esc button to Q?
-> balance: make ship arrows and cannon balls consumables
+> polish: falling trees
 > fix instance manager: leave areas with player presence (buildings/crew) active
 > drop crew by launching from the ship "wheee"
 > protection aura tower?
-> fix ui state not resetting when Esc or click on other ui (cannon)
 > fix audio: play ui click only on successful action
 > controls rebind
 > more live UI: animations, scaling, shaking, etc.
@@ -105,6 +102,7 @@ Next steps:
 > if not moving far for a long time, spawn enemies nearby
 
 
+> idea: make ship arrows and cannon balls consumables
 > idea: wrath usage: kill underwater stuff
 > idea: no crew mod, cannon cost = 0
 > idea: a screaming enemy that attracts all enemies around
@@ -114,6 +112,8 @@ Next steps:
     - dynamic enemies spawn as is
     - option to choose "chill" mode without dynamic enemies
 > idea: turn archers back to buddies
+> idea: get experience for killing? upgrade skills?
+> idea: get enfir for killing
 
 > scrolls
     > minions boost

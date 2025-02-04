@@ -264,6 +264,10 @@ function DrawHitBlinking(alpha, color=c_white) {
 	gpu_set_fog(false, color, 0, 0)
 }
 
+function EntityStep() {
+
+}
+
 SpecialAttack = undefined
 
 alarm[0] = 1
