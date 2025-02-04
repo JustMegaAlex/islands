@@ -1,5 +1,5 @@
 
-grid_active_distance = 2
+grid_active_distance = 20
 vec_check = new Vec2(0, 0)
 active_areas = []
 

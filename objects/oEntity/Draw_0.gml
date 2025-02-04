@@ -45,4 +45,4 @@ if hit_blinking_timer.update() {
 //     draw_text(x, y - 100, attackers_count)
 // }
 
-draw_text(x, y - 100, layer_get_name(layer))
+// draw_text(x, y - 100, layer_get_name(layer))

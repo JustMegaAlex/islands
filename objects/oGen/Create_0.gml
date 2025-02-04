@@ -1,8 +1,8 @@
 
 _debug_corner_cells = []
 
-grid_w = 100
-grid_h = 100
+grid_w = 300
+grid_h = 300
 
 gen_enabled = false
 
@@ -438,9 +438,9 @@ function SpawnEnemies() {
     for (var i = -1; i < 2; i++) {
         for (var j = -1; j < 2; j++) {
             vec_check.set(ship_grid_pos.x + i, ship_grid_pos.y + j)
-            if GridCheck(vec_check) {
+            // if GridCheck(vec_check) {
                 SpawnEnemiesArea(grid[# vec_check.x, vec_check.y])
-            }
+            // }
         }
     }
 }
@@ -476,9 +476,9 @@ function w2gy(yy) {
 function GridGetByCoords(xx, yy) {
     static ___grid_get_vec = new Vec2(0, 0)
     ___grid_get_vec.set(w2gx(xx), w2gy(yy))
-    if GridCheck(___grid_get_vec) {
+    // if GridCheck(___grid_get_vec) {
         return GridGet(___grid_get_vec)
-    }
+    // }
     return undefined
 }
 
