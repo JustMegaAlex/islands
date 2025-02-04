@@ -5,6 +5,7 @@ event_inherited()
 default_color = c_white
 default_rect = new Vec2(100, 100)
 sprite_index = sprite_index == -1 ? sWhitePixel : sprite_index
+image_xscale_start = image_xscale
 
 hit_blinking_timer = MakeTimer(15, 0)
 hit_effect_alpha = 0.5

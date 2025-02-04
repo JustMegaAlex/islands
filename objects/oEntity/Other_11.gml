@@ -1,6 +1,46 @@
 
 event_inherited()
 
+frames++
+if is_flying {
+    z = z_base + lengthdir_x(fly_waving_magnitude, frames * fly_waving_angular_speed)
+}
+
+if is_structure and build_timer.timer {
+    if !build_timer.update() {
+        BuildingFinished()
+    } else {
+        exit
+    }
+} else {
+    image_alpha = 1
+}
+
+if hp <= 0 {
+    Die(); exit;
+}
+
+if IsMoving() {
+    velocity.set_polar(sp_max, position.angle_to(move_target))
+} else {
+    velocity.set(0, 0)
+}
+if !is_structure {
+    position.add(velocity)
+}
+
+if velocity.x != 0 {
+    image_xscale = image_xscale_start * sign(velocity.x)
+}
+
+position.set(x, y)
+hspeed = velocity.x
+vspeed = velocity.y
+
+// x = position.x
+// y = position.y
+
+
 //// AI
 if !is_flying and !is_swimmer {
     if !island {

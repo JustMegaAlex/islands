@@ -132,3 +132,6 @@ Next steps:
 > I love optimization!!! (but not the graphics one)
 > At some html build was broken by pure presence of a particle system IN THE PROJECT, not in the game
   Removing it fixed the problem.
+> optimizing:
+    1. Switching to hspeed/vspeed got me 1.5x fps increase
+    2. Limiting the ai calls
