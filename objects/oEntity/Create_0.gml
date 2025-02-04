@@ -259,7 +259,7 @@ function DrawHitBlinking(alpha, color=c_white) {
 	draw_sprite_ext(
 		sprite_index,
 		image_index,
-		x, y,
+		x, y + z,
 		image_xscale, image_yscale,
 		image_angle, c_white, alpha)
 	gpu_set_fog(false, color, 0, 0)
