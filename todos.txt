@@ -135,3 +135,8 @@ Next steps:
 > optimizing:
     1. Switching to hspeed/vspeed got me 1.5x fps increase
     2. Limiting the ai calls
+    Log:
+        - instances - fps - note
+        - 1100 - 90 - no custom draw
+        - 1400 - 110 - hide (visible=false) instances out of vision range
+        - 4000 - 60 ^^^

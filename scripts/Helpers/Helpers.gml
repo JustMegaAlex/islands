@@ -137,7 +137,7 @@ function InstanceDeactivate(inst, caller=noone) {
     if instance_exists(inst) {
         inst_log = $"{object_get_name(inst.object_index)}"
     }
-    show_debug_message($"InstanceDeactivate: {inst_log} {caller_log}")
+    // show_debug_message($"InstanceDeactivate: {inst_log} {caller_log}")
     instance_deactivate_object(inst)
 }
 
@@ -158,6 +158,6 @@ function InstanceActivate(inst, caller=noone) {
     if instance_exists(inst) {
         inst_log = $"{object_get_name(inst.object_index)}"
     }
-    show_debug_message($"InstanceDeactivate: {inst_log} {caller_log}")
+    // show_debug_message($"InstanceDeactivate: {inst_log} {caller_log}")
 }
 

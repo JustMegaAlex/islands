@@ -39,8 +39,22 @@ with oWorldEntity {
 
 ///// Running instances
 CHECK_PAUSE
+var vision_range = oPlayerVision.vision_range
 repeat max_instances_per_step {
     var inst = instance_find(oEntity, current_instance_index)
-    with inst { event_user(1) }
+    with inst {
+        //// Hide if out of vision range
+        if InstDist(oShip) > vision_range {
+            visible = false
+        }
+        //// Entity logic
+        event_user(1)
+    }
     current_instance_index = (current_instance_index + 1) % instance_number(oEntity)
+}
+
+////// Show all instances in vision range
+var ents = EntitiesInCircle(oShip.x, oShip.y, vision_range)
+for (var i = 0; i < array_length(ents); ++i) {
+    ents[i].visible = true
 }
